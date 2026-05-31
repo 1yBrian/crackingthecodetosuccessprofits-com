@@ -1,0 +1,4 @@
+# Case-insensitive fallbacks for the unlisted Quarter squeeze page.
+# Cloudflare Pages serves files case-sensitively; these forward older or mistyped URLs to the canonical lowercase path.
+/Quarter-Opportunity.html  /quarter-opportunity.html  301
+/Quarter-Opportunity       /quarter-opportunity.html  301
