@@ -2727,3 +2727,50 @@ if (saveButton && saveDialog) {
     });
   }
 }
+
+
+// === Phase 2: Supabase POST ===
+async function postJourneyToApi(payload) {
+  try {
+    const res = await fetch("/api/journey-submit", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload)
+    });
+    const out = await res.json().catch(() => ({}));
+    return { ok: res.ok, status: res.status, body: out };
+  } catch (e) {
+    return { ok: false, status: 0, body: { error: String(e) } };
+  }
+}
+
+// Replace executeSave to chain the API call after the local save.
+const _phase1ExecuteSave = executeSave;
+executeSave = function (email) {
+  const payload = buildSavePayload(email);
+  if (!payload) {
+    showSaveStatus("Generate a journey before saving.", "err");
+    return;
+  }
+  // 1. Always do the local save first (works offline; user never loses their work)
+  _phase1ExecuteSave(email);
+
+  // 2. If email is present, also POST to the backend
+  if (!email) {
+    showSaveStatus("Saved locally — add an email next time to save to the cloud and receive a copy.", "warn");
+    return;
+  }
+  showSaveStatus("Saving to the cloud and emailing your copy…", "ok");
+  postJourneyToApi(payload).then((result) => {
+    if (result.ok && result.body.ok) {
+      const emailNote = result.body.email === "sent" ? " Confirmation email on its way." :
+                        result.body.email === "skipped" ? " (Email sender not configured.)" :
+                        " (Saved, but email failed — check Resend.)";
+      showSaveStatus("Saved to the cloud. JSON downloaded." + emailNote, "ok");
+    } else {
+      const reason = (result.body && result.body.error) ? result.body.error : ("HTTP " + result.status);
+      console.warn("Cloud save failed:", reason);
+      showSaveStatus("Saved locally + downloaded. Cloud save failed: " + reason + ". Your data is safe in the JSON file.", "warn");
+    }
+  });
+};
