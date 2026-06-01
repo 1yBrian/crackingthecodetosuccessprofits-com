@@ -99,11 +99,8 @@
             <button class="icon-button" id="loadSample" type="button" title="Load sample">↺</button>
             <button class="secondary-button" id="loadCtcsp" type="button" title="Load Cracking the Code case study">Load CTCSP</button>
             <button class="primary-button" id="generateAll" type="button">Generate Journey</button>
-            <button class="secondary-button" id="saveJourney" type="button" title="Save your journey + download a JSON copy">Save My Journey</button>
           </div>
         </header>
-
-        <div id="saveStatus" class="save-status" hidden role="status" aria-live="polite"></div>
 
         <section class="step-panel" id="onboarding">
           <div class="section-heading">
@@ -373,18 +370,5 @@
     </main>
 
     <script src="./app.js"></script>
-  
-    <dialog id="saveDialog">
-      <form method="dialog" class="save-dialog-form">
-        <h4>Save Your Journey</h4>
-        <p>Get a JSON copy now. Add your email and we'll also email you a copy and notes (production version — wiring coming).</p>
-        <label for="saveEmail" class="visually-hidden">Email</label>
-        <input id="saveEmail" type="email" placeholder="you@example.com" autocomplete="email" />
-        <div class="dialog-actions">
-          <button id="saveCancel" type="button" class="secondary-button">Cancel</button>
-          <button id="saveConfirm" type="submit" class="primary-button">Save + Download JSON</button>
-        </div>
-      </form>
-    </dialog>
   </body>
 </html>

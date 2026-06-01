@@ -324,11 +324,11 @@ const ctcspCaseStudy = {
   businessName: "Cracking the Code to Success and Profits",
   website: "https://crackingthecodetosuccessprofits.com/",
   linkedin: "",
-  offer: "Journey-OS and Cracking the Code client relationship improvement system",
-  idealClient: "Trainers, coaches, consultants, leaders, and relationship-driven business owners",
-  clientPersona: "A trainer, coach, consultant, leader, or entrepreneur who wants stronger strategy, implementation, relationship capital, and client growth",
+  offer: "Cracking the Code to Success & Profits, facilitated by Scott Sylvan Bell and Brian Oney",
+  idealClient: "Established SMB owners, B2B/B2C founders, agency owners, consultants, and professional service providers in growth mode",
+  clientPersona: "An established business owner with a validated offer, active clients, and predictable revenue who has hit a plateau because too much growth still depends on the owner's daily effort",
   clientOutcome:
-    "a clearer strategy for profitable growth, stronger client relationships, tested implementation ideas, visible wins, and natural referral opportunities",
+    "geometric profit growth, stronger backend revenue paths, higher client lifetime value, more active referrals, better client journeys, and a more balanced owner-independent business",
   deliveryEmail: "",
   tone: "Preeminent and advisory",
   outputLanguage: "en",
@@ -338,40 +338,40 @@ const ctcspCaseStudy = {
   accentColor: "#c7862f",
   logoUrl: "",
   clientFear:
-    "I do not want another abstract business program that sounds good but does not help me solve my specific strategy, growth, client, or implementation challenges.",
+    "I do not want another trend-driven business program that adds more complexity, content fatigue, or hustle without helping me build a more profitable, balanced, and systemized business.",
   clientConfusion:
-    "I am not sure which strategy to test first, how to adapt it to my business, or how to turn ideas from the group into measurable progress.",
+    "I know hidden money is probably leaking through my backend, referrals, upsells, client onboarding, or follow-up, but I am not sure which high-leverage strategy to fix first.",
   firstWin:
-    "A Monday strategy insight tested in the business and turned into a visible win.",
+    "A high-leverage strategy from a Monday session tested in the business and turned into a measurable revenue, referral, client journey, or systems win.",
   timeline:
-    "Learn about Cracking the Code, invest, enter Mighty Networks, join the entrepreneur peer group, use the recording library, show up on Mondays, test strategies, integrate wins, and share results.",
+    "Learn about Cracking the Code, recognize the specific growth plateau, invest, enter Mighty Networks, join the entrepreneur peer group, use the recording library, show up on Mondays, test leverage strategies, systemize wins, and share results.",
   supportChannels:
-    "Mighty Networks, Monday sessions, peer entrepreneur group, recording library, implementation discussions, Journey-OS assets, and follow-up resources.",
+    "Mighty Networks, Monday sessions, peer entrepreneur group, recording library, implementation discussions, strategic prompts, Journey-OS assets, referral/review language, and follow-up resources.",
   proofPoints:
-    "Member wins, tested strategies, LinkedIn shares, implementation examples, peer feedback, referral moments, stronger client relationships, and clearer profitable growth decisions.",
+    "Member wins, tested Jay Abraham-style strategies, improved backend offers, stronger client journeys, LinkedIn shares, peer feedback, referral moments, better client lifetime value, and clearer profitable growth decisions.",
   resources:
-    "Cracking the Code site, Mighty Networks access, Monday recordings, peer group conversations, strategy library, Journey-OS maps, LinkedIn prompts, review/referral language, and implementation checklists.",
+    "Cracking the Code site, Mighty Networks access, Monday recordings, peer group conversations, strategy library, Strategy of Preeminence principles, Journey-OS maps, LinkedIn prompts, review/referral language, and implementation checklists.",
   referralTrigger:
-    "After a member tests a strategy, gets a win, and shares the result on LinkedIn, in the group, or with another entrepreneur who would benefit.",
+    "After a member tests a leverage strategy, sees a measurable win, and can explain how it improved revenue, referrals, client lifetime value, systems, or owner freedom.",
   beforeBuy:
-    "Prospects learn about Cracking the Code through the site, LinkedIn, referrals, or community conversations and wonder whether it can help their specific strategy, profit, growth, and client-relationship challenges.",
+    "Prospects learn about Cracking the Code through the site, LinkedIn, referrals, or community conversations and wonder whether timeless strategy plus modern implementation can help their specific plateau, hidden revenue, client path friction, marketing fatigue, or systems complexity.",
   onboarding:
-    "After investing, members get access to Mighty Networks, the entrepreneur peer group, Monday sessions, and the recording library so they can start learning and testing quickly.",
+    "After investing, members get access to Mighty Networks, the entrepreneur peer group, Monday sessions, and the recording library so they can quickly orient, choose a leverage point, and begin testing strategy in the business.",
   support:
-    "Members show up on Mondays, learn new strategies, review recordings, compare notes with peers, test ideas in their business, and integrate what works.",
+    "Members show up on Mondays, learn high-leverage strategies, review recordings, compare notes with peers, test ideas in their business, and integrate what works into repeatable client, revenue, and referral systems.",
   referrals:
-    "When members get visible wins, they share the story in the group, on LinkedIn, in conversations, and with entrepreneurs who need the same kind of strategic lift.",
+    "When members get visible wins, they share the story in the group, on LinkedIn, in conversations, and with other established owners who want profit growth without more hustle.",
   customStages: [
-    ["Learning About Cracking the Code", "Is this the kind of strategic growth community that can help my business?", "Explore the offer", "Curious", "Pre-investment discovery"],
-    ["Seeing My Specific Growth Challenge", "Can this help me solve my actual strategy, profit, client, or growth challenge?", "See the fit", "Hopeful", "Pre-investment value recognition"],
+    ["Learning About Cracking the Code", "Is this built for an established owner like me, or is it another startup hustle program?", "Explore the offer", "Curious", "Pre-investment discovery"],
+    ["Recognizing the Growth Plateau", "Where am I leaking hidden money through referrals, backend offers, client paths, or owner-dependent operations?", "Name the constraint", "Alert", "Strategic diagnosis"],
+    ["Seeing the Strategy Fit", "Can Jay Abraham-style leverage and preeminence help my specific business grow without adding complexity?", "See the fit", "Hopeful", "Pre-investment value recognition"],
     ["Choosing to Invest", "Is this worth my time, attention, money, and implementation energy?", "Join the path", "Committed", "Decision and investment"],
-    ["Entering Mighty Networks", "Now that I invested, where do I go and who is with me?", "Enter the community", "Welcomed", "Honeymoon and onboarding"],
-    ["Joining the Peer Entrepreneur Group", "Who else is working on serious growth and strategy questions with me?", "Meet the peers", "Connected", "Community activation"],
-    ["Using the Recording Library", "What can I learn on demand when I need the right strategy or reminder?", "Use the library", "Equipped", "Receiving the offer"],
-    ["Showing Up on Mondays", "What strategy can I learn, test, and adapt this week?", "Attend and learn", "Engaged", "Active use"],
-    ["Testing and Integrating Strategies", "How do I make this real in my business and client relationships?", "Test and integrate", "Capable", "Implementation"],
-    ["Getting and Naming Wins", "What changed, improved, or became clearer because I applied this?", "Name the win", "Proud", "Benefit realized"],
-    ["Sharing Wins and Creating Referrals", "Who else should know because this helped me?", "Share the success", "Generous", "Advocacy and referral"],
+    ["Entering Mighty Networks", "Now that I invested, where do I go and how do I begin?", "Enter the community", "Welcomed", "Honeymoon and onboarding"],
+    ["Joining the Peer Entrepreneur Group", "Who else is building a smarter, more strategic, more balanced business alongside me?", "Meet the peers", "Connected", "Community activation"],
+    ["Using the Recording Library", "What timeless strategy can I study on demand when I need the right next move?", "Use the library", "Equipped", "Receiving the offer"],
+    ["Showing Up on Mondays", "What leverage strategy can I learn, test, and adapt this week?", "Attend and learn", "Engaged", "Active use"],
+    ["Testing and Systemizing Strategies", "How do I turn this idea into a repeatable revenue, referral, client journey, or operations improvement?", "Test and systemize", "Capable", "Implementation"],
+    ["Sharing Wins and Creating Referrals", "Who else should know because this helped me create profit, clarity, freedom, or preeminence?", "Share the success", "Generous", "Advocacy and referral"],
   ],
   researchPermission: true,
 };
@@ -2588,189 +2588,3 @@ if (saved) {
 }
 
 applyEmbedMode();
-
-
-// === Save My Journey (Phase 1: local) ===
-const saveButton = document.querySelector("#saveJourney");
-const saveDialog = document.querySelector("#saveDialog");
-const saveEmailInput = document.querySelector("#saveEmail");
-const saveConfirmButton = document.querySelector("#saveConfirm");
-const saveCancelButton = document.querySelector("#saveCancel");
-const saveStatusEl = document.querySelector("#saveStatus");
-
-let sessionEmail = "";
-try { sessionEmail = localStorage.getItem("journey-os-email") || ""; } catch (e) {}
-
-function generateUuid() {
-  if (window.crypto && window.crypto.randomUUID) return window.crypto.randomUUID();
-  return "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g, (c) => {
-    const r = (Math.random() * 16) | 0;
-    return (c === "x" ? r : (r & 0x3) | 0x8).toString(16);
-  });
-}
-
-function buildSavePayload(email) {
-  if (!lastRenderedData || !lastRenderedStages) return null;
-  return {
-    id: generateUuid(),
-    created_at: new Date().toISOString(),
-    email: email || null,
-    business_name: lastRenderedData.businessName || null,
-    website: lastRenderedData.website || null,
-    linkedin: lastRenderedData.linkedin || null,
-    offer: lastRenderedData.offer || null,
-    ideal_client: lastRenderedData.idealClient || null,
-    client_persona: lastRenderedData.clientPersona || null,
-    client_outcome: lastRenderedData.clientOutcome || null,
-    output_language: globalLanguage ? globalLanguage.value : null,
-    page_style: pageStyle ? pageStyle.value : null,
-    graphic_vibe: graphicVibe ? graphicVibe.value : null,
-    primary_color: lastRenderedData.primaryColor || null,
-    accent_color: lastRenderedData.accentColor || null,
-    intake: lastRenderedData,
-    generated_stages: lastRenderedStages,
-    status: "draft",
-    source: "prototype",
-    schema_version: 1
-  };
-}
-
-function downloadJourneyJson(payload) {
-  const slug = (payload.business_name || "draft-journey")
-    .toLowerCase()
-    .replace(/[^a-z0-9]+/g, "-")
-    .replace(/^-+|-+$/g, "")
-    .slice(0, 40) || "draft-journey";
-  const stamp = payload.created_at.replace(/[:.]/g, "-").slice(0, 19);
-  const blob = new Blob([JSON.stringify(payload, null, 2)], { type: "application/json" });
-  const url = URL.createObjectURL(blob);
-  const a = document.createElement("a");
-  a.href = url;
-  a.download = `journey-os-${slug}-${stamp}.json`;
-  document.body.appendChild(a);
-  a.click();
-  document.body.removeChild(a);
-  setTimeout(() => URL.revokeObjectURL(url), 1000);
-}
-
-function showSaveStatus(message, kind) {
-  if (!saveStatusEl) return;
-  saveStatusEl.textContent = message;
-  saveStatusEl.dataset.kind = kind || "ok";
-  saveStatusEl.hidden = false;
-  clearTimeout(showSaveStatus._t);
-  showSaveStatus._t = setTimeout(() => { saveStatusEl.hidden = true; }, 7000);
-}
-
-function executeSave(email) {
-  const payload = buildSavePayload(email);
-  if (!payload) {
-    showSaveStatus("Generate a journey before saving.", "err");
-    return;
-  }
-  try {
-    const indexKey = "journey-os-saved";
-    const list = JSON.parse(localStorage.getItem(indexKey) || "[]");
-    list.push({
-      id: payload.id,
-      created_at: payload.created_at,
-      email: payload.email,
-      business_name: payload.business_name
-    });
-    localStorage.setItem(indexKey, JSON.stringify(list));
-    localStorage.setItem("journey-os-saved:" + payload.id, JSON.stringify(payload));
-    if (email) localStorage.setItem("journey-os-email", email);
-  } catch (e) {
-    console.warn("localStorage save failed:", e);
-  }
-  downloadJourneyJson(payload);
-  const tail = email ? " Production version will email " + email + " a copy." : " Add an email next time to receive a copy by email.";
-  showSaveStatus("Saved — JSON downloaded." + tail, "ok");
-}
-
-if (saveButton && saveDialog) {
-  saveButton.addEventListener("click", () => {
-    if (!lastRenderedData || !lastRenderedStages) {
-      showSaveStatus("Generate a journey before saving.", "err");
-      return;
-    }
-    if (saveEmailInput) saveEmailInput.value = sessionEmail;
-    if (typeof saveDialog.showModal === "function") {
-      saveDialog.showModal();
-    } else {
-      const email = window.prompt("Email (optional, for production email copy):", sessionEmail) || "";
-      executeSave(email.trim());
-    }
-  });
-
-  if (saveConfirmButton) {
-    saveConfirmButton.addEventListener("click", (e) => {
-      e.preventDefault();
-      const email = saveEmailInput ? (saveEmailInput.value || "").trim() : "";
-      const looksValid = !email || /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email);
-      if (!looksValid) {
-        showSaveStatus("Email looks off — saving without email.", "warn");
-        sessionEmail = "";
-        executeSave("");
-      } else {
-        sessionEmail = email;
-        executeSave(email);
-      }
-      saveDialog.close();
-    });
-  }
-
-  if (saveCancelButton) {
-    saveCancelButton.addEventListener("click", (e) => {
-      e.preventDefault();
-      saveDialog.close();
-    });
-  }
-}
-
-
-// === Phase 2: Supabase POST ===
-async function postJourneyToApi(payload) {
-  try {
-    const res = await fetch("/api/journey-submit", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(payload)
-    });
-    const out = await res.json().catch(() => ({}));
-    return { ok: res.ok, status: res.status, body: out };
-  } catch (e) {
-    return { ok: false, status: 0, body: { error: String(e) } };
-  }
-}
-
-// Replace executeSave to chain the API call after the local save.
-const _phase1ExecuteSave = executeSave;
-executeSave = function (email) {
-  const payload = buildSavePayload(email);
-  if (!payload) {
-    showSaveStatus("Generate a journey before saving.", "err");
-    return;
-  }
-  // 1. Always do the local save first (works offline; user never loses their work)
-  _phase1ExecuteSave(email);
-
-  // 2. If email is present, also POST to the backend
-  if (!email) {
-    showSaveStatus("Saved locally — add an email next time to save to the cloud and receive a copy.", "warn");
-    return;
-  }
-  showSaveStatus("Saving to the cloud and emailing your copy…", "ok");
-  postJourneyToApi(payload).then((result) => {
-    if (result.ok && result.body.ok) {
-      const emailNote = result.body.email === "sent" ? " Confirmation email on its way." :
-                        result.body.email === "skipped" ? " (Email sender not configured.)" :
-                        " (Saved, but email failed — check Resend.)";
-      showSaveStatus("Saved to the cloud. JSON downloaded." + emailNote, "ok");
-    } else {
-      const reason = (result.body && result.body.error) ? result.body.error : ("HTTP " + result.status);
-      console.warn("Cloud save failed:", reason);
-      showSaveStatus("Saved locally + downloaded. Cloud save failed: " + reason + ". Your data is safe in the JSON file.", "warn");
-    }
-  });
-};
