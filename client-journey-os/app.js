@@ -2237,11 +2237,13 @@ function renderLinkedIn(data, stages) {
   const logoSource = data.logoDataUrl || data.logoUrl || "";
   const vibe = getVibe(data);
   const copy = getCopy(data);
-  const posts = copy.linkedInPosts(businessName, ideal).map(([title, body, stageKey]) => ({
-    title,
-    body,
-    stage: stageKey ? stages.find((stage) => stage.key === stageKey) : null,
-  }));
+  const posts = isCtcspData(data)
+    ? getCtcspLinkedInPosts(stages)
+    : copy.linkedInPosts(businessName, ideal).map(([title, body, stageKey]) => ({
+        title,
+        body,
+        stage: stageKey ? stages.find((stage) => stage.key === stageKey) : null,
+      }));
 
   document.querySelector("#linkedinOutput").innerHTML = posts
         .map(
@@ -2257,6 +2259,64 @@ function renderLinkedIn(data, stages) {
       `
     )
     .join("");
+}
+
+function isCtcspData(data) {
+  return /cracking the code/i.test(data.businessName || "") || /crackingthecodetosuccessprofits/i.test(data.website || "");
+}
+
+function getCtcspLinkedInPosts(stages) {
+  const byName = (name) => stages.find((stage) => stage.name === name);
+  return [
+    {
+      title: "For Established Owners Who Hit a Growth Plateau",
+      body:
+        "If you already have a working business, a validated offer, active clients, and predictable revenue, the next constraint is usually not more hustle. It is leverage. Cracking the Code to Success & Profits is for SMB owners who suspect hidden money is leaking through weak backend paths, clumsy client journeys, missed referrals, or owner-dependent operations.",
+      stage: byName("Learning About the Opportunity"),
+    },
+    {
+      title: "The First Win Is Focus",
+      body:
+        "One of the most valuable early outcomes is not adding another strategy to the pile. It is taking distractions off the radar. The right monthly theme and Monday strategy session help an owner choose a focused leverage point: referrals, lifetime value, backend offers, client experience, or systems.",
+      stage: byName("Following Monthly Themes"),
+    },
+    {
+      title: "What Happens After You Invest",
+      body:
+        "After joining, members enter Mighty Networks, learn to navigate the LMS, find the recording library, and plug into the rhythm of live Monday sessions. The experience is designed to help owners move from inspiration into implementation without losing the thread.",
+      stage: byName("Joining Mighty Networks"),
+    },
+    {
+      title: "Monday Sessions Create Implementation Rhythm",
+      body:
+        "Every Monday at 9AM PST, members gather for 90 minutes to learn, compare notes, and identify what to test next. For busy owners, that rhythm matters. It creates a recurring appointment with strategic thinking, not just another pile of content to consume later.",
+      stage: byName("Attending Monday Strategy Sessions"),
+    },
+    {
+      title: "The Recording Library Extends the Value",
+      body:
+        "The recording library gives members a way to return to timeless strategies when the right problem appears. Instead of chasing random tactics, owners can revisit the right theme, prompt, or principle when they are ready to apply it in their business.",
+      stage: byName("Navigating the LMS and Recording Library"),
+    },
+    {
+      title: "Strategies Become Valuable When They Become Systems",
+      body:
+        "A strategy creates real value when it becomes repeatable. Members are encouraged to test ideas, keep what works, and turn wins into better client paths, referral engines, follow-up systems, backend offers, and owner-independent operating rhythms.",
+      stage: byName("Systemizing What Works"),
+    },
+    {
+      title: "Compounding Profits Come From Stacked Improvements",
+      body:
+        "The goal is not a one-time bump. The goal is compounding: higher client lifetime value, more active referrals, better transaction value, stronger client trust, and systems that keep producing results over time. Small tested improvements can stack into a very different business.",
+      stage: byName("Compounding Profits Over Time"),
+    },
+    {
+      title: "Wins Become Referral Opportunities",
+      body:
+        "When a business owner gets clearer focus, better systems, and visible profit improvement, sharing becomes natural. Members are invited to share Cracking the Code with other owners who are ready to move beyond hustle and build smarter growth.",
+      stage: byName("Sharing Wins and Referring Owners"),
+    },
+  ];
 }
 
 function renderLinkedInGraphic(post, stages, data, options) {
