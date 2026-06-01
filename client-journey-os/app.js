@@ -342,36 +342,36 @@ const ctcspCaseStudy = {
   clientConfusion:
     "I know hidden money is probably leaking through my backend, referrals, upsells, client onboarding, or follow-up, but I am not sure which high-leverage strategy to fix first.",
   firstWin:
-    "A high-leverage strategy from a Monday session tested in the business and turned into a measurable revenue, referral, client journey, or systems win.",
+    "A clearer focus area, fewer distractions on the radar, and one high-leverage strategy tested in the business.",
   timeline:
-    "Learn about Cracking the Code, recognize the specific growth plateau, invest, enter Mighty Networks, join the entrepreneur peer group, use the recording library, show up on Mondays, test leverage strategies, systemize wins, and share results.",
+    "Learn about the opportunity, invest, join the Mighty Networks LMS, navigate the recording library, attend live Monday sessions at 9AM PST for 90 minutes, follow new monthly themes, focus on what matters, test strategies, build systems, compound profits, and share wins.",
   supportChannels:
-    "Mighty Networks, Monday sessions, peer entrepreneur group, recording library, implementation discussions, strategic prompts, Journey-OS assets, referral/review language, and follow-up resources.",
+    "Mighty Networks LMS, recording library, live Monday sessions at 9AM PST for 90 minutes, monthly themes, peer entrepreneur support, implementation discussions, strategic prompts, Journey-OS assets, referral/review language, and follow-up resources.",
   proofPoints:
-    "Member wins, tested Jay Abraham-style strategies, improved backend offers, stronger client journeys, LinkedIn shares, peer feedback, referral moments, better client lifetime value, and clearer profitable growth decisions.",
+    "Member wins, sharper strategic focus, fewer distracting initiatives, tested Jay Abraham-style strategies, improved systems, compounding profits, LinkedIn shares, peer feedback, referral moments, better client lifetime value, and clearer profitable growth decisions.",
   resources:
-    "Cracking the Code site, Mighty Networks access, Monday recordings, peer group conversations, strategy library, Strategy of Preeminence principles, Journey-OS maps, LinkedIn prompts, review/referral language, and implementation checklists.",
+    "Cracking the Code site, Mighty Networks LMS access, recording library, Monday 9AM PST live sessions, monthly theme releases, peer group conversations, Strategy of Preeminence principles, Journey-OS maps, LinkedIn prompts, review/referral language, and implementation checklists.",
   referralTrigger:
-    "After a member tests a leverage strategy, sees a measurable win, and can explain how it improved revenue, referrals, client lifetime value, systems, or owner freedom.",
+    "After a member tests a strategy, sees profits or systems begin to compound, and can explain how the program improved focus, revenue, referrals, client lifetime value, or owner freedom.",
   beforeBuy:
     "Prospects learn about Cracking the Code through the site, LinkedIn, referrals, or community conversations and wonder whether timeless strategy plus modern implementation can help their specific plateau, hidden revenue, client path friction, marketing fatigue, or systems complexity.",
   onboarding:
-    "After investing, members get access to Mighty Networks, the entrepreneur peer group, Monday sessions, and the recording library so they can quickly orient, choose a leverage point, and begin testing strategy in the business.",
+    "After investing, members join Mighty Networks, learn to navigate the LMS, find the recording library, understand the Monday 9AM PST live session rhythm, and see the monthly theme structure.",
   support:
-    "Members show up on Mondays, learn high-leverage strategies, review recordings, compare notes with peers, test ideas in their business, and integrate what works into repeatable client, revenue, and referral systems.",
+    "Members show up on Mondays for 90 minutes, learn high-leverage strategies, review recordings, compare notes with peers, focus on what is working, test ideas in their business, and integrate what works into repeatable client, revenue, and referral systems.",
   referrals:
-    "When members get visible wins, they share the story in the group, on LinkedIn, in conversations, and with other established owners who want profit growth without more hustle.",
+    "Members are invited to share the program with other business owners as part of an ongoing referral strategy once they experience clearer focus, better systems, and compounding profit results.",
   customStages: [
-    ["Learning About Cracking the Code", "Is this built for an established owner like me, or is it another startup hustle program?", "Explore the offer", "Curious", "Pre-investment discovery"],
-    ["Recognizing the Growth Plateau", "Where am I leaking hidden money through referrals, backend offers, client paths, or owner-dependent operations?", "Name the constraint", "Alert", "Strategic diagnosis"],
-    ["Seeing the Strategy Fit", "Can Jay Abraham-style leverage and preeminence help my specific business grow without adding complexity?", "See the fit", "Hopeful", "Pre-investment value recognition"],
-    ["Choosing to Invest", "Is this worth my time, attention, money, and implementation energy?", "Join the path", "Committed", "Decision and investment"],
-    ["Entering Mighty Networks", "Now that I invested, where do I go and how do I begin?", "Enter the community", "Welcomed", "Honeymoon and onboarding"],
-    ["Joining the Peer Entrepreneur Group", "Who else is building a smarter, more strategic, more balanced business alongside me?", "Meet the peers", "Connected", "Community activation"],
-    ["Using the Recording Library", "What timeless strategy can I study on demand when I need the right next move?", "Use the library", "Equipped", "Receiving the offer"],
-    ["Showing Up on Mondays", "What leverage strategy can I learn, test, and adapt this week?", "Attend and learn", "Engaged", "Active use"],
-    ["Testing and Systemizing Strategies", "How do I turn this idea into a repeatable revenue, referral, client journey, or operations improvement?", "Test and systemize", "Capable", "Implementation"],
-    ["Sharing Wins and Creating Referrals", "Who else should know because this helped me create profit, clarity, freedom, or preeminence?", "Share the success", "Generous", "Advocacy and referral"],
+    ["Learning About the Opportunity", "Is Cracking the Code built for an established owner like me who wants smarter growth, not more hustle?", "Explore the opportunity", "Curious", "Pre-investment discovery"],
+    ["Deciding to Invest", "Is this worth my time, attention, money, and implementation energy?", "Invest in the path", "Committed", "Decision and investment"],
+    ["Joining Mighty Networks", "Now that I invested, where do I go and how do I begin?", "Enter the LMS", "Welcomed", "Honeymoon and onboarding"],
+    ["Navigating the LMS and Recording Library", "How do I find the right recordings, themes, and resources when I need them?", "Use the library", "Equipped", "Receiving the offer"],
+    ["Attending Monday Strategy Sessions", "What will I learn live every Monday at 9AM PST for 90 minutes?", "Show up Mondays", "Engaged", "Active weekly learning"],
+    ["Following Monthly Themes", "What is this month's strategic focus, and what distractions can I take off my radar?", "Focus the month", "Focused", "Monthly strategic focus"],
+    ["Testing Strategies in the Business", "Which strategy can I test now to improve systems, clients, revenue, or referrals?", "Test the strategy", "Capable", "Implementation"],
+    ["Systemizing What Works", "How do I turn the winning test into a repeatable system?", "Systemize the win", "Confident", "Systems and profit growth"],
+    ["Compounding Profits Over Time", "How do these focused strategies stack into better lifetime value, referrals, and profits?", "Compound the gains", "Encouraged", "Compounding value"],
+    ["Sharing Wins and Referring Owners", "Who else should know because this helped me create focus, systems, profit, or freedom?", "Share and refer", "Generous", "Advocacy and referral"],
   ],
   researchPermission: true,
 };
@@ -2744,7 +2744,6 @@ async function postJourneyToApi(payload) {
   }
 }
 
-// Replace executeSave to chain the API call after the local save.
 const _phase1ExecuteSave = executeSave;
 executeSave = function (email) {
   const payload = buildSavePayload(email);
@@ -2752,10 +2751,7 @@ executeSave = function (email) {
     showSaveStatus("Generate a journey before saving.", "err");
     return;
   }
-  // 1. Always do the local save first (works offline; user never loses their work)
   _phase1ExecuteSave(email);
-
-  // 2. If email is present, also POST to the backend
   if (!email) {
     showSaveStatus("Saved locally — add an email next time to save to the cloud and receive a copy.", "warn");
     return;
