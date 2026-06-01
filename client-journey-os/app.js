@@ -326,9 +326,9 @@ const ctcspCaseStudy = {
   linkedin: "",
   offer: "Journey-OS and Cracking the Code client relationship improvement system",
   idealClient: "Trainers, coaches, consultants, leaders, and relationship-driven business owners",
-  clientPersona: "A business owner who wants clients to trust the path, use what they bought, get visible results, and naturally refer others",
+  clientPersona: "A trainer, coach, consultant, leader, or entrepreneur who wants stronger strategy, implementation, relationship capital, and client growth",
   clientOutcome:
-    "A clearer, more preeminent client journey that improves trust, implementation, reviews, referrals, lifetime value, and eventual business transferability",
+    "a clearer strategy for profitable growth, stronger client relationships, tested implementation ideas, visible wins, and natural referral opportunities",
   deliveryEmail: "",
   tone: "Preeminent and advisory",
   outputLanguage: "en",
@@ -338,29 +338,41 @@ const ctcspCaseStudy = {
   accentColor: "#c7862f",
   logoUrl: "",
   clientFear:
-    "I do not want another abstract business framework that sounds good but does not change how clients experience my business.",
+    "I do not want another abstract business program that sounds good but does not help me solve my specific strategy, growth, client, or implementation challenges.",
   clientConfusion:
-    "I am not sure where my client journey breaks down, what clients are feeling at each step, or how to make the path visible enough to build confidence.",
+    "I am not sure which strategy to test first, how to adapt it to my business, or how to turn ideas from the group into measurable progress.",
   firstWin:
-    "A client-lived journey map that shows where trust, value, reviews, referrals, and long-term benefit are created.",
+    "A Monday strategy insight tested in the business and turned into a visible win.",
   timeline:
-    "One focused Journey-OS mapping session to diagnose the journey, followed by asset creation for the infographic, webpage, LinkedIn posts, article, and delivery email.",
+    "Learn about Cracking the Code, invest, enter Mighty Networks, join the entrepreneur peer group, use the recording library, show up on Mondays, test strategies, integrate wins, and share results.",
   supportChannels:
-    "Journey-OS diagnostic, Cracking the Code community discussion, LMS resources, webpage draft, LinkedIn assets, article draft, delivery email, and implementation guidance.",
+    "Mighty Networks, Monday sessions, peer entrepreneur group, recording library, implementation discussions, Journey-OS assets, and follow-up resources.",
   proofPoints:
-    "Before/after journey clarity, client review prompts, referral moments, lifetime value tracking, systemized response standards, and enterprise value opportunities.",
+    "Member wins, tested strategies, LinkedIn shares, implementation examples, peer feedback, referral moments, stronger client relationships, and clearer profitable growth decisions.",
   resources:
-    "Journey map, onboarding graphic, infographic, LinkedIn graphics, article, interactive webpage, delivery email, referral language, review prompts, response templates, and LTV tracker.",
+    "Cracking the Code site, Mighty Networks access, Monday recordings, peer group conversations, strategy library, Journey-OS maps, LinkedIn prompts, review/referral language, and implementation checklists.",
   referralTrigger:
-    "After the business owner sees the improved journey and can explain how it will increase client trust, reviews, lifetime value, and referrals.",
+    "After a member tests a strategy, gets a win, and shares the result on LinkedIn, in the group, or with another entrepreneur who would benefit.",
   beforeBuy:
-    "Prospects arrive from the Cracking the Code site, referrals, LinkedIn, or the community with a desire to improve client relationships and business value. They need to see a practical path before they commit.",
+    "Prospects learn about Cracking the Code through the site, LinkedIn, referrals, or community conversations and wonder whether it can help their specific strategy, profit, growth, and client-relationship challenges.",
   onboarding:
-    "The client enters business details, website, LinkedIn profile, audience, offer, brand colors, logo, fears, first win, support channels, proof, resources, and referral moments.",
+    "After investing, members get access to Mighty Networks, the entrepreneur peer group, Monday sessions, and the recording library so they can start learning and testing quickly.",
   support:
-    "Journey-OS diagnoses the client-lived path, recommends preeminent improvements, identifies review and referral opportunities, and generates shareable assets the client can refine.",
+    "Members show up on Mondays, learn new strategies, review recordings, compare notes with peers, test ideas in their business, and integrate what works.",
   referrals:
-    "Referrals should be invited when the user can see the improved journey, recognize the business value, and has language to share the tool with another trainer, coach, consultant, or leader.",
+    "When members get visible wins, they share the story in the group, on LinkedIn, in conversations, and with entrepreneurs who need the same kind of strategic lift.",
+  customStages: [
+    ["Learning About Cracking the Code", "Is this the kind of strategic growth community that can help my business?", "Explore the offer", "Curious", "Pre-investment discovery"],
+    ["Seeing My Specific Growth Challenge", "Can this help me solve my actual strategy, profit, client, or growth challenge?", "See the fit", "Hopeful", "Pre-investment value recognition"],
+    ["Choosing to Invest", "Is this worth my time, attention, money, and implementation energy?", "Join the path", "Committed", "Decision and investment"],
+    ["Entering Mighty Networks", "Now that I invested, where do I go and who is with me?", "Enter the community", "Welcomed", "Honeymoon and onboarding"],
+    ["Joining the Peer Entrepreneur Group", "Who else is working on serious growth and strategy questions with me?", "Meet the peers", "Connected", "Community activation"],
+    ["Using the Recording Library", "What can I learn on demand when I need the right strategy or reminder?", "Use the library", "Equipped", "Receiving the offer"],
+    ["Showing Up on Mondays", "What strategy can I learn, test, and adapt this week?", "Attend and learn", "Engaged", "Active use"],
+    ["Testing and Integrating Strategies", "How do I make this real in my business and client relationships?", "Test and integrate", "Capable", "Implementation"],
+    ["Getting and Naming Wins", "What changed, improved, or became clearer because I applied this?", "Name the win", "Proud", "Benefit realized"],
+    ["Sharing Wins and Creating Referrals", "Who else should know because this helped me?", "Share the success", "Generous", "Advocacy and referral"],
+  ],
   researchPermission: true,
 };
 
@@ -427,9 +439,25 @@ function buildStages(data) {
   const firstWin = data.firstWin || "a clear first win";
 
   const language = getLanguage(data);
+  const sourceBlueprint = Array.isArray(data.customStages)
+    ? data.customStages.map((values, index) => ({
+        key: stageBlueprint[index]?.key || `customStage${index + 1}`,
+        name: values[0],
+        clientQuestion: values[1],
+        cta: values[2],
+        lens: values[4] || stageBlueprint[index]?.lens || "Journey",
+        clientPhase: values[4] || values[0],
+        customEmotion: values[3],
+      }))
+    : stageBlueprint;
 
-  return stageBlueprint.map((stage, index) => {
-    const localized = getLocalizedStage(stage, language);
+  return sourceBlueprint.map((stage, index) => {
+    const localized = Array.isArray(data.customStages) ? {
+      name: stage.name,
+      clientQuestion: stage.clientQuestion,
+      cta: stage.cta,
+      emotion: stage.customEmotion || getEmotion(stage.key),
+    } : getLocalizedStage(stage, language);
     const stageSpecific = {
       meetingTeam: `The client is trying to decide whether the people behind ${data.businessName || "the business"} feel credible, human, and aligned with their values.`,
       understandingBenefit: `The client wants plain-language benefits for ${data.offer || "the offer"}, not only features or credentials.`,
