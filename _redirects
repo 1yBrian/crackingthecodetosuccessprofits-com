@@ -2,3 +2,8 @@
 # Cloudflare Pages serves files case-sensitively; these forward older or mistyped URLs to the canonical lowercase path.
 /Quarter-Opportunity.html  /quarter-opportunity.html  301
 /Quarter-Opportunity       /quarter-opportunity.html  301
+
+# Journey-OS prototype moved to /client-journey-os/ subdirectory (2026-06-01)
+/client-journey-os.html  /client-journey-os/  301
+/ctcsp-adventure-infographic.html  /client-journey-os/ctcsp-adventure-infographic.html  301
+/ctcsp-adventure-infographic  /client-journey-os/ctcsp-adventure-infographic.html  301
