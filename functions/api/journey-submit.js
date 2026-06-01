@@ -37,11 +37,18 @@ function esc(s) {
     .replace(/"/g, "&quot;");
 }
 
+
+// Workaround: Cloudflare Pages dashboard allowed trailing-colon var names.
+// Read env.X if present, else env["X:"], else undefined.
+function envRead(env, key) {
+  return env[key] !== undefined ? env[key] : env[key + ":"];
+}
+
 export async function onRequestPost({ request, env }) {
   // Defensive: required env
   const need = ["SUPABASE_URL", "SUPABASE_SERVICE_ROLE_KEY", "RESEND_API_KEY",
                 "JOURNEY_FROM_EMAIL", "JOURNEY_ADMIN_EMAIL"];
-  const missing = need.filter((k) => !env[k]);
+  const missing = need.filter((k) => !envRead(env, k));
   if (missing.length) {
     return json({ error: "Server not configured", missing }, 500);
   }
@@ -95,11 +102,11 @@ export async function onRequestPost({ request, env }) {
   };
 
   // Insert into Supabase
-  const sbRes = await fetch(`${env.SUPABASE_URL}/rest/v1/journey_submissions`, {
+  const sbRes = await fetch(`${envRead(env,'SUPABASE_URL')}/rest/v1/journey_submissions`, {
     method: "POST",
     headers: {
-      "apikey": env.SUPABASE_SERVICE_ROLE_KEY,
-      "Authorization": `Bearer ${env.SUPABASE_SERVICE_ROLE_KEY}`,
+      "apikey": envRead(env,'SUPABASE_SERVICE_ROLE_KEY'),
+      "Authorization": `Bearer ${envRead(env,'SUPABASE_SERVICE_ROLE_KEY')}`,
       "Content-Type": "application/json",
       "Prefer": "return=representation"
     },
@@ -145,13 +152,13 @@ export async function onRequestPost({ request, env }) {
     const resendRes = await fetch("https://api.resend.com/emails", {
       method: "POST",
       headers: {
-        "Authorization": `Bearer ${env.RESEND_API_KEY}`,
+        "Authorization": `Bearer ${envRead(env,'RESEND_API_KEY')}`,
         "Content-Type": "application/json"
       },
       body: JSON.stringify({
-        from: env.JOURNEY_FROM_EMAIL,
+        from: envRead(env,'JOURNEY_FROM_EMAIL'),
         to: [email],
-        bcc: [env.JOURNEY_ADMIN_EMAIL],
+        bcc: [envRead(env,'JOURNEY_ADMIN_EMAIL')],
         subject: `Your Journey-OS assets for ${businessName}`,
         html,
         attachments: [{
