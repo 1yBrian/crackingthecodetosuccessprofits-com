@@ -26,6 +26,7 @@ const stageBlueprint = [
     clientQuestion: "Who are the people I will trust with this?",
     cta: "Meet the people",
     lens: "Trust",
+    clientPhase: "Not knowing who to trust",
   },
   {
     key: "understandingBenefit",
@@ -33,6 +34,7 @@ const stageBlueprint = [
     clientQuestion: "What will this help me become able to do, feel, or achieve?",
     cta: "Understand the value",
     lens: "Clarity",
+    clientPhase: "Learning what is possible",
   },
   {
     key: "abilityToAct",
@@ -40,6 +42,7 @@ const stageBlueprint = [
     clientQuestion: "Can I realistically implement this in my world?",
     cta: "See how it fits",
     lens: "Agency",
+    clientPhase: "Seeing myself succeed",
   },
   {
     key: "projectOfWorth",
@@ -47,6 +50,7 @@ const stageBlueprint = [
     clientQuestion: "What meaningful project or result will make this worth it?",
     cta: "Start the worthy work",
     lens: "Commitment",
+    clientPhase: "Choosing to invest",
   },
   {
     key: "usingProduct",
@@ -54,6 +58,7 @@ const stageBlueprint = [
     clientQuestion: "How do I actually use this well enough to get value?",
     cta: "Use it well",
     lens: "Use",
+    clientPhase: "Receiving and using the offer",
   },
   {
     key: "troubleshooting",
@@ -61,6 +66,7 @@ const stageBlueprint = [
     clientQuestion: "What happens when I get stuck or need this adapted?",
     cta: "Customize the path",
     lens: "Support",
+    clientPhase: "Getting help when real life happens",
   },
   {
     key: "recognizingResults",
@@ -68,6 +74,7 @@ const stageBlueprint = [
     clientQuestion: "What does great look like, and how will I know I got there?",
     cta: "Recognize the win",
     lens: "Evidence",
+    clientPhase: "Enjoying the benefit",
   },
   {
     key: "sharingFriends",
@@ -75,6 +82,7 @@ const stageBlueprint = [
     clientQuestion: "Who would I naturally tell because this helped me?",
     cta: "Share the story",
     lens: "Advocacy",
+    clientPhase: "Sharing the success",
   },
   {
     key: "givingOthers",
@@ -82,6 +90,7 @@ const stageBlueprint = [
     clientQuestion: "Could this be a meaningful gift, referral, or introduction?",
     cta: "Give the benefit",
     lens: "Generosity",
+    clientPhase: "Passing value forward",
   },
   {
     key: "continuingBenefit",
@@ -89,6 +98,7 @@ const stageBlueprint = [
     clientQuestion: "How does this keep helping me long after the investment?",
     cta: "Keep the value alive",
     lens: "Long-Term Value",
+    clientPhase: "Continuing to benefit",
   },
 ];
 
@@ -114,6 +124,19 @@ const i18n = {
       wholeJourney: "The Whole Journey At A Glance",
       journeyMap: "Journey-OS Map",
       clientJourney: "Your Client Journey",
+      powerView: "Power View",
+      clientView: "Client View",
+      topQuickWin: "Top quick win",
+      teamChecklist: "Team checklist",
+      systemImprovement: "System improvement",
+      reviewOpportunity: "Review opportunity",
+      referralOpportunity: "Referral opportunity",
+      clientBenefit: "Client benefit",
+      successFeeling: "Success feeling",
+      inspirationPrompt: "Inspiration prompt",
+      sharePrompt: "Share prompt",
+      articleLabel: "Authority Article",
+      nextStepHeadline: "Ready for the next best step?",
     },
     stages: {},
   },
@@ -138,6 +161,19 @@ const i18n = {
       wholeJourney: "Il percorso completo in sintesi",
       journeyMap: "Mappa Journey-OS",
       clientJourney: "Il tuo percorso cliente",
+      powerView: "Vista operativa",
+      clientView: "Vista cliente",
+      topQuickWin: "Vittoria rapida prioritaria",
+      teamChecklist: "Checklist del team",
+      systemImprovement: "Miglioramento del sistema",
+      reviewOpportunity: "Opportunita di recensione",
+      referralOpportunity: "Opportunita di referral",
+      clientBenefit: "Beneficio per il cliente",
+      successFeeling: "Sensazione di successo",
+      inspirationPrompt: "Messaggio di ispirazione",
+      sharePrompt: "Suggerimento di condivisione",
+      articleLabel: "Articolo autorevole",
+      nextStepHeadline: "Pronto per il prossimo passo giusto?",
     },
     stages: {
       meetingTeam: ["Incontrare il team", "Chi sono le persone a cui daro fiducia?", "Conosci le persone", "Curioso"],
@@ -173,6 +209,19 @@ const i18n = {
       wholeJourney: "El recorrido completo de un vistazo",
       journeyMap: "Mapa Journey-OS",
       clientJourney: "Tu recorrido del cliente",
+      powerView: "Vista de poder",
+      clientView: "Vista del cliente",
+      topQuickWin: "Victoria rapida prioritaria",
+      teamChecklist: "Lista del equipo",
+      systemImprovement: "Mejora del sistema",
+      reviewOpportunity: "Oportunidad de reseña",
+      referralOpportunity: "Oportunidad de referencia",
+      clientBenefit: "Beneficio para el cliente",
+      successFeeling: "Sensacion de exito",
+      inspirationPrompt: "Mensaje inspirador",
+      sharePrompt: "Sugerencia para compartir",
+      articleLabel: "Articulo de autoridad",
+      nextStepHeadline: "Listo para el siguiente mejor paso?",
     },
     stages: {
       meetingTeam: ["Conocer al equipo", "Quienes son las personas en las que voy a confiar?", "Conoce a las personas", "Curioso"],
@@ -208,6 +257,19 @@ const i18n = {
       wholeJourney: "全体像",
       journeyMap: "Journey-OS マップ",
       clientJourney: "あなたの顧客ジャーニー",
+      powerView: "パワービュー",
+      clientView: "クライアントビュー",
+      topQuickWin: "最優先のクイックウィン",
+      teamChecklist: "チーム用チェックリスト",
+      systemImprovement: "仕組みの改善",
+      reviewOpportunity: "レビュー機会",
+      referralOpportunity: "紹介機会",
+      clientBenefit: "クライアントの利益",
+      successFeeling: "成功の実感",
+      inspirationPrompt: "励ましの言葉",
+      sharePrompt: "共有のきっかけ",
+      articleLabel: "信頼構築記事",
+      nextStepHeadline: "次の最善の一歩へ進みますか?",
     },
     stages: {
       meetingTeam: ["チームと出会う", "信頼する相手はどんな人たちか?", "人を知る", "興味"],
@@ -397,6 +459,15 @@ function buildStages(data) {
       resource: translateDynamic(getResource(stage.key, resources), language),
       proof: translateDynamic(getProof(stage.key, proof, firstWin), language),
       moment: translateDynamic(getMomentOfTruth(stage.key, data), language),
+      systemImprovement: translateDynamic(getSystemImprovement(stage.key, data), language),
+      reviewOpportunity: translateDynamic(getReviewOpportunity(stage.key, data), language),
+      referralOpportunity: translateDynamic(getReferralOpportunity(stage.key, data), language),
+      teamChecklist: translateDynamic(getTeamChecklist(stage.key, data), language),
+      clientBenefit: translateDynamic(getClientBenefit(stage.key, data), language),
+      successFeeling: translateDynamic(getSuccessFeeling(stage.key, data), language),
+      inspirationPrompt: translateDynamic(getInspirationPrompt(stage.key, data), language),
+      clientPhase: translateDynamic(getClientPhase(stage, language), language),
+      serviceStandards: getServiceStandards(stage.key, data).map((item) => translateDynamic(item, language)),
     };
   });
 }
@@ -428,8 +499,243 @@ function label(data, key) {
   return getLanguage(data).labels[key] || i18n.en.labels[key] || key;
 }
 
+function getClientPhase(stage, language) {
+  const phases = {
+    it: {
+      meetingTeam: "Non so ancora di chi fidarmi",
+      understandingBenefit: "Scopro cosa e possibile",
+      abilityToAct: "Mi vedo capace di riuscire",
+      projectOfWorth: "Scelgo di investire",
+      usingProduct: "Ricevo e uso l'offerta",
+      troubleshooting: "Ricevo aiuto quando la vita reale accade",
+      recognizingResults: "Godo del beneficio",
+      sharingFriends: "Condivido il successo",
+      givingOthers: "Trasmetto valore ad altri",
+      continuingBenefit: "Continuo a beneficiarne",
+    },
+    es: {
+      meetingTeam: "Todavia no se en quien confiar",
+      understandingBenefit: "Aprendo lo que es posible",
+      abilityToAct: "Me veo capaz de lograrlo",
+      projectOfWorth: "Decido invertir",
+      usingProduct: "Recibo y uso la oferta",
+      troubleshooting: "Recibo ayuda cuando aparece la vida real",
+      recognizingResults: "Disfruto el beneficio",
+      sharingFriends: "Comparto el exito",
+      givingOthers: "Paso valor a otros",
+      continuingBenefit: "Sigo beneficiandome",
+    },
+    ja: {
+      meetingTeam: "まだ誰を信頼すべきかわからない",
+      understandingBenefit: "何が可能かを学ぶ",
+      abilityToAct: "自分にもできると見える",
+      projectOfWorth: "投資を決める",
+      usingProduct: "オファーを受け取り使う",
+      troubleshooting: "現実の問題が起きた時に助けを得る",
+      recognizingResults: "利益を実感する",
+      sharingFriends: "成功を共有する",
+      givingOthers: "価値を誰かに渡す",
+      continuingBenefit: "価値を受け続ける",
+    },
+  };
+
+  return phases[language.code]?.[stage.key] || stage.clientPhase;
+}
+
 function translateDynamic(text, language) {
-  return language.code === "en" ? text : `${text} (${language.code.toUpperCase()} draft: AI translation pass recommended for final delivery.)`;
+  return text;
+}
+
+function getCopy(data) {
+  const code = getLanguage(data).code;
+  const packs = {
+    en: {
+      scoreStrong: "Strong foundation. The biggest opportunity is making the journey visible and shareable.",
+      scoreBase: "Good raw material. The biggest opportunity is turning hidden relationship work into explicit client confidence.",
+      enterpriseEyebrow: "Enterprise Value Layer",
+      enterpriseTitle: "Opportunities to increase value at exit",
+      enterpriseBody:
+        "A better client journey is not only a better experience. It can become a more transferable, review-rich, systemized business with stronger client lifetime value.",
+      posterNotesTitle: "Infographic design notes",
+      posterNotes:
+        "The poster above is the client-facing asset: short, branded, visual, and built for trust. The detailed stage notes below remain available for editing, review, and webpage/article generation.",
+      mapSubhead: "A client-centered relationship map built to create clarity, confidence, momentum, and advocacy.",
+      timelineFallback: "Timeline is clarified during onboarding.",
+      emotionArcLine: "The journey should move the client from curiosity and uncertainty into confidence, value, and advocacy.",
+      executiveIntro: "Working together should feel clear before it feels complex.",
+      adventureIntro: "Each step is a milestone on the path. Hover over the map, follow the trail, and keep moving toward the next visible win.",
+      storybookIntro: "This journey is told like a guided story, with each chapter helping the client understand what happens next.",
+      webpageIntro: (persona, businessName, outcome) =>
+        `This page shows what clients like ${persona} experience with ${businessName}, from meeting the team through ${outcome}, sharing, giving, and continuing value.`,
+      openDetails: "Open details",
+      webpageFooter:
+        "If this journey feels like the kind of relationship you want with a partner, start with a focused conversation about fit, timing, and the result you want to create.",
+      linkedInCta: "Want to see the full client journey? Start with the map.",
+      mapWholeRelationship: "Map the whole relationship",
+      suggestedImage: "Suggested image",
+      fullMapOverview: "Full journey map overview",
+      brandedMapSection: "branded map section",
+      articleTitle: (businessName) => `The Client Journey Behind ${businessName}`,
+      articleIntro: (businessName) =>
+        `Clients rarely choose a business because of information alone. They choose when they can see a trustworthy path from where they are to the result they want. That is why ${businessName} treats the client journey as part of the value, not an afterthought.`,
+      articleOpening: (ideal, outcome) =>
+        `For ${ideal}, the relationship begins before a purchase. The first responsibility is clarity: what this work is for, who it serves, what changes, and how a strong decision should be made. The intended outcome is ${outcome}.`,
+      articleStage: (stage) =>
+        `At this stage, the client is asking: ${stage.clientQuestion} They may feel ${stage.emotion.toLowerCase()}. The strongest support move is to ${lowerFirst(stage.orgSupport)} The proof to place here is: ${stage.proof}`,
+      articleClose1:
+        "The result is a more preeminent relationship: one where the business advocates for the client's best interest, makes the path visible, and creates moments where trust can compound.",
+      articleClose2: (offer) =>
+        `If you are considering ${offer}, use this journey as a guide. It shows not only what we do, but how we think about helping clients succeed.`,
+      emailSubject: (businessName) => `Subject: Your Journey-OS assets for ${businessName}`,
+      emailGreeting: "Hi there,",
+      emailIntro: (businessName, outcome) =>
+        `Your Journey-OS client journey assets are ready. Inside, you will find a visual map of how clients experience ${businessName}, from the first trust-building moments through ${outcome}, sharing, gifting, and continuing value.`,
+      emailIncludes: "Your asset package includes:",
+      emailItems: [
+        "Client journey infographic",
+        "Interactive client journey webpage draft",
+        "LinkedIn post copy and branded graphics",
+        "Authority article with journey map sections",
+        "Enterprise value diagnosis: reviews, LTV, response systems, and exit-readiness opportunities",
+      ],
+      emailUse: "Use these assets to make the client experience visible, trustworthy, and easier to share.",
+      linkedInPosts: (businessName, ideal) => [
+        ["The Journey Overview", `Most ${ideal} do not only need an offer. They need to see themselves in the journey: meeting the people, understanding the benefit, acting with confidence, using the product or service, solving stuck points, recognizing results, and continuing to benefit over time. At ${businessName}, the client journey is designed around that lived experience.`, null],
+        ["The Project of Worth Post", "The first meaningful project is where confidence becomes practical. Clients need to see what is worth working on, why it matters, and what progress will look like.", "projectOfWorth"],
+        ["The Support Post", "Support should be visible before it is needed. When clients know how troubleshooting and customization work, stuck points become part of the journey instead of the end of momentum.", "troubleshooting"],
+        ["The Proof Post", "Proof is strongest when the client knows what great results look like. Journey design lets evidence answer the right question at the right time.", "recognizingResults"],
+        ["The Sharing Post", "Sharing should feel natural because the client can explain what helped. The best referral moments come from generosity, not pressure.", "sharingFriends"],
+      ],
+    },
+    it: {
+      scoreStrong: "Base forte. L'opportunita principale e rendere il percorso visibile e facile da condividere.",
+      scoreBase: "Buona materia prima. L'opportunita principale e trasformare il lavoro relazionale nascosto in fiducia esplicita per il cliente.",
+      enterpriseEyebrow: "Valore d'impresa",
+      enterpriseTitle: "Opportunita per aumentare il valore in uscita",
+      enterpriseBody: "Un percorso cliente migliore diventa un'esperienza ripetibile, ricca di recensioni e meno dipendente dal fondatore.",
+      posterNotesTitle: "Note per il design dell'infografica",
+      posterNotes: "Il poster e l'asset rivolto al cliente: breve, brandizzato, visivo e costruito per creare fiducia.",
+      mapSubhead: "Una mappa relazionale centrata sul cliente, pensata per creare chiarezza, fiducia, slancio e passaparola.",
+      timelineFallback: "La tempistica viene chiarita durante l'onboarding.",
+      emotionArcLine: "Il percorso dovrebbe portare il cliente da curiosita e incertezza a fiducia, valore e condivisione.",
+      executiveIntro: "Lavorare insieme dovrebbe sembrare chiaro prima di sembrare complesso.",
+      adventureIntro: "Ogni passo e una tappa del percorso. Segui la traccia e avanza verso la prossima vittoria visibile.",
+      storybookIntro: "Questo percorso e raccontato come una storia guidata, con ogni capitolo che chiarisce il passo successivo.",
+      webpageIntro: (persona, businessName, outcome) => `Questa pagina mostra cio che clienti come ${persona} vivono con ${businessName}, dall'incontro con il team fino a ${outcome}, condivisione, dono e valore continuo.`,
+      openDetails: "Apri dettagli",
+      webpageFooter: "Se questo percorso sembra il tipo di relazione che desideri, inizia con una conversazione mirata su fit, tempi e risultato.",
+      linkedInCta: "Vuoi vedere il percorso completo del cliente? Inizia dalla mappa.",
+      mapWholeRelationship: "Mappa l'intera relazione",
+      suggestedImage: "Immagine suggerita",
+      fullMapOverview: "Panoramica completa del percorso",
+      brandedMapSection: "sezione brandizzata della mappa",
+      articleTitle: (businessName) => `Il percorso cliente dietro ${businessName}`,
+      articleIntro: (businessName) => `I clienti scelgono quando vedono un percorso affidabile dal punto in cui sono al risultato che desiderano. Per questo ${businessName} tratta il percorso cliente come parte del valore.`,
+      articleOpening: (ideal, outcome) => `Per ${ideal}, la relazione inizia prima dell'acquisto. La prima responsabilita e la chiarezza. Il risultato desiderato e ${outcome}.`,
+      articleStage: (stage) => `In questa fase il cliente si chiede: ${stage.clientQuestion} Puo sentirsi ${stage.emotion.toLowerCase()}. La mossa di supporto piu forte e: ${stage.orgSupport} La prova da mostrare qui e: ${stage.proof}`,
+      articleClose1: "Il risultato e una relazione piu preminente: il business difende l'interesse del cliente, rende visibile il percorso e fa crescere la fiducia.",
+      articleClose2: (offer) => `Se stai valutando ${offer}, usa questo percorso come guida.`,
+      emailSubject: (businessName) => `Oggetto: I tuoi asset Journey-OS per ${businessName}`,
+      emailGreeting: "Ciao,",
+      emailIntro: (businessName, outcome) => `I tuoi asset Journey-OS sono pronti. Troverai una mappa visiva di come i clienti vivono ${businessName}, dai primi momenti di fiducia fino a ${outcome}, condivisione e valore continuo.`,
+      emailIncludes: "Il pacchetto include:",
+      emailItems: ["Infografica del percorso cliente", "Bozza di pagina web interattiva", "Post LinkedIn e grafiche brandizzate", "Articolo autorevole con sezioni mappa", "Diagnosi del valore d'impresa: recensioni, LTV, sistemi di risposta e preparazione all'uscita"],
+      emailUse: "Usa questi asset per rendere l'esperienza cliente visibile, affidabile e facile da condividere.",
+      linkedInPosts: (businessName, ideal) => [
+        ["Panoramica del percorso", `La maggior parte dei ${ideal} non ha bisogno solo di un'offerta. Ha bisogno di vedersi nel percorso. In ${businessName}, il percorso cliente e progettato intorno a questa esperienza vissuta.`, null],
+        ["Il progetto di valore", "Il primo progetto significativo e il momento in cui la fiducia diventa pratica.", "projectOfWorth"],
+        ["Il supporto visibile", "Il supporto deve essere visibile prima che serva.", "troubleshooting"],
+        ["La prova giusta", "La prova e piu forte quando il cliente sa riconoscere un grande risultato.", "recognizingResults"],
+        ["La condivisione naturale", "La condivisione funziona quando il cliente riesce a spiegare con naturalezza cio che lo ha aiutato.", "sharingFriends"],
+      ],
+    },
+    es: {
+      scoreStrong: "Base fuerte. La mayor oportunidad es hacer que el recorrido sea visible y compartible.",
+      scoreBase: "Buen material inicial. La mayor oportunidad es convertir el trabajo relacional oculto en confianza explicita para el cliente.",
+      enterpriseEyebrow: "Capa de valor empresarial",
+      enterpriseTitle: "Oportunidades para aumentar el valor en una salida",
+      enterpriseBody: "Un mejor recorrido del cliente puede convertirse en una experiencia repetible, rica en reseñas y con mayor valor de vida del cliente.",
+      posterNotesTitle: "Notas de diseno de la infografia",
+      posterNotes: "El poster es el activo para el cliente: breve, visual, de marca y construido para generar confianza.",
+      mapSubhead: "Un mapa relacional centrado en el cliente, creado para dar claridad, confianza, impulso y recomendacion.",
+      timelineFallback: "El cronograma se aclara durante la incorporacion.",
+      emotionArcLine: "El recorrido debe mover al cliente de curiosidad e incertidumbre hacia confianza, valor y recomendacion.",
+      executiveIntro: "Trabajar juntos debe sentirse claro antes de sentirse complejo.",
+      adventureIntro: "Cada paso es un hito del camino. Sigue la ruta y avanza hacia la siguiente victoria visible.",
+      storybookIntro: "Este recorrido se cuenta como una historia guiada, donde cada capitulo aclara el siguiente paso.",
+      webpageIntro: (persona, businessName, outcome) => `Esta pagina muestra lo que clientes como ${persona} viven con ${businessName}, desde conocer al equipo hasta ${outcome}, compartir, regalar y seguir recibiendo valor.`,
+      openDetails: "Abrir detalles",
+      webpageFooter: "Si este recorrido se parece a la relacion que quieres, empieza con una conversacion enfocada sobre encaje, tiempos y resultado.",
+      linkedInCta: "Quieres ver el recorrido completo del cliente? Empieza con el mapa.",
+      mapWholeRelationship: "Mapea toda la relacion",
+      suggestedImage: "Imagen sugerida",
+      fullMapOverview: "Mapa completo del recorrido",
+      brandedMapSection: "seccion de mapa con marca",
+      articleTitle: (businessName) => `El recorrido del cliente detras de ${businessName}`,
+      articleIntro: (businessName) => `Los clientes eligen cuando pueden ver un camino confiable desde donde estan hasta el resultado que desean. Por eso ${businessName} trata el recorrido del cliente como parte del valor.`,
+      articleOpening: (ideal, outcome) => `Para ${ideal}, la relacion empieza antes de la compra. La primera responsabilidad es la claridad. El resultado deseado es ${outcome}.`,
+      articleStage: (stage) => `En esta etapa, el cliente se pregunta: ${stage.clientQuestion} Puede sentirse ${stage.emotion.toLowerCase()}. El mejor apoyo es: ${stage.orgSupport} La prueba que corresponde aqui es: ${stage.proof}`,
+      articleClose1: "El resultado es una relacion mas preeminente: el negocio defiende el interes del cliente, hace visible el camino y permite que la confianza se acumule.",
+      articleClose2: (offer) => `Si estas considerando ${offer}, usa este recorrido como guia.`,
+      emailSubject: (businessName) => `Asunto: Tus activos Journey-OS para ${businessName}`,
+      emailGreeting: "Hola,",
+      emailIntro: (businessName, outcome) => `Tus activos Journey-OS estan listos. Encontraras un mapa visual de como los clientes viven ${businessName}, desde los primeros momentos de confianza hasta ${outcome}, compartir y seguir recibiendo valor.`,
+      emailIncludes: "Tu paquete incluye:",
+      emailItems: ["Infografia del recorrido del cliente", "Borrador de pagina web interactiva", "Copys de LinkedIn y graficas de marca", "Articulo de autoridad con secciones de mapa", "Diagnostico de valor empresarial: resenas, LTV, sistemas de respuesta y preparacion para salida"],
+      emailUse: "Usa estos activos para hacer que la experiencia del cliente sea visible, confiable y facil de compartir.",
+      linkedInPosts: (businessName, ideal) => [
+        ["Panorama del recorrido", `La mayoria de ${ideal} no necesita solo una oferta. Necesita verse dentro del recorrido. En ${businessName}, el recorrido del cliente se disena alrededor de esa experiencia vivida.`, null],
+        ["El proyecto valioso", "El primer proyecto significativo es donde la confianza se vuelve practica.", "projectOfWorth"],
+        ["El apoyo visible", "El apoyo debe ser visible antes de que sea necesario.", "troubleshooting"],
+        ["La prueba correcta", "La prueba es mas fuerte cuando el cliente sabe reconocer un gran resultado.", "recognizingResults"],
+        ["La recomendacion natural", "Compartir funciona cuando el cliente puede explicar con naturalidad que le ayudo.", "sharingFriends"],
+      ],
+    },
+    ja: {
+      scoreStrong: "強い土台があります。最大の機会は、ジャーニーを見える形にして共有しやすくすることです。",
+      scoreBase: "よい材料があります。最大の機会は、見えにくい関係性の仕事を、顧客が感じる明確な信頼に変えることです。",
+      enterpriseEyebrow: "事業価値レイヤー",
+      enterpriseTitle: "出口価値を高める機会",
+      enterpriseBody: "よい顧客ジャーニーは、再現性があり、レビューが集まり、顧客生涯価値を高める仕組みになります。",
+      posterNotesTitle: "インフォグラフィック設計メモ",
+      posterNotes: "このポスターは顧客向けの信頼形成アセットです。短く、視覚的で、ブランドに沿った形で使えます。",
+      mapSubhead: "明確さ、信頼、前進感、紹介を生むための顧客中心の関係マップです。",
+      timelineFallback: "流れはオンボーディングで明確にします。",
+      emotionArcLine: "この旅は、好奇心と不安から、信頼、価値実感、紹介へ進む流れです。",
+      executiveIntro: "一緒に進む体験は、複雑になる前に明確であるべきです。",
+      adventureIntro: "各ステップは旅のマイルストーンです。道筋をたどり、次の見える成果へ進みます。",
+      storybookIntro: "このジャーニーは物語のように進み、各章が次の一歩を明確にします。",
+      webpageIntro: (persona, businessName, outcome) => `${persona} のような顧客が ${businessName} で体験する流れを、チームとの出会いから ${outcome}、共有、贈り物、継続価値まで示します。`,
+      openDetails: "詳細を見る",
+      webpageFooter: "この道筋が望む関係性に近いなら、相性、時期、目指す結果について話すことから始めましょう。",
+      linkedInCta: "顧客ジャーニー全体を見たい方は、まずマップから始めてください。",
+      mapWholeRelationship: "関係全体をマップ化する",
+      suggestedImage: "おすすめ画像",
+      fullMapOverview: "全体ジャーニーマップ",
+      brandedMapSection: "ブランド付きマップ部分",
+      articleTitle: (businessName) => `${businessName} の顧客ジャーニー`,
+      articleIntro: (businessName) => `顧客は情報だけで選ぶのではありません。望む結果までの信頼できる道筋が見えたときに選びます。だから ${businessName} は顧客ジャーニーを価値の一部として扱います。`,
+      articleOpening: (ideal, outcome) => `${ideal} にとって、関係は購入前から始まります。最初の責任は明確さです。目指す成果は ${outcome} です。`,
+      articleStage: (stage) => `この段階で顧客はこう考えます: ${stage.clientQuestion} 感情は「${stage.emotion}」に近いかもしれません。最も大切な支援は: ${stage.orgSupport} ここに置く証拠は: ${stage.proof}`,
+      articleClose1: "結果として、顧客の利益を守り、道筋を見える化し、信頼が積み上がる関係になります。",
+      articleClose2: (offer) => `${offer} を検討しているなら、このジャーニーを判断のガイドとして使ってください。`,
+      emailSubject: (businessName) => `件名: ${businessName} の Journey-OS アセット`,
+      emailGreeting: "こんにちは,",
+      emailIntro: (businessName, outcome) => `Journey-OS アセットが準備できました。顧客が ${businessName} をどのように体験し、信頼形成から ${outcome}、共有、継続価値へ進むかを示す視覚マップが含まれています。`,
+      emailIncludes: "含まれるもの:",
+      emailItems: ["顧客ジャーニー・インフォグラフィック", "インタラクティブなWebページ案", "LinkedIn投稿文とブランド画像", "マップ付き信頼構築記事", "事業価値診断: レビュー、LTV、応答システム、出口準備"],
+      emailUse: "これらのアセットを使って、顧客体験を見える化し、信頼しやすく、共有しやすくしてください。",
+      linkedInPosts: (businessName, ideal) => [
+        ["ジャーニー全体像", `${ideal} が必要としているのは、単なるオファーではありません。自分が進む道筋が見えることです。${businessName} の顧客ジャーニーは、その体験を中心に設計されています。`, null],
+        ["価値あるプロジェクト", "最初の意味あるプロジェクトで、信頼は実践に変わります。", "projectOfWorth"],
+        ["見える支援", "支援は必要になる前から見えているべきです。", "troubleshooting"],
+        ["適切な証拠", "顧客がよい結果を認識できるとき、証拠は最も強く働きます。", "recognizingResults"],
+        ["自然な共有", "顧客が何に助けられたかを自然に説明できるとき、共有は起こります。", "sharingFriends"],
+      ],
+    },
+  };
+
+  return packs[code] || packs.en;
 }
 
 function getImprovement(stageName, data) {
@@ -597,6 +903,312 @@ function getMomentOfTruth(stageName, data) {
   return moments[stageName];
 }
 
+function getSystemImprovement(stageName, data) {
+  const support = data.supportChannels || "support channels";
+  const firstWin = data.firstWin || "first meaningful win";
+  const improvements = {
+    meetingTeam: "Create a reusable trust kit: team story, values, standards, and proof of care.",
+    understandingBenefit: "Turn features into a benefit matrix that sales, onboarding, and support can all use.",
+    abilityToAct: "Add a readiness checklist and first-action sequence so clients know how to begin.",
+    projectOfWorth: `Define the ${firstWin.toLowerCase()} as a named milestone with owner, trigger, and success marker.`,
+    usingProduct: "Create a simple usage rhythm: open, apply, review, ask, repeat.",
+    troubleshooting: `Document the path from stuck point to response across ${support.toLowerCase()}.`,
+    recognizingResults: "Create a result review ritual with before/after markers and client language.",
+    sharingFriends: "Create a share kit with story prompts, images, and natural referral language.",
+    givingOthers: "Create a gift or introduction pathway for seasonal, team, family, or peer use cases.",
+    continuingBenefit: "Create a long-tail value calendar with reminders, updates, and next uses.",
+  };
+
+  return improvements[stageName];
+}
+
+function getReviewOpportunity(stageName, data) {
+  const outcome = data.clientOutcome || "the result";
+  const opportunities = {
+    meetingTeam: "Invite a trust-focused review after the first positive human interaction.",
+    understandingBenefit: `Ask for a review when the client can explain how ${outcome.toLowerCase()} matters to them.`,
+    abilityToAct: "Capture a short confidence quote when the client realizes they can take action.",
+    projectOfWorth: "Ask for a progress review after the first meaningful milestone is completed.",
+    usingProduct: "Collect a use-case review once the client has used the product or service in real conditions.",
+    troubleshooting: "Ask how supported the client felt after a stuck point was resolved well.",
+    recognizingResults: "Ask for the strongest results review when the before/after difference is visible.",
+    sharingFriends: "Turn natural praise into a permission-based testimonial or public review.",
+    givingOthers: "Capture why they would gift, introduce, or recommend it to someone they care about.",
+    continuingBenefit: "Ask for a long-term value review after the original investment has continued to pay off.",
+  };
+
+  return opportunities[stageName];
+}
+
+function getReferralOpportunity(stageName, data) {
+  const trigger = data.referralTrigger || "the moment value is easy to name";
+  const opportunities = {
+    meetingTeam: "Offer an easy introduction path when trust is high and expectations are clear.",
+    understandingBenefit: "Give clients simple words for who this helps and why it matters.",
+    abilityToAct: "Invite referrals to people who need confidence that they can implement.",
+    projectOfWorth: `Use ${trigger.toLowerCase()} as the first natural referral prompt.`,
+    usingProduct: "Invite clients to share the usage rhythm with peers who would benefit.",
+    troubleshooting: "When support creates relief, ask who else needs that kind of help.",
+    recognizingResults: "After the result is visible, ask who would value the same outcome.",
+    sharingFriends: "Make sharing a generous next step rather than a sales request.",
+    givingOthers: "Create a direct gift, introduction, or referral pathway.",
+    continuingBenefit: "Use renewal, alumni, and long-term value moments for thoughtful introductions.",
+  };
+
+  return opportunities[stageName];
+}
+
+function getTeamChecklist(stageName, data) {
+  const checklists = {
+    meetingTeam: "Owner: make trust visible. Check: can a prospect see the humans, standards, and care before booking?",
+    understandingBenefit: "Owner: clarify value. Check: are benefits written in client language, not internal language?",
+    abilityToAct: "Owner: reduce hesitation. Check: can a client see the first action and believe they can do it?",
+    projectOfWorth: "Owner: define progress. Check: is there a named milestone that makes the investment feel worthwhile?",
+    usingProduct: "Owner: enable use. Check: does the client know what to open, attend, apply, repeat, or practice?",
+    troubleshooting: "Owner: respond preeminently. Check: are requests acknowledged, routed, answered, and learned from?",
+    recognizingResults: "Owner: mark success. Check: does the client know what great looks like and when to celebrate?",
+    sharingFriends: "Owner: support advocacy. Check: does the client have simple words and visuals to share?",
+    givingOthers: "Owner: enable generosity. Check: is there a graceful way to gift, introduce, or recommend?",
+    continuingBenefit: "Owner: extend value. Check: are reminders, updates, community, and next uses designed?",
+  };
+
+  return checklists[stageName];
+}
+
+function getServiceStandards(stageName, data) {
+  const support = data.supportChannels || "email, community, AI assistant, calls, or help desk";
+  const standards = {
+    meetingTeam: [
+      "Do we make the client feel welcomed before they have to ask for reassurance?",
+      "Can they quickly see the people, values, standards, and care behind the business?",
+      "Is there a personal welcome or human touch within the first meaningful interaction?",
+    ],
+    understandingBenefit: [
+      "Do we explain the benefit in the client's words, not only in our expert language?",
+      "Can the client see what gets easier, safer, clearer, more profitable, or more meaningful?",
+      "Do we show examples from people like them before they are asked to decide?",
+    ],
+    abilityToAct: [
+      "Do we remove overwhelm with a clear first action, readiness checklist, or simple next step?",
+      "Do we show what success looks like for someone with their time, budget, skill, or context?",
+      "Do we reduce fear before asking them to commit deeper attention?",
+    ],
+    projectOfWorth: [
+      "Do we define the first worthy project or milestone so the investment feels purposeful?",
+      "Does someone on the team own progress visibility and momentum?",
+      "Can the client see why this effort matters now?",
+    ],
+    usingProduct: [
+      "Do we make usage obvious: what to open, watch, attend, apply, repeat, or practice?",
+      "Do we follow up if they have not started using what they bought?",
+      "Is there a simple usage rhythm the team can reinforce?",
+    ],
+    troubleshooting: [
+      `Do we respond quickly across ${support.toLowerCase()} when the client gets stuck?`,
+      "Do we call back quickly when a human response is needed?",
+      "Do we offer 24-hour AI or self-serve responses for common questions?",
+      "Do we turn repeated requests and suggestions into system improvements?",
+    ],
+    recognizingResults: [
+      "Do we help the client notice the benefit instead of assuming they will see it?",
+      "Do we schedule a result review, scorecard, or before/after moment?",
+      "Do we ask for a review when the client can name the win?",
+    ],
+    sharingFriends: [
+      "Do we give the client simple language to share what helped?",
+      "Do we make referral or testimonial sharing feel generous rather than pressured?",
+      "Do we provide a graphic, link, or short story they can easily pass along?",
+    ],
+    givingOthers: [
+      "Do we make gifting, introducing, or recommending easy when the moment is natural?",
+      "Do we have seasonal or situational prompts for birthdays, holidays, teams, or peers?",
+      "Do we protect the relationship by making the recommendation useful, not pushy?",
+    ],
+    continuingBenefit: [
+      "Do we keep value alive after the initial purchase through reminders, updates, resources, or community?",
+      "Do we track lifetime value, renewal, repeat use, and long-tail outcomes?",
+      "Do we have a next-success path rather than letting the relationship fade?",
+    ],
+  };
+
+  return standards[stageName] || [];
+}
+
+function getClientBenefit(stageName, data) {
+  const offer = data.offer || "the offer";
+  const code = getLanguage(data).code;
+  const translated = {
+    it: {
+      meetingTeam: "Puoi capire se queste sono persone che vuoi al tuo fianco.",
+      understandingBenefit: `Puoi collegare ${offer} al sollievo, al risultato o al futuro che desideri davvero.`,
+      abilityToAct: "Puoi vedere un primo passo pratico che si adatta alla tua vita reale.",
+      projectOfWorth: "Puoi sentire che il tuo impegno e legato a qualcosa di significativo.",
+      usingProduct: "Sai come usare cio che hai acquistato, cosi il valore non resta teorico.",
+      troubleshooting: "Sai che l'aiuto fa parte della relazione, non e un'eccezione.",
+      recognizingResults: "Puoi dare un nome a cio che e cambiato e sentirti orgoglioso del progresso.",
+      sharingFriends: "Puoi spiegare il valore senza sembrare preparato a memoria.",
+      givingOthers: "Puoi condividere il beneficio con qualcuno a cui tieni.",
+      continuingBenefit: "Continui a ricevere valore molto dopo il momento dell'acquisto.",
+    },
+    es: {
+      meetingTeam: "Puedes sentir si estas son personas que quieres a tu lado.",
+      understandingBenefit: `Puedes conectar ${offer} con el alivio, resultado, capacidad o futuro que realmente quieres.`,
+      abilityToAct: "Puedes ver un primer paso practico que encaja con tu vida real.",
+      projectOfWorth: "Puedes sentir que tu esfuerzo esta unido a algo significativo.",
+      usingProduct: "Sabes como usar lo que compraste para que el valor no se quede en teoria.",
+      troubleshooting: "Sabes que la ayuda forma parte de la relacion, no es una excepcion.",
+      recognizingResults: "Puedes nombrar lo que cambio y sentir orgullo por el progreso.",
+      sharingFriends: "Puedes explicar el valor sin sonar ensayado.",
+      givingOthers: "Puedes compartir el beneficio con alguien que te importa.",
+      continuingBenefit: "Sigues recibiendo valor mucho despues del momento de compra.",
+    },
+    ja: {
+      meetingTeam: "一緒に進みたい人たちかどうかを感じられます。",
+      understandingBenefit: `${offer} を、自分が本当に望む安心、結果、力、未来につなげられます。`,
+      abilityToAct: "現実の生活に合う最初の一歩が見えます。",
+      projectOfWorth: "努力が意味あるものにつながっていると感じられます。",
+      usingProduct: "購入したものをどう使えば価値になるかがわかります。",
+      troubleshooting: "助けは例外ではなく、関係の一部だとわかります。",
+      recognizingResults: "何が変わったかを言葉にでき、進歩を誇れます。",
+      sharingFriends: "台本のように聞こえず、自然に価値を説明できます。",
+      givingOthers: "大切な人にその価値を渡せます。",
+      continuingBenefit: "購入後も長く価値を受け取り続けられます。",
+    },
+  };
+  if (translated[code]?.[stageName]) return translated[code][stageName];
+
+  const benefits = {
+    meetingTeam: "You can feel whether these are people you want beside you.",
+    understandingBenefit: `You can connect ${offer} to the relief, result, ability, or future you actually want.`,
+    abilityToAct: "You can see a practical first move that fits your real life.",
+    projectOfWorth: "You can feel that your effort is attached to something meaningful.",
+    usingProduct: "You know how to use what you bought so value does not stay theoretical.",
+    troubleshooting: "You know help is part of the relationship, not an exception.",
+    recognizingResults: "You can name what changed and feel proud of the progress.",
+    sharingFriends: "You can explain the value without sounding scripted.",
+    givingOthers: "You can share the benefit with someone you care about.",
+    continuingBenefit: "You keep receiving value long after the first purchase moment.",
+  };
+
+  return benefits[stageName];
+}
+
+function getSuccessFeeling(stageName, data) {
+  const code = getLanguage(data).code;
+  const translated = {
+    it: {
+      meetingTeam: "Sono nel posto giusto.",
+      understandingBenefit: "Questo ha senso per me.",
+      abilityToAct: "Posso davvero farlo.",
+      projectOfWorth: "Vale il mio impegno.",
+      usingProduct: "So come usarlo bene.",
+      troubleshooting: "Sono supportato quando la realta si complica.",
+      recognizingResults: "Vedo il progresso.",
+      sharingFriends: "So chi altro potrebbe beneficiarne.",
+      givingOthers: "Posso passare valore ad altri.",
+      continuingBenefit: "Continua a ripagarmi.",
+    },
+    es: {
+      meetingTeam: "Estoy en el lugar correcto.",
+      understandingBenefit: "Esto tiene sentido para mi.",
+      abilityToAct: "Realmente puedo hacerlo.",
+      projectOfWorth: "Esto vale mi esfuerzo.",
+      usingProduct: "Se como usarlo bien.",
+      troubleshooting: "Estoy apoyado cuando las cosas se vuelven reales.",
+      recognizingResults: "Puedo ver el progreso.",
+      sharingFriends: "Se a quien mas podria ayudar.",
+      givingOthers: "Puedo pasar valor a otros.",
+      continuingBenefit: "Esto sigue devolviendome valor.",
+    },
+    ja: {
+      meetingTeam: "ここで合っている。",
+      understandingBenefit: "これは自分に意味がある。",
+      abilityToAct: "自分にもできる。",
+      projectOfWorth: "努力する価値がある。",
+      usingProduct: "うまく使う方法がわかる。",
+      troubleshooting: "現実の問題が出ても支えられている。",
+      recognizingResults: "進歩が見える。",
+      sharingFriends: "他に誰が助かるかがわかる。",
+      givingOthers: "価値を誰かに渡せる。",
+      continuingBenefit: "価値が戻り続ける。",
+    },
+  };
+  if (translated[code]?.[stageName]) return translated[code][stageName];
+
+  const feelings = {
+    meetingTeam: "I am in the right room.",
+    understandingBenefit: "This makes sense for me.",
+    abilityToAct: "I can actually do this.",
+    projectOfWorth: "This is worth my effort.",
+    usingProduct: "I know how to use this well.",
+    troubleshooting: "I am supported when things get real.",
+    recognizingResults: "I can see the progress.",
+    sharingFriends: "I know who else this could help.",
+    givingOthers: "I can pass value forward.",
+    continuingBenefit: "This keeps paying me back.",
+  };
+
+  return feelings[stageName];
+}
+
+function getInspirationPrompt(stageName, data) {
+  const code = getLanguage(data).code;
+  const translated = {
+    it: {
+      meetingTeam: "Inizia dalla fiducia. Le persone avanzano piu velocemente quando sanno chi le guida.",
+      understandingBenefit: "Il valore diventa magnetico quando il cliente lo sente con le proprie parole.",
+      abilityToAct: "La fiducia cresce quando il prossimo passo sembra possibile.",
+      projectOfWorth: "Un progetto degno trasforma l'acquisto in progresso.",
+      usingProduct: "La promessa diventa reale attraverso l'uso.",
+      troubleshooting: "Il supporto e il luogo in cui la fiducia viene dimostrata.",
+      recognizingResults: "Il progresso visibile merita un nome e un momento.",
+      sharingFriends: "La migliore advocacy suona come gratitudine.",
+      givingOthers: "La generosita espande il valore del lavoro.",
+      continuingBenefit: "Un grande investimento continua a creare ritorni.",
+    },
+    es: {
+      meetingTeam: "Empieza con confianza. Las personas avanzan mas rapido cuando saben quien las guia.",
+      understandingBenefit: "El valor se vuelve magnetico cuando el cliente puede sentirlo en sus propias palabras.",
+      abilityToAct: "La confianza crece cuando el siguiente paso parece posible.",
+      projectOfWorth: "Un proyecto valioso convierte la compra en progreso.",
+      usingProduct: "La promesa se vuelve real a traves del uso.",
+      troubleshooting: "El apoyo es donde se demuestra la confianza.",
+      recognizingResults: "El progreso visible merece nombre y momento.",
+      sharingFriends: "La mejor recomendacion suena como gratitud.",
+      givingOthers: "La generosidad expande el valor del trabajo.",
+      continuingBenefit: "Una gran inversion sigue creando retorno.",
+    },
+    ja: {
+      meetingTeam: "信頼から始めましょう。誰が導くかが見えると、人は前に進みやすくなります。",
+      understandingBenefit: "顧客自身の言葉で価値を感じられると、その価値は強くなります。",
+      abilityToAct: "次の一歩が可能に見えると、自信が育ちます。",
+      projectOfWorth: "価値あるプロジェクトは購入を前進に変えます。",
+      usingProduct: "約束は使うことで現実になります。",
+      troubleshooting: "支援の場面で信頼は証明されます。",
+      recognizingResults: "見える進歩には名前と祝う瞬間が必要です。",
+      sharingFriends: "最高の紹介は感謝のように聞こえます。",
+      givingOthers: "寛大さは仕事の価値を広げます。",
+      continuingBenefit: "よい投資は価値を生み続けます。",
+    },
+  };
+  if (translated[code]?.[stageName]) return translated[code][stageName];
+
+  const prompts = {
+    meetingTeam: "Begin with trust. People move faster when they know who is guiding them.",
+    understandingBenefit: "Value becomes magnetic when the client can feel it in their own words.",
+    abilityToAct: "Confidence grows when the next step feels possible.",
+    projectOfWorth: "A worthy project turns purchase into progress.",
+    usingProduct: "The promise becomes real through use.",
+    troubleshooting: "Support is where trust is proven.",
+    recognizingResults: "Visible progress deserves a name and a moment.",
+    sharingFriends: "The best advocacy sounds like gratitude.",
+    givingOthers: "Generosity expands the value of the work.",
+    continuingBenefit: "A great investment keeps creating returns.",
+  };
+
+  return prompts[stageName];
+}
+
 function getEnterpriseValueOpportunities(data, stages) {
   const businessName = data.businessName || "the business";
   const clientValue = data.clientOutcome || data.offer || "the promised client outcome";
@@ -705,20 +1317,28 @@ function renderJourneyThumbnailBand(stages, vibe) {
 
 function renderDiagnosis(data, stages) {
   const text = getLanguage(data).labels;
+  const copy = getCopy(data);
   const enterpriseOpportunities = getEnterpriseValueOpportunities(data, stages);
+  const quickWinStage = getQuickWinStage(stages);
   const score = Math.max(38, Math.min(96, completenessScore(data) + (data.researchPermission ? 8 : 0)));
   document.querySelector("#scoreRing").textContent = score;
   document.querySelector("#scoreCopy").textContent =
     score > 80
-      ? "Strong foundation. The biggest opportunity is making the journey visible and shareable."
-      : "Good raw material. The biggest opportunity is turning hidden relationship work into explicit client confidence.";
+      ? copy.scoreStrong
+      : copy.scoreBase;
 
   document.querySelector("#insightList").innerHTML = `
+    <section class="quick-win-panel">
+      <p class="eyebrow">${text.topQuickWin}</p>
+      <h4>${quickWinStage.name}</h4>
+      <p>${quickWinStage.systemImprovement}</p>
+      <strong>${quickWinStage.clientBenefit}</strong>
+    </section>
     <section class="enterprise-panel">
       <div>
-        <p class="eyebrow">Enterprise Value Layer</p>
-        <h4>Opportunities to increase value at exit</h4>
-        <p>A better client journey is not only a better experience. It can become a more transferable, review-rich, systemized business with stronger client lifetime value.</p>
+        <p class="eyebrow">${copy.enterpriseEyebrow}</p>
+        <h4>${copy.enterpriseTitle}</h4>
+        <p>${copy.enterpriseBody}</p>
       </div>
       <div class="enterprise-grid">
         ${enterpriseOpportunities
@@ -758,7 +1378,84 @@ function renderDiagnosis(data, stages) {
       `
     )
     .join("")}
+    <section class="power-client-views">
+      <div class="view-column power-view">
+        <div class="view-header">
+          <span class="view-badge">OPS</span>
+          <div>
+            <p class="eyebrow">${text.powerView}</p>
+            <h4>Executive service checklist</h4>
+            <p>What the team, systems, and response standards must do to enhance each moment of the client journey.</p>
+          </div>
+        </div>
+        ${stages
+          .map(
+            (stage) => `
+              <article class="power-card">
+                <div class="power-card-top">
+                  <b>${stage.order}</b>
+                  <div>
+                    <h5>${stage.name}</h5>
+                    <small>${stage.lens}</small>
+                  </div>
+                </div>
+                <ul class="service-standards">
+                  ${stage.serviceStandards.map((item) => `<li>${item}</li>`).join("")}
+                </ul>
+                <ul class="ops-checklist">
+                  <li><span>System</span>${stage.systemImprovement}</li>
+                  <li><span>Review</span>${stage.reviewOpportunity}</li>
+                  <li><span>Referral</span>${stage.referralOpportunity}</li>
+                </ul>
+              </article>
+            `
+          )
+          .join("")}
+      </div>
+      <div class="view-column client-view">
+        <div class="view-header">
+          <span class="view-badge">CLIENT</span>
+          <div>
+            <p class="eyebrow">${text.clientView}</p>
+            <h4>The client's path through the process</h4>
+            <p>From not knowing, to learning, to investing, to receiving, using, enjoying, sharing, and continuing to benefit.</p>
+          </div>
+        </div>
+        <div class="client-path-line">
+          ${stages
+            .map(
+              (stage) => `
+                <span>
+                  <b>${stage.order}</b>
+                  <em>${stage.clientPhase}</em>
+                </span>
+              `
+            )
+            .join("")}
+        </div>
+        ${stages
+          .map(
+            (stage) => `
+              <article class="client-card">
+                <span class="journey-marker">${stage.order}</span>
+                <small>${stage.clientPhase}</small>
+                <h5>${stage.name}</h5>
+                <blockquote>${stage.inspirationPrompt}</blockquote>
+                <p class="client-question">${stage.clientQuestion}</p>
+                <p>${stage.clientBenefit}</p>
+                <strong>${stage.successFeeling}</strong>
+              </article>
+            `
+          )
+          .join("")}
+      </div>
+    </section>
   `;
+}
+
+function getQuickWinStage(stages) {
+  const priorityKeys = ["troubleshooting", "abilityToAct", "recognizingResults", "understandingBenefit"];
+  return priorityKeys.map((key) => stages.find((stage) => stage.key === key)).find(Boolean) || stages[0];
 }
 
 function renderInfographic(data, stages) {
@@ -770,11 +1467,12 @@ function renderInfographic(data, stages) {
   const persona = data.clientPersona || data.idealClient || "your best-fit clients";
   const outcome = data.clientOutcome || cleanOutcome(offer);
   const text = getLanguage(data).labels;
+  const copy = getCopy(data);
 
   document.querySelector("#journeyMap").innerHTML = `
     <section class="poster-summary">
-      <h4>Infographic design notes</h4>
-      <p>The poster above is the client-facing asset: short, branded, visual, and built for trust. The detailed stage notes below remain available for editing, review, and webpage/article generation.</p>
+      <h4>${copy.posterNotesTitle}</h4>
+      <p>${copy.posterNotes}</p>
     </section>
     <section class="journey-title" style="background:${primary}">
       <div class="map-brand-row">
@@ -782,7 +1480,7 @@ function renderInfographic(data, stages) {
         <p class="eyebrow">${text.journeyMap}</p>
       </div>
       <h4>${businessName}: ${text.clientJourney}</h4>
-      <p>A client-centered relationship map built to create clarity, confidence, momentum, and advocacy.</p>
+      <p>${copy.mapSubhead}</p>
     </section>
     <section class="journey-context">
       <article>
@@ -795,7 +1493,7 @@ function renderInfographic(data, stages) {
       </article>
       <article>
         <h5>${text.timeline}</h5>
-        <p>${data.timeline || "Timeline is clarified during onboarding."}</p>
+        <p>${data.timeline || copy.timelineFallback}</p>
       </article>
     </section>
     <section class="emotion-arc">
@@ -803,7 +1501,7 @@ function renderInfographic(data, stages) {
       <div class="emotion-track">
         ${stages.map((stage) => `<div class="emotion-step" style="border-color:${accent}">${stage.emotion}</div>`).join("")}
       </div>
-      <p>The journey should move the client from curiosity and uncertainty into confidence, value, and advocacy.</p>
+      <p>${copy.emotionArcLine}</p>
     </section>
     ${stages
       .map(
@@ -1272,15 +1970,16 @@ function renderWebpage(data, stages) {
   const accent = data.accentColor || "#c7862f";
   const logoSource = data.logoDataUrl || data.logoUrl || "";
   const text = getLanguage(data).labels;
+  const copy = getCopy(data);
   const style = data.pageStyle || "executive";
   const styleClass = `journey-style-${style}`;
   const vibe = getVibe(data);
   const adventureIntro =
     style === "adventure"
-      ? "Each step is a milestone on the path. Hover over the map, follow the trail, and keep moving toward the next visible win."
+      ? copy.adventureIntro
       : style === "storybook"
-        ? "This journey is told like a guided story, with each chapter helping the client understand what happens next."
-        : "Working together should feel clear before it feels complex.";
+        ? copy.storybookIntro
+        : copy.executiveIntro;
 
   document.querySelector("#webpageOutput").innerHTML = `
     <section class="journey-page-preview ${styleClass} ${vibe.className}" style="--client-primary:${primary}; --client-accent:${accent}">
@@ -1292,14 +1991,15 @@ function renderWebpage(data, stages) {
             <h4>${text.clientJourney}: ${businessName}</h4>
           </div>
         </div>
-        <p>${adventureIntro} This page shows what clients like ${persona} experience with ${businessName}, from meeting the team through ${outcome}, sharing, giving, and continuing value.</p>
+        <p>${adventureIntro}</p>
+        <p>${copy.webpageIntro(persona, businessName, outcome)}</p>
         ${renderQuoteBreak(vibe.quote, vibe)}
         ${renderJourneyThumbnailBand(stages, vibe)}
       </header>
       <div class="journey-page-context">
         <article><strong>${text.whoThisIsFor}</strong><span>${persona}</span></article>
         <article><strong>${text.outcome}</strong><span>${outcome}</span></article>
-        <article><strong>${text.timeline}</strong><span>${data.timeline || "Defined during onboarding"}</span></article>
+        <article><strong>${text.timeline}</strong><span>${data.timeline || copy.timelineFallback}</span></article>
       </div>
       <div class="interactive-map" aria-label="Interactive client journey map">
         ${stages
@@ -1313,7 +2013,7 @@ function renderWebpage(data, stages) {
                   <b>${stage.clientQuestion}</b>
                   <em>${text.yourStep}: ${stage.clientAction}</em>
                   <em>${text.ourSupport}: ${stage.orgSupport}</em>
-                  <a href="#stage-${stage.order}">Open details</a>
+                  <a href="#stage-${stage.order}">${copy.openDetails}</a>
                 </span>
               </button>
             `
@@ -1358,8 +2058,8 @@ function renderWebpage(data, stages) {
         )
         .join("")}
       <footer class="journey-page-footer">
-        <h5>Ready for the next best step?</h5>
-        <p>If this journey feels like the kind of relationship you want with a partner, start with a focused conversation about fit, timing, and the result you want to create.</p>
+        <h5>${text.nextStepHeadline}</h5>
+        <p>${copy.webpageFooter}</p>
       </footer>
     </section>
   `;
@@ -1368,49 +2068,27 @@ function renderWebpage(data, stages) {
 function renderLinkedIn(data, stages) {
   const businessName = data.businessName || "our business";
   const ideal = data.idealClient || "clients";
-  const outcome = data.clientOutcome || "a better client result";
   const primary = data.primaryColor || "#123d35";
   const accent = data.accentColor || "#c7862f";
   const logoSource = data.logoDataUrl || data.logoUrl || "";
   const vibe = getVibe(data);
-  const posts = [
-    {
-      title: "The Journey Overview",
-      body: `Most ${ideal} do not only need an offer. They need to see themselves in the journey: meeting the people, understanding the benefit, acting with confidence, using the product or service, solving stuck points, recognizing results, and continuing to benefit over time. At ${businessName}, the client journey is designed around that lived experience.`,
-      stage: null,
-    },
-    {
-      title: "The Project of Worth Post",
-      body: `The first meaningful project is where confidence becomes practical. Clients need to see what is worth working on, why it matters, and what progress will look like.`,
-      stage: stages.find((stage) => stage.key === "projectOfWorth"),
-    },
-    {
-      title: "The Support Post",
-      body: `Support should be visible before it is needed. When clients know how troubleshooting and customization work, stuck points become part of the journey instead of the end of momentum.`,
-      stage: stages.find((stage) => stage.key === "troubleshooting"),
-    },
-    {
-      title: "The Proof Post",
-      body: `Proof is strongest when the client knows what great results look like. Journey design lets evidence answer the right question at the right time.`,
-      stage: stages.find((stage) => stage.key === "recognizingResults"),
-    },
-    {
-      title: "The Sharing Post",
-      body: `Sharing should feel natural because the client can explain what helped. The best referral moments come from generosity, not pressure.`,
-      stage: stages.find((stage) => stage.key === "sharingFriends"),
-    },
-  ];
+  const copy = getCopy(data);
+  const posts = copy.linkedInPosts(businessName, ideal).map(([title, body, stageKey]) => ({
+    title,
+    body,
+    stage: stageKey ? stages.find((stage) => stage.key === stageKey) : null,
+  }));
 
   document.querySelector("#linkedinOutput").innerHTML = posts
-    .map(
-      (post, index) => `
+        .map(
+          (post, index) => `
         <article class="post-card linked-post-card">
-          ${renderLinkedInGraphic(post, stages, data, { primary, accent, logoSource, index, vibe })}
+          ${renderLinkedInGraphic(post, stages, data, { primary, accent, logoSource, index, vibe, copy })}
           <span class="pill">Post ${index + 1}</span>
           <h4>${post.title}</h4>
           <p>${post.body}</p>
-          <p><strong>Suggested image:</strong> ${post.stage ? `${post.stage.name} branded map section` : "Full journey map overview"}</p>
-          <p><strong>CTA:</strong> Want to see the full client journey? Start with the map.</p>
+          <p><strong>${copy.suggestedImage}:</strong> ${post.stage ? `${post.stage.name} ${copy.brandedMapSection}` : copy.fullMapOverview}</p>
+          <p><strong>CTA:</strong> ${copy.linkedInCta}</p>
         </article>
       `
     )
@@ -1445,7 +2123,7 @@ function renderLinkedInGraphic(post, stages, data, options) {
           )
           .join("")}
       </div>
-      <strong>${stage ? stage.cta : "Map the whole relationship"}</strong>
+      <strong>${stage ? stage.cta : options.copy.mapWholeRelationship}</strong>
       <small class="social-quote">${options.index % 2 === 0 ? options.vibe.quote : options.vibe.secondQuote}</small>
     </div>
   `;
@@ -1460,24 +2138,25 @@ function renderArticle(data, stages) {
   const accent = data.accentColor || "#c7862f";
   const logoSource = data.logoDataUrl || data.logoUrl || "";
   const text = getLanguage(data).labels;
+  const copy = getCopy(data);
   const vibe = getVibe(data);
 
   document.querySelector("#articleOutput").innerHTML = `
     <article class="article-layout ${vibe.className}" style="--client-primary:${primary}; --client-accent:${accent}">
       <header class="article-hero">
-        <p class="eyebrow">Authority Article</p>
-        <h4>The Client Journey Behind ${businessName}</h4>
-        <p>Clients rarely choose a business because of information alone. They choose when they can see a trustworthy path from where they are to the result they want. That is why ${businessName} treats the client journey as part of the value, not an afterthought.</p>
+        <p class="eyebrow">${text.articleLabel}</p>
+        <h4>${copy.articleTitle(businessName)}</h4>
+        <p>${copy.articleIntro(businessName)}</p>
         ${renderQuoteBreak(vibe.quote, vibe)}
       </header>
-      <p>For ${ideal}, the relationship begins before a purchase. The first responsibility is clarity: what this work is for, who it serves, what changes, and how a strong decision should be made. The intended outcome is ${outcome}.</p>
+      <p>${copy.articleOpening(ideal, outcome)}</p>
     ${stages
       .map(
         (stage, index) => `
           ${index === 4 ? renderQuoteBreak(vibe.secondQuote, vibe) : ""}
           ${renderArticleMapSection(stage, data, { primary, accent, logoSource, vibe })}
           <h5>${stage.name}</h5>
-          <p>At this stage, the client is asking: ${stage.clientQuestion} They may feel ${stage.emotion.toLowerCase()}. The strongest support move is to ${stage.orgSupport.charAt(0).toLowerCase() + stage.orgSupport.slice(1)} The proof to place here is: ${stage.proof}</p>
+          <p>${copy.articleStage(stage)}</p>
           ${index < stages.length - 1 ? renderJourneyThumbnail(stages[index + 1], vibe, index) : ""}
         `
       )
@@ -1486,8 +2165,8 @@ function renderArticle(data, stages) {
         <h5>${text.wholeJourney}</h5>
         ${renderArticleFullMap(stages, data, { primary, accent, logoSource })}
       </section>
-      <p>The result is a more preeminent relationship: one where the business advocates for the client's best interest, makes the path visible, and creates moments where trust can compound.</p>
-      <p>If you are considering ${offer}, use this journey as a guide. It shows not only what we do, but how we think about helping clients succeed.</p>
+      <p>${copy.articleClose1}</p>
+      <p>${copy.articleClose2(offer)}</p>
     </article>
   `;
 }
@@ -1544,24 +2223,21 @@ function renderDeliveryEmail(data) {
   const recipient = data.deliveryEmail || "you@example.com";
   const outcome = data.clientOutcome || "a clearer client journey";
   const vibe = getVibe(data);
+  const copy = getCopy(data);
 
   document.querySelector("#emailOutput").innerHTML = `
     <p class="eyebrow">Custom Asset Delivery Email</p>
-    <h4>Subject: Your Journey-OS assets for ${businessName}</h4>
+    <h4>${copy.emailSubject(businessName)}</h4>
     <p><strong>To:</strong> ${recipient}</p>
     <div class="email-card">
-      <p>Hi there,</p>
-      <p>Your Journey-OS client journey assets are ready. Inside, you will find a visual map of how clients experience ${businessName}, from the first trust-building moments through ${outcome}, sharing, gifting, and continuing value.</p>
+      <p>${copy.emailGreeting}</p>
+      <p>${copy.emailIntro(businessName, outcome)}</p>
       <p><em>${vibe.quote}</em></p>
-      <p><strong>Your asset package includes:</strong></p>
+      <p><strong>${copy.emailIncludes}</strong></p>
       <ul>
-        <li>Client journey infographic</li>
-        <li>Interactive client journey webpage draft</li>
-        <li>LinkedIn post copy and branded graphics</li>
-        <li>Authority article with journey map sections</li>
-        <li>Enterprise value diagnosis: reviews, LTV, response systems, and exit-readiness opportunities</li>
+        ${copy.emailItems.map((item) => `<li>${item}</li>`).join("")}
       </ul>
-      <p>Use these assets to make the client experience visible, trustworthy, and easier to share.</p>
+      <p>${copy.emailUse}</p>
       <p>Copyright 2026 - Cracking the Code to Success and Profits - ctcsp.com</p>
     </div>
   `;
@@ -1569,6 +2245,10 @@ function renderDeliveryEmail(data) {
 
 function cleanOutcome(offer) {
   return offer.replace(/^(a|an|the)\s+/i, "").replace(/\.$/, "");
+}
+
+function lowerFirst(text) {
+  return text ? text.charAt(0).toLowerCase() + text.slice(1) : "";
 }
 
 function setActiveStep(id) {
@@ -1612,10 +2292,56 @@ function generateJourney() {
   renderLinkedIn(data, stages);
   renderArticle(data, stages);
   renderDeliveryEmail(data);
+  renderAiRemixPrompt(data, stages);
   document.querySelector("#routePreview").textContent = `/journey-os/${slugify(data.businessName || "draft-journey")}`;
   renderEmbedCode(data);
   setActiveStep("diagnosis");
   localStorage.setItem("journey-os-draft", JSON.stringify(data));
+}
+
+function renderAiRemixPrompt(data, stages) {
+  const promptBox = document.querySelector("#aiRemixPrompt");
+  if (!promptBox) return;
+
+  const businessName = data.businessName || "my business";
+  const website = data.website || "my website";
+  const offer = data.offer || "my offer";
+  const idealClient = data.clientPersona || data.idealClient || "my ideal client";
+  const outcome = data.clientOutcome || "the outcome my clients want";
+  const primary = data.primaryColor || "#123d35";
+  const accent = data.accentColor || "#c7862f";
+  const vibe = getVibe(data);
+  const stageLines = stages
+    .map(
+      (stage) =>
+        `${stage.order}. ${stage.clientPhase}: ${stage.name} - client question: "${stage.clientQuestion}" - desired feeling: "${stage.successFeeling}"`
+    )
+    .join("\n");
+
+  promptBox.textContent = `I want you to help me create a more engaging client journey infographic for ${businessName}.
+
+Business/site: ${website}
+Primary offer: ${offer}
+Ideal client: ${idealClient}
+Desired client outcome: ${outcome}
+Brand colors: primary ${primary}, accent ${accent}
+Current visual vibe: ${vibe.name}
+
+Here is the client journey path:
+${stageLines}
+
+Please create 3 stronger infographic concepts that make this journey feel more emotionally engaging, visually memorable, and easy for a client to understand. For each concept, include:
+- A metaphor or visual world for the journey, such as map, quest, bridge, staircase, flywheel, operating system, expedition, transformation path, or another better idea.
+- A title and subtitle.
+- Suggested icons or imagery for each stage.
+- A short client-facing phrase for each stage.
+- Where to place review moments, referral moments, proof, support, and long-term value.
+- A LinkedIn/social version and a website hero/page version.
+- A prompt I could give to an image generator, designer, Canva, or NotebookLM to build the visual.
+
+Make the journey feel like the client is moving from not knowing, to learning, to understanding the value, to investing, receiving the offer, using it, enjoying the benefit, sharing it, and continuing to benefit.
+
+If using NotebookLM, suggest how to organize the sources and ask it to create an infographic briefing document from this journey.`;
 }
 
 function renderEmbedCode(data) {
