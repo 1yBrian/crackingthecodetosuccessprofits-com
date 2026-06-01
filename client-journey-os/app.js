@@ -2588,3 +2588,142 @@ if (saved) {
 }
 
 applyEmbedMode();
+
+
+// === Save My Journey (Phase 1: local) ===
+const saveButton = document.querySelector("#saveJourney");
+const saveDialog = document.querySelector("#saveDialog");
+const saveEmailInput = document.querySelector("#saveEmail");
+const saveConfirmButton = document.querySelector("#saveConfirm");
+const saveCancelButton = document.querySelector("#saveCancel");
+const saveStatusEl = document.querySelector("#saveStatus");
+
+let sessionEmail = "";
+try { sessionEmail = localStorage.getItem("journey-os-email") || ""; } catch (e) {}
+
+function generateUuid() {
+  if (window.crypto && window.crypto.randomUUID) return window.crypto.randomUUID();
+  return "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g, (c) => {
+    const r = (Math.random() * 16) | 0;
+    return (c === "x" ? r : (r & 0x3) | 0x8).toString(16);
+  });
+}
+
+function buildSavePayload(email) {
+  if (!lastRenderedData || !lastRenderedStages) return null;
+  return {
+    id: generateUuid(),
+    created_at: new Date().toISOString(),
+    email: email || null,
+    business_name: lastRenderedData.businessName || null,
+    website: lastRenderedData.website || null,
+    linkedin: lastRenderedData.linkedin || null,
+    offer: lastRenderedData.offer || null,
+    ideal_client: lastRenderedData.idealClient || null,
+    client_persona: lastRenderedData.clientPersona || null,
+    client_outcome: lastRenderedData.clientOutcome || null,
+    output_language: globalLanguage ? globalLanguage.value : null,
+    page_style: pageStyle ? pageStyle.value : null,
+    graphic_vibe: graphicVibe ? graphicVibe.value : null,
+    primary_color: lastRenderedData.primaryColor || null,
+    accent_color: lastRenderedData.accentColor || null,
+    intake: lastRenderedData,
+    generated_stages: lastRenderedStages,
+    status: "draft",
+    source: "prototype",
+    schema_version: 1
+  };
+}
+
+function downloadJourneyJson(payload) {
+  const slug = (payload.business_name || "draft-journey")
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "")
+    .slice(0, 40) || "draft-journey";
+  const stamp = payload.created_at.replace(/[:.]/g, "-").slice(0, 19);
+  const blob = new Blob([JSON.stringify(payload, null, 2)], { type: "application/json" });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = `journey-os-${slug}-${stamp}.json`;
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  setTimeout(() => URL.revokeObjectURL(url), 1000);
+}
+
+function showSaveStatus(message, kind) {
+  if (!saveStatusEl) return;
+  saveStatusEl.textContent = message;
+  saveStatusEl.dataset.kind = kind || "ok";
+  saveStatusEl.hidden = false;
+  clearTimeout(showSaveStatus._t);
+  showSaveStatus._t = setTimeout(() => { saveStatusEl.hidden = true; }, 7000);
+}
+
+function executeSave(email) {
+  const payload = buildSavePayload(email);
+  if (!payload) {
+    showSaveStatus("Generate a journey before saving.", "err");
+    return;
+  }
+  try {
+    const indexKey = "journey-os-saved";
+    const list = JSON.parse(localStorage.getItem(indexKey) || "[]");
+    list.push({
+      id: payload.id,
+      created_at: payload.created_at,
+      email: payload.email,
+      business_name: payload.business_name
+    });
+    localStorage.setItem(indexKey, JSON.stringify(list));
+    localStorage.setItem("journey-os-saved:" + payload.id, JSON.stringify(payload));
+    if (email) localStorage.setItem("journey-os-email", email);
+  } catch (e) {
+    console.warn("localStorage save failed:", e);
+  }
+  downloadJourneyJson(payload);
+  const tail = email ? " Production version will email " + email + " a copy." : " Add an email next time to receive a copy by email.";
+  showSaveStatus("Saved — JSON downloaded." + tail, "ok");
+}
+
+if (saveButton && saveDialog) {
+  saveButton.addEventListener("click", () => {
+    if (!lastRenderedData || !lastRenderedStages) {
+      showSaveStatus("Generate a journey before saving.", "err");
+      return;
+    }
+    if (saveEmailInput) saveEmailInput.value = sessionEmail;
+    if (typeof saveDialog.showModal === "function") {
+      saveDialog.showModal();
+    } else {
+      const email = window.prompt("Email (optional, for production email copy):", sessionEmail) || "";
+      executeSave(email.trim());
+    }
+  });
+
+  if (saveConfirmButton) {
+    saveConfirmButton.addEventListener("click", (e) => {
+      e.preventDefault();
+      const email = saveEmailInput ? (saveEmailInput.value || "").trim() : "";
+      const looksValid = !email || /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email);
+      if (!looksValid) {
+        showSaveStatus("Email looks off — saving without email.", "warn");
+        sessionEmail = "";
+        executeSave("");
+      } else {
+        sessionEmail = email;
+        executeSave(email);
+      }
+      saveDialog.close();
+    });
+  }
+
+  if (saveCancelButton) {
+    saveCancelButton.addEventListener("click", (e) => {
+      e.preventDefault();
+      saveDialog.close();
+    });
+  }
+}
