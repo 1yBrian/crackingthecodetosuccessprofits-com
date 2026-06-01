@@ -1582,7 +1582,13 @@ async function renderJourneyCanvas(data, stages) {
   drawPosterBackdrop(ctx, palette, metaphor);
   drawPosterHeader(ctx, { businessName, outcome, persona, website, logo, palette, metaphor, text });
   drawContextStrip(ctx, { persona, outcome, data, palette, text });
-  drawJourneyPath(ctx, stages, { palette, detail });
+  if (template === "executive") {
+    drawExecutiveChecklistPoster(ctx, stages, { palette, detail });
+  } else if (template === "success") {
+    drawClientSuccessPathwayPoster(ctx, stages, { palette, detail });
+  } else {
+    drawJourneyPath(ctx, stages, { palette, detail });
+  }
   drawPosterFooter(ctx, { businessName, palette });
 
   imageStatus.textContent = logo
@@ -1798,6 +1804,110 @@ function drawJourneyPath(ctx, stages, options) {
     const y = startY + index * gap;
     drawMilestone(ctx, pathX, y + 34, index + 1, palette);
     drawStagePosterCard(ctx, stage, 258, y - 20, 780, cardHeight, palette, detail);
+  });
+
+  drawEmotionArc(ctx, stages, palette);
+}
+
+function drawExecutiveChecklistPoster(ctx, stages, options) {
+  const { palette } = options;
+  const startY = 548;
+  const rowHeight = stages.length > 8 ? 86 : 104;
+  const leftX = 86;
+  const width = 1028;
+
+  ctx.fillStyle = palette.dark;
+  ctx.font = "900 24px system-ui, sans-serif";
+  ctx.textAlign = "left";
+  ctx.fillText("EXECUTIVE SERVICE CHECKLIST", leftX, 532);
+
+  stages.forEach((stage, index) => {
+    const y = startY + index * rowHeight;
+    ctx.fillStyle = index % 2 === 0 ? "#ffffff" : palette.soft;
+    roundRect(ctx, leftX, y, width, rowHeight - 10, 18, true);
+    ctx.strokeStyle = palette.line;
+    ctx.lineWidth = 2;
+    roundRect(ctx, leftX, y, width, rowHeight - 10, 18, false);
+
+    ctx.fillStyle = palette.dark;
+    roundRect(ctx, leftX + 18, y + 16, 48, 48, 12, true);
+    ctx.fillStyle = "#fff";
+    ctx.font = "900 22px system-ui, sans-serif";
+    ctx.textAlign = "center";
+    ctx.textBaseline = "middle";
+    ctx.fillText(String(stage.order), leftX + 42, y + 40);
+
+    ctx.textBaseline = "alphabetic";
+    ctx.textAlign = "left";
+    ctx.fillStyle = palette.dark;
+    ctx.font = "900 23px system-ui, sans-serif";
+    ctx.fillText(stage.name, leftX + 84, y + 34);
+
+    ctx.fillStyle = palette.muted;
+    ctx.font = "650 15px system-ui, sans-serif";
+    wrapText(ctx, stage.serviceStandards?.[0] || stage.teamChecklist, leftX + 84, y + 60, 560, 19, 2);
+
+    const rightX = leftX + 690;
+    ctx.fillStyle = "rgba(199,134,47,0.14)";
+    roundRect(ctx, rightX, y + 18, 188, 34, 17, true);
+    ctx.fillStyle = palette.dark;
+    ctx.font = "900 13px system-ui, sans-serif";
+    ctx.textAlign = "center";
+    ctx.fillText("SYSTEM", rightX + 94, y + 40);
+
+    ctx.fillStyle = palette.soft;
+    roundRect(ctx, rightX + 204, y + 18, 114, 34, 17, true);
+    ctx.fillStyle = palette.dark;
+    ctx.fillText("REVIEW", rightX + 261, y + 40);
+  });
+}
+
+function drawClientSuccessPathwayPoster(ctx, stages, options) {
+  const { palette, detail } = options;
+  const centerX = 600;
+  const startY = 548;
+  const gap = stages.length > 8 ? 92 : 108;
+
+  ctx.fillStyle = palette.dark;
+  ctx.font = "900 24px system-ui, sans-serif";
+  ctx.textAlign = "left";
+  ctx.fillText("CLIENT SUCCESS PATHWAY", 86, 532);
+
+  ctx.strokeStyle = palette.accent;
+  ctx.lineWidth = 7;
+  ctx.setLineDash([18, 16]);
+  ctx.beginPath();
+  ctx.moveTo(centerX, startY - 26);
+  stages.forEach((_, index) => {
+    const y = startY + index * gap;
+    const x = index % 2 === 0 ? 360 : 840;
+    ctx.quadraticCurveTo(centerX, y + 34, x, y + 56);
+    ctx.quadraticCurveTo(centerX, y + 82, centerX, y + gap - 18);
+  });
+  ctx.stroke();
+  ctx.setLineDash([]);
+
+  stages.forEach((stage, index) => {
+    const y = startY + index * gap;
+    const leftSide = index % 2 === 0;
+    const x = leftSide ? 106 : 604;
+    drawMilestone(ctx, leftSide ? 360 : 840, y + 44, stage.order, palette);
+    ctx.fillStyle = palette.panel;
+    roundRect(ctx, x, y, 426, detail === "compact" ? 74 : 88, 24, true);
+    ctx.strokeStyle = palette.line;
+    ctx.lineWidth = 2;
+    roundRect(ctx, x, y, 426, detail === "compact" ? 74 : 88, 24, false);
+
+    ctx.fillStyle = palette.accent;
+    ctx.font = "900 12px system-ui, sans-serif";
+    ctx.textAlign = "left";
+    ctx.fillText((stage.clientPhase || stage.lens).toUpperCase(), x + 24, y + 24);
+    ctx.fillStyle = palette.dark;
+    ctx.font = "900 21px system-ui, sans-serif";
+    ctx.fillText(stage.name, x + 24, y + 50);
+    ctx.fillStyle = palette.muted;
+    ctx.font = "650 14px system-ui, sans-serif";
+    wrapText(ctx, stage.clientQuestion, x + 24, y + 72, 360, 18, 1);
   });
 
   drawEmotionArc(ctx, stages, palette);
