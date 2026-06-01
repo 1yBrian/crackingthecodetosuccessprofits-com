@@ -1,4 +1,4 @@
-// Build trigger: secrets rotated 2026-06-01
+// Build trigger: vars now plaintext 2026-06-01b
 /**
  * POST /api/journey-submit
  * Cloudflare Pages Function — receives Journey-OS payloads from the prototype,
