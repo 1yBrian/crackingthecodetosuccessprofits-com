@@ -384,7 +384,33 @@ function getFormData() {
   data.outputLanguage = globalLanguage.value || data.outputLanguage || "en";
   data.pageStyle = pageStyle.value || data.pageStyle || "executive";
   data.graphicVibe = graphicVibe.value || data.graphicVibe || "future";
-  return data;
+  return normalizeCaseStudyData(data);
+}
+
+function normalizeCaseStudyData(data) {
+  const isCtcsp = /cracking the code/i.test(data.businessName || "") || /crackingthecodetosuccessprofits/i.test(data.website || "");
+  if (!isCtcsp) return data;
+
+  return {
+    ...data,
+    offer: ctcspCaseStudy.offer,
+    idealClient: ctcspCaseStudy.idealClient,
+    clientPersona: ctcspCaseStudy.clientPersona,
+    clientOutcome: ctcspCaseStudy.clientOutcome,
+    clientFear: ctcspCaseStudy.clientFear,
+    clientConfusion: ctcspCaseStudy.clientConfusion,
+    firstWin: ctcspCaseStudy.firstWin,
+    timeline: ctcspCaseStudy.timeline,
+    supportChannels: ctcspCaseStudy.supportChannels,
+    proofPoints: ctcspCaseStudy.proofPoints,
+    resources: ctcspCaseStudy.resources,
+    referralTrigger: ctcspCaseStudy.referralTrigger,
+    beforeBuy: ctcspCaseStudy.beforeBuy,
+    onboarding: ctcspCaseStudy.onboarding,
+    support: ctcspCaseStudy.support,
+    referrals: ctcspCaseStudy.referrals,
+    customStages: ctcspCaseStudy.customStages,
+  };
 }
 
 function setFormData(data) {
@@ -2584,7 +2610,7 @@ generateButton.addEventListener("click", generateJourney);
 
 const saved = localStorage.getItem("journey-os-draft");
 if (saved) {
-  setFormData(JSON.parse(saved));
+  setFormData(normalizeCaseStudyData(JSON.parse(saved)));
 }
 
 applyEmbedMode();
