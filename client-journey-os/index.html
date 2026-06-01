@@ -1,0 +1,374 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  <meta name="robots" content="noindex,nofollow">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Journey-OS Prototype</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <aside class="side-panel">
+        <div class="brand-block">
+          <div class="brand-mark">J</div>
+          <div>
+            <p class="eyebrow">Journey-OS</p>
+            <h1>Client Relationship Operating System</h1>
+          </div>
+        </div>
+
+        <nav class="step-list" aria-label="Journey-OS workflow">
+          <button class="step-button" data-step-target="onboarding">Start Here</button>
+          <figure class="nav-journey-shot">
+            <img src="./assets/journey-stage-course.jpg" alt="Client begins the journey through a guided business course" />
+            <figcaption>Begin with a visible path.</figcaption>
+          </figure>
+          <div class="nav-quote">
+            <span>◇</span>
+            <p>The map is not the territory, but it helps the traveler begin.</p>
+          </div>
+          <button class="step-button active" data-step-target="intake">1. Intake</button>
+          <figure class="nav-journey-shot">
+            <img src="./assets/journey-stage-workspace.jpg" alt="Client gathers context and prepares for the first meaningful step" />
+            <figcaption>Gather what the client needs.</figcaption>
+          </figure>
+          <div class="nav-quote">
+            <span>→</span>
+            <p>Every client is asking, “Where am I, and what happens next?”</p>
+          </div>
+          <button class="step-button" data-step-target="diagnosis">2. Diagnosis</button>
+          <figure class="nav-journey-shot">
+            <img src="./assets/journey-stage-dashboard.jpg" alt="Advisor reviews a client success dashboard" />
+            <figcaption>Reveal the hidden journey.</figcaption>
+          </figure>
+          <button class="step-button" data-step-target="assets">3. Assets</button>
+          <figure class="nav-journey-shot">
+            <img src="./assets/journey-stage-keynote.jpg" alt="Client journey results are presented as branded shareable assets" />
+            <figcaption>Turn the path into assets.</figcaption>
+          </figure>
+          <div class="nav-quote">
+            <span>✦</span>
+            <p>Visible journeys create confidence before complexity.</p>
+          </div>
+          <button class="step-button" data-step-target="share">4. Share</button>
+          <figure class="nav-journey-shot">
+            <img src="./assets/journey-stage-impact.jpg" alt="Client shares results and expands impact" />
+            <figcaption>Share the progress forward.</figcaption>
+          </figure>
+        </nav>
+
+        <section class="status-panel">
+          <p class="eyebrow">Your Map Is An Asset</p>
+          <p>When your journey is designed, use it everywhere a client needs confidence: your website, welcome emails, social posts, sales calls, proposals, and client onboarding.</p>
+        </section>
+      </aside>
+
+      <section class="workspace">
+        <header class="top-bar">
+          <div>
+            <p class="eyebrow">MVP Prototype</p>
+            <h2>Map, improve, and generate a client journey.</h2>
+          </div>
+          <div class="top-actions">
+            <label class="top-control">
+              Language
+              <select id="globalLanguage">
+                <option value="en">English</option>
+                <option value="it">Italiano</option>
+                <option value="es">Español</option>
+                <option value="ja">日本語</option>
+              </select>
+            </label>
+            <label class="top-control">
+              Page style
+              <select id="pageStyle">
+                <option value="executive">Executive Path</option>
+                <option value="adventure">Playful Adventure</option>
+                <option value="storybook">Storybook Journey</option>
+              </select>
+            </label>
+            <label class="top-control">
+              Graphic vibe
+              <select id="graphicVibe">
+                <option value="future">Future Tech</option>
+                <option value="quest">Epic Quest</option>
+                <option value="literary">Once Upon a Time</option>
+              </select>
+            </label>
+            <button class="icon-button" id="loadSample" type="button" title="Load sample">↺</button>
+            <button class="secondary-button" id="loadCtcsp" type="button" title="Load Cracking the Code case study">Load CTCSP</button>
+            <button class="primary-button" id="generateAll" type="button">Generate Journey</button>
+          </div>
+        </header>
+
+        <section class="step-panel" id="onboarding">
+          <div class="section-heading">
+            <p class="eyebrow">Start Here</p>
+            <h3>How Journey-OS Works</h3>
+          </div>
+
+          <figure class="onboarding-graphic">
+            <img src="./assets/journey-os-program-infographic.png" alt="Journey-OS onboarding infographic showing the five-step workflow" />
+            <figcaption>Use this as the quick-start map before entering a business journey.</figcaption>
+          </figure>
+        </section>
+
+        <section class="step-panel active" id="intake">
+          <div class="section-heading">
+            <p class="eyebrow">Step 1</p>
+            <h3>Business Identity and Relationship Context</h3>
+          </div>
+
+          <form class="intake-grid" id="journeyForm">
+            <label>
+              Business name
+              <input name="businessName" placeholder="Example: Northstar Coaching" />
+            </label>
+            <label>
+              Website
+              <input name="website" placeholder="https://example.com" />
+            </label>
+            <label>
+              LinkedIn profile
+              <input name="linkedin" placeholder="https://linkedin.com/in/..." />
+            </label>
+            <label>
+              Primary offer
+              <input name="offer" placeholder="Leadership coaching intensive" />
+            </label>
+            <label>
+              Ideal client
+              <input name="idealClient" placeholder="Founders, teams, executives..." />
+            </label>
+            <label>
+              Client persona
+              <input name="clientPersona" placeholder="Example: growth-stage founder" />
+            </label>
+            <label>
+              Desired client outcome
+              <input name="clientOutcome" placeholder="Example: confident leadership alignment" />
+            </label>
+            <label>
+              Email for asset delivery
+              <input name="deliveryEmail" type="email" placeholder="you@example.com" />
+            </label>
+            <label>
+              Desired tone
+              <select name="tone">
+                <option>Preeminent and advisory</option>
+                <option>Warm and practical</option>
+                <option>High-growth and direct</option>
+                <option>Creative and bold</option>
+              </select>
+            </label>
+            <label>
+              Output language
+              <select name="outputLanguage">
+                <option value="en">English</option>
+                <option value="it">Italiano</option>
+                <option value="es">Español</option>
+                <option value="ja">日本語</option>
+              </select>
+            </label>
+            <label>
+              Primary brand color
+              <input name="primaryColor" type="color" value="#123d35" />
+            </label>
+            <label>
+              Accent brand color
+              <input name="accentColor" type="color" value="#c7862f" />
+            </label>
+            <label>
+              Logo image
+              <input name="logoFile" type="file" accept="image/*" />
+            </label>
+            <label>
+              Logo URL
+              <input name="logoUrl" placeholder="https://example.com/logo.png" />
+            </label>
+            <label>
+              Biggest fear before buying
+              <input name="clientFear" placeholder="Will this actually work for me?" />
+            </label>
+            <label>
+              Biggest confusion after buying
+              <input name="clientConfusion" placeholder="What should I do first?" />
+            </label>
+            <label>
+              First meaningful win
+              <input name="firstWin" placeholder="A completed plan, first result, clear next step..." />
+            </label>
+            <label>
+              Typical timeline
+              <input name="timeline" placeholder="Example: 30 days, 12 weeks, 6 months..." />
+            </label>
+            <label class="span-2">
+              Support channels
+              <input name="supportChannels" placeholder="Email, LMS, community, calls, dashboard, help desk..." />
+            </label>
+            <label class="span-2">
+              Proof or evidence by stage
+              <textarea name="proofPoints" placeholder="Testimonials, case studies, metrics, before/after examples..."></textarea>
+            </label>
+            <label class="span-2">
+              Key resources clients should see
+              <textarea name="resources" placeholder="FAQ, welcome video, intake form, scorecard, workbook, referral script..."></textarea>
+            </label>
+            <label class="span-2">
+              Best referral trigger moment
+              <input name="referralTrigger" placeholder="After the first measurable win, after a milestone review..." />
+            </label>
+            <label class="span-2">
+              What happens before someone buys?
+              <textarea name="beforeBuy" placeholder="Discovery call, content, referral, audit, webinar..."></textarea>
+            </label>
+            <label class="span-2">
+              What happens immediately after someone buys?
+              <textarea name="onboarding" placeholder="Welcome email, intake form, kickoff call, portal access..."></textarea>
+            </label>
+            <label class="span-2">
+              How do you support client success?
+              <textarea name="support" placeholder="Check-ins, resources, office hours, dashboards, support desk..."></textarea>
+            </label>
+            <label class="span-2">
+              How do referrals, testimonials, or next steps happen today?
+              <textarea name="referrals" placeholder="Referral asks, case studies, alumni offers, partner intros..."></textarea>
+            </label>
+            <label class="span-2 consent-row">
+              <input type="checkbox" name="researchPermission" />
+              <span>When connected later, I permit Journey-OS to use public web research to verify my business identity and discoverability.</span>
+            </label>
+          </form>
+        </section>
+
+        <section class="step-panel" id="diagnosis">
+          <div class="section-heading">
+            <p class="eyebrow">Step 2</p>
+            <h3>Preeminence Diagnosis</h3>
+          </div>
+
+          <div class="diagnosis-layout">
+            <section class="insight-list" id="insightList" aria-live="polite">
+              <p class="empty-state">Generate a journey to see stage-by-stage recommendations.</p>
+            </section>
+            <section class="score-panel">
+              <p class="eyebrow">Relationship Capital Score</p>
+              <div class="score-ring" id="scoreRing">--</div>
+              <p id="scoreCopy">Score appears after generation.</p>
+              <div class="legend">
+                <span><i class="dot dot-red"></i> Friction</span>
+                <span><i class="dot dot-gold"></i> Opportunity</span>
+                <span><i class="dot dot-green"></i> Asset</span>
+              </div>
+            </section>
+          </div>
+        </section>
+
+        <section class="step-panel" id="assets">
+          <div class="section-heading">
+            <p class="eyebrow">Step 3</p>
+            <h3>Generated Assets</h3>
+          </div>
+
+          <div class="asset-tabs" role="tablist" aria-label="Generated assets">
+            <button class="asset-tab active" data-asset-target="infographic" type="button">Infographic</button>
+            <button class="asset-tab" data-asset-target="webpage" type="button">Webpage</button>
+            <button class="asset-tab" data-asset-target="linkedin" type="button">LinkedIn</button>
+            <button class="asset-tab" data-asset-target="article" type="button">Article</button>
+          </div>
+
+          <div class="asset-panel active" id="infographic">
+            <div class="infographic-toolbar">
+              <label>
+                Template
+                <select id="infographicTemplate">
+                  <option value="executive">Executive Journey Map</option>
+                  <option value="success">Client Success Pathway</option>
+                  <option value="blueprint">Operating System Blueprint</option>
+                </select>
+              </label>
+              <label>
+                Visual metaphor
+                <select id="visualMetaphor">
+                  <option value="path">Path</option>
+                  <option value="compass">Compass</option>
+                  <option value="blueprint">Blueprint</option>
+                  <option value="standards">Standards</option>
+                </select>
+              </label>
+              <label>
+                Public detail level
+                <select id="publicDetailLevel">
+                  <option value="polished">Polished public poster</option>
+                  <option value="compact">Compact executive version</option>
+                </select>
+              </label>
+            </div>
+            <div class="infographic-actions">
+              <button class="primary-button" id="downloadInfographic" type="button">Download Image</button>
+              <p id="imageStatus">Generate a journey to create the client journey image.</p>
+            </div>
+            <canvas id="journeyCanvas" width="1200" height="1600" aria-label="Generated client journey infographic image"></canvas>
+            <div class="journey-map" id="journeyMap">
+              <p class="empty-state">Your infographic journey map will appear here.</p>
+            </div>
+          </div>
+
+          <div class="asset-panel" id="webpage">
+            <article class="output-doc" id="webpageOutput">
+              <p class="empty-state">Your public journey webpage draft will appear here.</p>
+            </article>
+          </div>
+
+          <div class="asset-panel" id="linkedin">
+            <div class="post-grid" id="linkedinOutput">
+              <p class="empty-state">Your LinkedIn post set will appear here.</p>
+            </div>
+          </div>
+
+          <div class="asset-panel" id="article">
+            <article class="output-doc" id="articleOutput">
+              <p class="empty-state">Your long-form article will appear here.</p>
+            </article>
+          </div>
+        </section>
+
+        <section class="step-panel" id="share">
+          <div class="section-heading">
+            <p class="eyebrow">Step 4</p>
+            <h3>Share and Integrate</h3>
+          </div>
+
+          <div class="share-grid">
+            <section>
+              <h4>Share the Infographic</h4>
+              <p>Post it on LinkedIn, add it to your website, include it in your proposal, and send it before a strategy call so prospects can see the path before they buy.</p>
+              <code id="routePreview">Use as: social post, sales asset, proposal insert</code>
+            </section>
+            <section>
+              <h4>Use It With Clients</h4>
+              <p>Put the journey in your welcome email, onboarding portal, LMS lesson, kickoff call, client dashboard, resource library, and renewal conversation.</p>
+              <code>Welcome → Onboard → Support → Celebrate → Refer</code>
+            </section>
+            <section>
+              <h4>Remix With AI</h4>
+              <p>Copy your infographic text into your favorite AI and ask it for a better metaphor, map, quest, staircase, flywheel, ritual, or movement that matches how clients progress through your process.</p>
+              <code>Prompt: Improve this client journey map with a stronger metaphor.</code>
+            </section>
+            <section>
+              <h4>Embed or Teach It</h4>
+              <p>Add it to Mighty Networks, a course lesson, a workshop slide, a client-facing article, or a recorded walkthrough explaining what each stage feels like for the client.</p>
+              <code id="mightyEmbedCode">&lt;iframe src="https://YOUR-CLOUDFLARE-DOMAIN.com/journey-os/index.html?embed=1&amp;case=ctcsp" width="100%" height="900" style="border:0;" loading="lazy"&gt;&lt;/iframe&gt;</code>
+            </section>
+          </div>
+          <article class="email-output" id="emailOutput">
+            <p class="empty-state">Generate a journey to create the custom delivery email.</p>
+          </article>
+        </section>
+      </section>
+    </main>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
