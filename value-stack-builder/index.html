@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex,nofollow" />
+  <title>Value Stack Builder — CTCSP</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <div class="demo-banner">PROTOTYPE · Phase 1 vertical slice · baked example uses real crackingthecodetosuccessprofits.com data</div>
+
+  <header class="masthead">
+    <div class="wrap">
+      <div class="brand">
+        <span class="mark">Value&nbsp;Stack&nbsp;<em>Builder</em></span>
+        <span class="tag">build the yes</span>
+      </div>
+      <div class="status" id="brandStatus">No site analyzed yet</div>
+    </div>
+  </header>
+
+  <div class="wrap">
+    <div class="steps" id="stepRail">
+      <span class="step-pill active" data-step="frontdoor">Start with your website</span>
+      <span class="step-pill" data-step="verify">Verify &amp; tune</span>
+      <span class="step-pill" data-step="stack">Your value stack</span>
+    </div>
+  </div>
+
+  <!-- ===================== FRONT DOOR ===================== -->
+  <section class="panel active wrap" id="frontdoor">
+    <div class="frontdoor">
+      <p class="eyebrow">The less you do, the better</p>
+      <h1>Give us your <em>website.</em><br>We'll build the yes.</h1>
+      <p class="sub">Most of your value stack is already written — on your own site. Enter your URL and watch the form fill itself. You just verify and fine-tune.</p>
+      <div class="url-row">
+        <input type="text" id="urlInput" placeholder="crackingthecodetosuccessprofits.com" autocomplete="off" />
+        <button class="btn btn-dark btn-lg" id="analyzeBtn">Analyze my site →</button>
+      </div>
+      <p class="hint">Demo note: this prototype is wired to one real example — CTCSP. Press Analyze to watch the auto-fill on genuine site data.</p>
+
+      <div class="scanner" id="scanner" style="display:none;"></div>
+    </div>
+  </section>
+
+  <!-- ===================== VERIFY & TUNE ===================== -->
+  <section class="panel wrap" id="verify">
+    <div class="brand-found" id="brandFound">
+      <img id="brandLogoVerify" alt="" />
+      <span>Brand identified — pulled from your site</span>
+    </div>
+    <div class="section-head">
+      <p class="eyebrow">Step 1 of 5 · The Value Stack</p>
+      <h2>We read your site. Here's what we found.</h2>
+      <p class="lead">Everything below was pulled from your website. Green = scraped directly. Gold = inferred from your copy. Rose = we need you. Change anything that isn't quite right, then build your stack.</p>
+    </div>
+
+    <form class="verify-grid" id="verifyForm"><!-- fields injected by app.js --></form>
+
+    <div class="verify-actions">
+      <button class="btn btn-primary btn-lg" id="buildStackBtn">Build my value stack →</button>
+      <span class="note" id="verifyNote"></span>
+    </div>
+  </section>
+
+  <!-- ===================== VALUE STACK ===================== -->
+  <section class="panel wrap" id="stack">
+    <div class="brand-crest"><img id="brandLogoStack" alt="" /></div>
+    <div class="section-head">
+      <p class="eyebrow">Step 1 of 5 · Complete</p>
+      <h2 id="stackHeadline">Your value stack — built to make yes easy.</h2>
+      <p class="lead">This is the stack a prospect sees before you ever name a price. The value is visible; the decision models itself.</p>
+    </div>
+
+    <div class="stack-layout">
+      <div class="stack-visual" id="stackVisual"><!-- layers injected --></div>
+
+      <div class="whyyes">
+        <h3>Why yes — modeled, not pitched</h3>
+        <div class="model" id="whyYesModel"><!-- injected --></div>
+        <div class="founder" id="founderBlock"><!-- injected --></div>
+      </div>
+    </div>
+
+    <div class="handoff">
+      <div class="txt"><strong>Next, in the full build:</strong> the Confident Ask, the Thank-You confirmation, the 20-minute surprise bonus, and the one-pager your client hands their team. Then the whole architecture wires into Journey-OS.</div>
+      <button class="btn btn-ghost" id="restartBtn">Start over</button>
+    </div>
+  </section>
+
+  <footer class="foot">
+    <div class="wrap">
+      <span>Value Stack Builder · a <em>CTCSP</em> product · sold with Journey-OS</span>
+      <span>Phase 1 prototype · built <span id="buildStamp">overnight</span></span>
+    </div>
+  </footer>
+
+  <script src="./app.js"></script>
+</body>
+</html>
