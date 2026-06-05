@@ -95,6 +95,15 @@ nav .nav-cta:hover { background: var(--gold-light); color: var(--ink); }
   text-align: center;
 }
 
+/* nav brand mark replaces the CTCSP text wordmark, sitewide */
+nav .wordmark { padding: 0.55rem 0; }
+nav .wordmark img {
+  display: block;
+  height: 82px;
+  width: auto;
+  border-radius: 9px;
+}
+
 .hero .eyebrow {
   font-size: 0.78rem;
   letter-spacing: 0.14em;
