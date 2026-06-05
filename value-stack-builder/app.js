@@ -31,7 +31,7 @@ const CTCSP_PROFILE = {
     { key: "priceFrame", label: "How the price is framed", src: "scraped", type: "area",
       value: "\"$279 a month. That's the floor. The ceiling is whether you use it.\"" },
     { key: "deliveryEmail", label: "Contact email", src: "scraped",
-      value: "explore@brianoney.com" },
+      value: "brian@abraham.com" },
     { key: "onboardingPath", label: "How they actually buy", src: "scraped", type: "area",
       value: "ctcsp.com → Mighty Networks plan checkout → private community access (the-abraham-group.mn.co)." },
     { key: "linkedin", label: "LinkedIn", src: "verify",
