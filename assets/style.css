@@ -99,9 +99,9 @@ nav .nav-cta:hover { background: var(--gold-light); color: var(--ink); }
 nav .wordmark { padding: 0.55rem 0; }
 nav .wordmark img {
   display: block;
-  height: 82px;
+  height: 41px;
   width: auto;
-  border-radius: 9px;
+  border-radius: 6px;
 }
 
 .hero .eyebrow {
