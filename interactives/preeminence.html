@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Strategy of Preeminence — interactive</title>
+<meta name="description" content="Preeminence isn't what you offer — it's how you show up. Flip the switch and watch the sales dynamic reverse: you stop convincing and start attracting.">
+<style>
+  .ctc, .ctc *{box-sizing:border-box; margin:0; padding:0;}
+  .ctc{
+    --cream:#F5F0E8; --ink:#1A1814; --ink-mid:#3D3830; --ink-light:#6B6355;
+    --gold:#8B6914; --gold-light:#C4922A; --rule:#D4C9B0; --white:#FFFFFF; --dark-mid:#2A2720;
+    font-family:Georgia,'Times New Roman',serif; color:var(--ink); line-height:1.55; max-width:760px; margin:0 auto; font-size:17px; -webkit-font-smoothing:antialiased;
+  }
+  .ctc .shell{background:var(--white); border:1px solid var(--rule); border-radius:18px; overflow:hidden; box-shadow:0 1px 2px rgba(26,24,20,.05), 0 10px 40px rgba(26,24,20,.09);}
+  .ctc .head{background:var(--ink); color:var(--cream); padding:26px 28px 24px; position:relative;}
+  .ctc .head::after{content:""; position:absolute; left:0; right:0; bottom:0; height:3px; background:linear-gradient(90deg,var(--gold),var(--gold-light),var(--gold));}
+  .ctc .kicker{font-size:.72rem; letter-spacing:.16em; text-transform:uppercase; color:var(--gold-light); font-weight:700; margin-bottom:10px; font-family:Helvetica,Arial,sans-serif;}
+  .ctc .head h2{font-weight:400; font-size:1.7rem; line-height:1.2; margin-bottom:8px;}
+  .ctc .head h2 em{color:var(--gold-light);}
+  .ctc .head p{color:#C4B99A; font-size:.96rem; max-width:48ch;}
+  .ctc .body{padding:26px 28px;}
+
+  .ctc .toggle{display:flex; background:var(--cream); border:1px solid var(--rule); border-radius:999px; padding:5px; margin:0 auto 24px; max-width:420px;}
+  .ctc .toggle button{flex:1; font:inherit; font-size:1rem; cursor:pointer; border:0; background:transparent; color:var(--ink-light); padding:11px 8px; border-radius:999px; transition:all .2s;}
+  .ctc .toggle button.on{background:var(--ink); color:var(--cream);}
+  .ctc .toggle button.on.adv{background:var(--gold-light); color:var(--ink);}
+
+  .ctc .stage{text-align:center; margin-bottom:22px;}
+  .ctc .stage .who{font-size:.74rem; letter-spacing:.12em; text-transform:uppercase; font-family:Helvetica,Arial,sans-serif; color:var(--ink-light); margin-bottom:10px;}
+  .ctc .flow{display:flex; align-items:center; justify-content:center; gap:0; margin:8px 0 4px;}
+  .ctc .node{width:104px; height:104px; border-radius:50%; display:flex; flex-direction:column; align-items:center; justify-content:center; border:2px solid var(--rule); background:var(--white); font-size:.82rem; color:var(--ink-mid); padding:8px;}
+  .ctc .node b{font-size:.95rem; display:block;}
+  .ctc .conn{flex:0 0 90px; height:2px; position:relative; background:var(--rule);}
+  .ctc .conn::after{content:"→"; position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); font-size:1.4rem; color:var(--ink-light); background:var(--white); padding:0 6px;}
+  .ctc.adv .conn::after{content:"←";}
+  .ctc.adv .conn{background:var(--gold-light);}
+  .ctc .node.you{border-color:var(--ink); color:var(--ink);}
+  .ctc.adv .node.you{border-color:var(--gold-light);}
+  .ctc .verb{font-size:.95rem; color:var(--ink-light); font-style:italic; margin-top:12px;}
+
+  .ctc .pairs{display:grid; gap:0; border:1px solid var(--rule); border-radius:12px; overflow:hidden;}
+  .ctc .pair{display:grid; grid-template-columns:1fr; padding:13px 16px; border-bottom:1px solid var(--rule); font-size:.97rem;}
+  .ctc .pair:last-child{border-bottom:0;}
+  .ctc .pair .v{transition:opacity .25s;}
+  .ctc .pair .vendor{color:var(--ink-light);}
+  .ctc .pair .advisor{color:var(--ink); font-weight:600;}
+  .ctc .pair .advisor::before{content:"→ "; color:var(--gold);}
+  .ctc .callout{margin-top:20px; background:var(--cream); border-left:3px solid var(--gold-light); border-radius:10px; padding:15px 17px; font-size:.98rem;}
+  .ctc .callout b{color:var(--gold);}
+  .ctc .foot{padding:16px 28px 24px; font-size:.82rem; color:var(--ink-light); text-align:center; font-family:Helvetica,Arial,sans-serif;}
+  @media (max-width:560px){ .ctc{font-size:16px;} .ctc .head h2{font-size:1.4rem;} .ctc .conn{flex-basis:50px;} .ctc .node{width:90px;height:90px;} }
+</style>
+</head>
+<body>
+<div class="ctc" id="root">
+  <div class="shell">
+    <div class="head">
+      <div class="kicker">Jay Abraham · The Strategy of Preeminence</div>
+      <h2>Not a better pitch. <em>A different posture.</em></h2>
+      <p>Preeminence is positioning yourself as the trusted authority who takes responsibility for the client's outcome — not a vendor who completes transactions. Flip the switch and watch the dynamic reverse.</p>
+    </div>
+    <div class="body">
+      <div class="toggle">
+        <button id="t-vendor" class="on">You as Vendor</button>
+        <button id="t-advisor" class="adv">You as Preeminent Advisor</button>
+      </div>
+
+      <div class="stage">
+        <div class="who" id="who">Vendor — you push toward the sale</div>
+        <div class="flow">
+          <div class="node you"><b>You</b></div>
+          <div class="conn"></div>
+          <div class="node"><b>Client</b><span id="clientsub">compares &amp; weighs</span></div>
+        </div>
+        <div class="verb" id="verb">You convince. They hesitate.</div>
+      </div>
+
+      <div class="pairs" id="pairs"></div>
+      <div class="callout" id="callout">—</div>
+    </div>
+    <div class="foot">When the posture changes, the sales conversation changes with it — the right clients self-select.</div>
+  </div>
+</div>
+<script>
+(function(){
+  const root = document.getElementById("root");
+  const PAIRS = [
+    { v:"You lead with what you sell.",            a:"You lead with the client's outcome." },
+    { v:"You discount to stay competitive.",       a:"You're the obvious choice, so price relaxes." },
+    { v:"You chase prospects.",                    a:"You attract the ones who fit." },
+    { v:"You're one option they compare.",         a:"You're the first call they make." },
+    { v:"You're responsible for the transaction.", a:"You take responsibility for the result." }
+  ];
+  const $ = (id)=>document.getElementById(id);
+  function render(advisor){
+    root.classList.toggle("adv", advisor);
+    $("t-vendor").classList.toggle("on", !advisor);
+    $("t-advisor").classList.toggle("on", advisor);
+    $("who").textContent = advisor ? "Preeminent — clients move toward you" : "Vendor — you push toward the sale";
+    $("clientsub").textContent = advisor ? "self-selects" : "compares & weighs";
+    $("verb").textContent = advisor ? "You advise. They lean in." : "You convince. They hesitate.";
+    $("pairs").innerHTML = PAIRS.map(p =>
+      `<div class="pair"><span class="v ${advisor?'advisor':'vendor'}">${advisor?p.a:p.v}</span></div>`).join("");
+    $("callout").innerHTML = advisor
+      ? "<b>The dynamic reversed.</b> You stopped convincing and started attracting. Same expertise, same offer — but now the client is moving toward you, and the ones who don't fit quietly opt out. That's preeminence: it changes how you show up, not just what you charge."
+      : "Notice the effort: in vendor posture every yes is something you push for, and price is the battleground. Flip the switch above — nothing about your skill changes, only your posture.";
+  }
+  $("t-vendor").addEventListener("click", ()=>render(false));
+  $("t-advisor").addEventListener("click", ()=>render(true));
+  render(false);
+})();
+</script>
+<script>
+(function(){function p(){try{parent.postMessage({ctcEmbed:true,height:(function(){var e=document.querySelector('.ctc')||document.body;return Math.ceil(e.getBoundingClientRect().bottom)+14;})()},"*");}catch(e){}}window.addEventListener("load",p);window.addEventListener("resize",p);try{new MutationObserver(p).observe(document.body,{subtree:true,childList:true,attributes:true,characterData:true});}catch(e){}setTimeout(p,300);setTimeout(p,900);})();
+</script>
+</body>
+</html>

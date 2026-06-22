@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Risk Reversal — interactive</title>
+<meta name="description" content="The biggest barrier to a first transaction is rarely price — it's perceived risk. Move the risk from the buyer to you and watch the hesitation fall.">
+<style>
+  .ctc, .ctc *{box-sizing:border-box; margin:0; padding:0;}
+  .ctc{
+    --cream:#F5F0E8; --ink:#1A1814; --ink-mid:#3D3830; --ink-light:#6B6355;
+    --gold:#8B6914; --gold-light:#C4922A; --rule:#D4C9B0; --white:#FFFFFF; --dark-mid:#2A2720;
+    --risk:#a8462a;
+    font-family:Georgia,'Times New Roman',serif; color:var(--ink); line-height:1.55; max-width:760px; margin:0 auto; font-size:17px; -webkit-font-smoothing:antialiased;
+  }
+  .ctc .shell{background:var(--white); border:1px solid var(--rule); border-radius:18px; overflow:hidden; box-shadow:0 1px 2px rgba(26,24,20,.05), 0 10px 40px rgba(26,24,20,.09);}
+  .ctc .head{background:var(--ink); color:var(--cream); padding:26px 28px 24px; position:relative;}
+  .ctc .head::after{content:""; position:absolute; left:0; right:0; bottom:0; height:3px; background:linear-gradient(90deg,var(--gold),var(--gold-light),var(--gold));}
+  .ctc .kicker{font-size:.72rem; letter-spacing:.16em; text-transform:uppercase; color:var(--gold-light); font-weight:700; margin-bottom:10px; font-family:Helvetica,Arial,sans-serif;}
+  .ctc .head h2{font-weight:400; font-size:1.7rem; line-height:1.2; margin-bottom:8px;}
+  .ctc .head h2 em{color:var(--gold-light);}
+  .ctc .head p{color:#C4B99A; font-size:.96rem; max-width:48ch;}
+  .ctc .body{padding:26px 28px;}
+
+  .ctc .ends{display:flex; justify-content:space-between; font-size:.78rem; letter-spacing:.08em; text-transform:uppercase; font-family:Helvetica,Arial,sans-serif; color:var(--ink-light); margin-bottom:8px;}
+  .ctc input[type=range]{-webkit-appearance:none; appearance:none; width:100%; height:10px; border-radius:999px; background:linear-gradient(90deg,#c9b48a,var(--gold-light)); outline:none; margin-bottom:6px;}
+  .ctc input[type=range]::-webkit-slider-thumb{-webkit-appearance:none; width:28px; height:28px; border-radius:50%; background:var(--white); border:3px solid var(--gold); cursor:pointer; box-shadow:0 2px 6px rgba(0,0,0,.2);}
+  .ctc input[type=range]::-moz-range-thumb{width:26px; height:26px; border-radius:50%; background:var(--white); border:3px solid var(--gold); cursor:pointer;}
+  .ctc .who{text-align:center; font-style:italic; color:var(--ink-mid); margin:6px 0 22px; font-size:1.02rem;}
+  .ctc .who b{font-style:normal; color:var(--gold);}
+
+  .ctc .meters{display:grid; gap:16px; margin-bottom:22px;}
+  .ctc .meter .mt{display:flex; justify-content:space-between; align-items:baseline; font-size:.92rem; margin-bottom:6px;}
+  .ctc .meter .mt .mv{font-size:1.05rem;}
+  .ctc .bar{height:14px; border-radius:999px; background:var(--cream); border:1px solid var(--rule); overflow:hidden;}
+  .ctc .bar > i{display:block; height:100%; border-radius:999px; transition:width .35s ease;}
+  .ctc .bar.fear > i{background:#a8462a;}
+  .ctc .bar.yes > i{background:var(--gold-light);}
+  .ctc .bar.conf > i{background:var(--ink-mid);}
+
+  .ctc .offer{background:var(--cream); border:1px solid var(--rule); border-radius:12px; padding:16px 18px; text-align:center; margin-bottom:18px;}
+  .ctc .offer .ol{font-size:.72rem; letter-spacing:.1em; text-transform:uppercase; color:var(--ink-light); font-family:Helvetica,Arial,sans-serif; margin-bottom:8px;}
+  .ctc .offer .ov{font-size:1.15rem; color:var(--ink);}
+  .ctc .callout{border-left:3px solid var(--gold-light); padding:13px 16px; font-size:.97rem; background:var(--white); border:1px solid var(--rule); border-left-width:3px; border-radius:10px;}
+  .ctc .callout b{color:var(--gold);}
+  .ctc .foot{padding:16px 28px 24px; font-size:.82rem; color:var(--ink-light); text-align:center; font-family:Helvetica,Arial,sans-serif;}
+  @media (max-width:560px){ .ctc{font-size:16px;} .ctc .head h2{font-size:1.4rem;} }
+</style>
+</head>
+<body>
+<div class="ctc">
+  <div class="shell">
+    <div class="head">
+      <div class="kicker">Jay Abraham · Risk Reversal</div>
+      <h2>The barrier is rarely price. <em>It's fear.</em></h2>
+      <p>A prospect's real hesitation is the risk of spending money or time and not getting the result. Reverse it — move that fear from the buyer onto you — and the first yes gets dramatically easier.</p>
+    </div>
+    <div class="body">
+      <div class="ends"><span>Buyer carries the risk</span><span>You carry the risk</span></div>
+      <input id="slider" type="range" min="0" max="100" value="0">
+      <div class="who" id="who">Right now, <b>the buyer</b> is carrying all of it.</div>
+
+      <div class="meters">
+        <div class="meter">
+          <div class="mt"><span>The prospect's perceived risk</span><span class="mv" id="fearv">High</span></div>
+          <div class="bar fear"><i id="fear" style="width:90%"></i></div>
+        </div>
+        <div class="meter">
+          <div class="mt"><span>Their willingness to say yes</span><span class="mv" id="yesv">Low</span></div>
+          <div class="bar yes"><i id="yes" style="width:18%"></i></div>
+        </div>
+        <div class="meter">
+          <div class="mt"><span>The confidence it asks of you</span><span class="mv" id="confv">Little</span></div>
+          <div class="bar conf"><i id="conf" style="width:10%"></i></div>
+        </div>
+      </div>
+
+      <div class="offer">
+        <div class="ol">What the prospect hears</div>
+        <div class="ov" id="offer">“Pay first, and hope it works out.”</div>
+      </div>
+      <div class="callout" id="callout">Drag the slider. Watch the fear move off the buyer — and notice it doesn't land on your wallet, it lands on your <b>confidence</b>.</div>
+    </div>
+    <div class="foot">The guarantee is rarely the expensive part. The positioning shift — being willing to carry the risk — is where the value lives.</div>
+  </div>
+</div>
+<script>
+(function(){
+  const $=(id)=>document.getElementById(id);
+  const s=$("slider");
+  const OFFERS=[
+    {max:15, t:"“Pay first, and hope it works out.”"},
+    {max:45, t:"“If you're not satisfied, we'll make adjustments.”"},
+    {max:75, t:"“Try it — if it's not right within 30 days, full refund.”"},
+    {max:101,t:"“You get the result, or you don't pay. The risk is mine.”"}
+  ];
+  function lvl(v,a,b,c){ return v<33?a:(v<70?b:c); }
+  function render(){
+    const v=+s.value;
+    const fear=Math.round(90-v*0.78);      // 90 -> ~12
+    const yes=Math.round(18+v*0.72);        // 18 -> ~90
+    const conf=Math.round(10+v*0.85);       // 10 -> ~95
+    $("fear").style.width=fear+"%"; $("yes").style.width=yes+"%"; $("conf").style.width=conf+"%";
+    $("fearv").textContent=lvl(v,"High","Easing","Low");
+    $("yesv").textContent=lvl(v,"Low","Warming","High");
+    $("confv").textContent=lvl(v,"Little","Real","Full");
+    $("who").innerHTML = v<15 ? "Right now, <b>the buyer</b> is carrying all of it."
+      : v<70 ? "You're <b>sharing</b> the risk now." : "Now <b>you</b> carry it — and the buyer can finally relax.";
+    $("offer").textContent = (OFFERS.find(o=>v<o.max)||OFFERS[3]).t;
+    $("callout").innerHTML = v<15
+      ? "Drag the slider. Watch the fear move off the buyer — and notice it doesn't land on your wallet, it lands on your <b>confidence</b>."
+      : v<70
+      ? "Halfway there: the hesitation is already dropping. The shift costs you almost nothing but the nerve to stand behind your work."
+      : "<b>Fully reversed.</b> Owners who do this close faster, attract better clients, and earn more referrals — not because of the refund, but because carrying the risk is the loudest proof you believe in the result.";
+  }
+  s.addEventListener("input",render); render();
+})();
+</script>
+<script>
+(function(){function p(){try{parent.postMessage({ctcEmbed:true,height:(function(){var e=document.querySelector('.ctc')||document.body;return Math.ceil(e.getBoundingClientRect().bottom)+14;})()},"*");}catch(e){}}window.addEventListener("load",p);window.addEventListener("resize",p);try{new MutationObserver(p).observe(document.body,{subtree:true,childList:true,attributes:true,characterData:true});}catch(e){}setTimeout(p,300);setTimeout(p,900);})();
+</script>
+</body>
+</html>
