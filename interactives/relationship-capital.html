@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Relationship Capital — interactive</title>
+<meta name="description" content="You don't have to own a large audience to reach one. You're already in relationship with businesses that hold the trust of your ideal client. Activate them and watch your reach appear.">
+<style>
+  .ctc, .ctc *{box-sizing:border-box; margin:0; padding:0;}
+  .ctc{
+    --cream:#F5F0E8; --ink:#1A1814; --ink-mid:#3D3830; --ink-light:#6B6355;
+    --gold:#8B6914; --gold-light:#C4922A; --rule:#D4C9B0; --white:#FFFFFF; --dark-mid:#2A2720;
+    font-family:Georgia,'Times New Roman',serif; color:var(--ink); line-height:1.55; max-width:760px; margin:0 auto; font-size:17px; -webkit-font-smoothing:antialiased;
+  }
+  .ctc .shell{background:var(--white); border:1px solid var(--rule); border-radius:18px; overflow:hidden; box-shadow:0 1px 2px rgba(26,24,20,.05), 0 10px 40px rgba(26,24,20,.09);}
+  .ctc .head{background:var(--ink); color:var(--cream); padding:26px 28px 24px; position:relative;}
+  .ctc .head::after{content:""; position:absolute; left:0; right:0; bottom:0; height:3px; background:linear-gradient(90deg,var(--gold),var(--gold-light),var(--gold));}
+  .ctc .kicker{font-size:.72rem; letter-spacing:.16em; text-transform:uppercase; color:var(--gold-light); font-weight:700; margin-bottom:10px; font-family:Helvetica,Arial,sans-serif;}
+  .ctc .head h2{font-weight:400; font-size:1.7rem; line-height:1.2; margin-bottom:8px;}
+  .ctc .head h2 em{color:var(--gold-light);}
+  .ctc .head p{color:#C4B99A; font-size:.96rem; max-width:48ch;}
+  .ctc .body{padding:24px 28px;}
+  .ctc .hint{text-align:center; font-size:.84rem; color:var(--ink-light); font-family:Helvetica,Arial,sans-serif; margin-bottom:18px;}
+
+  .ctc .grid{display:grid; grid-template-columns:repeat(3,1fr); gap:12px; align-items:stretch;}
+  .ctc .partner{cursor:pointer; border:1.5px solid var(--rule); border-radius:14px; padding:14px; background:var(--cream); text-align:center; transition:all .2s; position:relative;}
+  .ctc .partner:hover{border-color:var(--gold-light);}
+  .ctc .partner .pn{font-size:.95rem; font-weight:600; margin-bottom:4px; line-height:1.25;}
+  .ctc .partner .pa{font-size:.8rem; color:var(--ink-light);}
+  .ctc .partner .badge{display:none; position:absolute; top:-9px; right:-9px; background:var(--gold-light); color:var(--ink); font-family:Helvetica,Arial,sans-serif; font-size:.62rem; font-weight:700; letter-spacing:.04em; padding:3px 8px; border-radius:999px;}
+  .ctc .partner.on{background:#fbf3df; border-color:var(--gold-light); box-shadow:inset 0 0 0 1px var(--gold-light);}
+  .ctc .partner.on .badge{display:block;}
+  .ctc .partner.on .pa{color:var(--gold);}
+
+  .ctc .you{display:flex; flex-direction:column; align-items:center; justify-content:center; border-radius:14px; background:var(--ink); color:var(--cream); padding:14px;}
+  .ctc .you b{font-size:1.1rem;} .ctc .you span{font-size:.76rem; color:#C4B99A; font-family:Helvetica,Arial,sans-serif;}
+
+  .ctc .tally{margin-top:22px; background:var(--cream); border:1px solid var(--rule); border-radius:14px; padding:20px; text-align:center;}
+  .ctc .tally .big{font-size:2.3rem; color:var(--gold);}
+  .ctc .tally .lbl{font-size:.85rem; color:var(--ink-light); font-family:Helvetica,Arial,sans-serif;}
+  .ctc .tally .sub{margin-top:6px; font-size:.95rem; color:var(--ink-mid);}
+  .ctc .callout{margin-top:18px; border-left:3px solid var(--gold-light); padding:13px 16px; font-size:.97rem; background:var(--white); border:1px solid var(--rule); border-left-width:3px; border-radius:10px;}
+  .ctc .callout b{color:var(--gold);}
+  .ctc .foot{padding:16px 28px 24px; font-size:.82rem; color:var(--ink-light); text-align:center; font-family:Helvetica,Arial,sans-serif;}
+  @media (max-width:560px){ .ctc{font-size:16px;} .ctc .head h2{font-size:1.4rem;} .ctc .tally .big{font-size:1.9rem;} }
+</style>
+</head>
+<body>
+<div class="ctc">
+  <div class="shell">
+    <div class="head">
+      <div class="kicker">Jay Abraham · Relationship Capital</div>
+      <h2>You don't have to build an audience. <em>You're already near five.</em></h2>
+      <p>Every owner is already in relationship with businesses that hold the trust and attention of their ideal client. Named clearly, each becomes a channel — additive for everyone. Tap the ones you recognize.</p>
+    </div>
+    <div class="body">
+      <div class="hint">Tap each relationship you already have →</div>
+      <div class="grid" id="grid"></div>
+
+      <div class="tally">
+        <div class="big" id="reach">0</div>
+        <div class="lbl">ideal clients now within reach — that you didn't build from scratch</div>
+        <div class="sub" id="sub">Tap a relationship above. Most owners have about five sitting unused.</div>
+      </div>
+      <div class="callout" id="callout">The audience you need is usually already standing next to you — held by someone who'd happily introduce you, if you framed it as a win for them too.</div>
+    </div>
+    <div class="foot">Relationship capital is reach you've already earned. The only thing missing is naming the structure clearly enough to act on it.</div>
+  </div>
+</div>
+<script>
+(function(){
+  // center is index 4 (the "you" tile) in a 3x3.
+  const PARTNERS = [
+    { n:"The accountant your clients trust", a:"~300 small-business owners", reach:300 },
+    { n:"A complementary service",           a:"an email list of ~1,200",    reach:1200 },
+    { n:"The community / gym they belong to", a:"~500 engaged members",       reach:500 },
+    { n:"A supplier you buy from",            a:"~400 fellow buyers",         reach:400 },
+    null, // YOU (center)
+    { n:"A respected non-competing peer",     a:"an audience of ~2,000",      reach:2000 },
+    { n:"A past client who loves you",        a:"their whole network",        reach:250 },
+    { n:"Your local chamber / association",   a:"~900 member businesses",     reach:900 },
+    { n:"A platform or publication",          a:"~3,000 readers",             reach:3000 }
+  ];
+  const grid = document.getElementById("grid");
+  const active = new Set();
+  const fmt = (n)=>Math.round(n).toLocaleString("en-US");
+
+  PARTNERS.forEach((p,i)=>{
+    if (p === null){
+      const you = document.createElement("div");
+      you.className = "you";
+      you.innerHTML = "<b>You</b><span>your ideal client</span>";
+      grid.appendChild(you);
+      return;
+    }
+    const el = document.createElement("div");
+    el.className = "partner";
+    el.innerHTML = `<span class="badge">channel ✓</span><div class="pn">${p.n}</div><div class="pa">${p.a}</div>`;
+    el.addEventListener("click", ()=>{
+      if (active.has(i)){ active.delete(i); el.classList.remove("on"); }
+      else { active.add(i); el.classList.add("on"); }
+      update();
+    });
+    grid.appendChild(el);
+  });
+
+  function update(){
+    let reach = 0; active.forEach(i => reach += PARTNERS[i].reach);
+    document.getElementById("reach").textContent = fmt(reach);
+    const c = active.size;
+    document.getElementById("sub").textContent = c === 0
+      ? "Tap a relationship above. Most owners have about five sitting unused."
+      : `${c} relationship${c>1?"s":""} activated — and you already had ${c>1?"them all":"it"}.`;
+    document.getElementById("callout").innerHTML = c >= 3
+      ? `<b>Three or more, and the math is obvious.</b> You're standing inside reach you never had to earn. None of this required a bigger list — only naming the relationship as a channel and making it a win for them too.`
+      : "The audience you need is usually already standing next to you — held by someone who'd happily introduce you, if you framed it as a win for them too.";
+  }
+})();
+</script>
+<script>
+(function(){function p(){try{parent.postMessage({ctcEmbed:true,height:(function(){var e=document.querySelector('.ctc')||document.body;return Math.ceil(e.getBoundingClientRect().bottom)+14;})()},"*");}catch(e){}}window.addEventListener("load",p);window.addEventListener("resize",p);try{new MutationObserver(p).observe(document.body,{subtree:true,childList:true,attributes:true,characterData:true});}catch(e){}setTimeout(p,300);setTimeout(p,900);})();
+</script>
+</body>
+</html>

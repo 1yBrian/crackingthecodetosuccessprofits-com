@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Education-Based Marketing — interactive</title>
+<meta name="description" content="People buy when they understand — not when they're pressured. Move the dial from pressure to understanding and watch trust replace resistance.">
+<style>
+  .ctc, .ctc *{box-sizing:border-box; margin:0; padding:0;}
+  .ctc{
+    --cream:#F5F0E8; --ink:#1A1814; --ink-mid:#3D3830; --ink-light:#6B6355;
+    --gold:#8B6914; --gold-light:#C4922A; --rule:#D4C9B0; --white:#FFFFFF; --dark-mid:#2A2720;
+    font-family:Georgia,'Times New Roman',serif; color:var(--ink); line-height:1.55; max-width:760px; margin:0 auto; font-size:17px; -webkit-font-smoothing:antialiased;
+  }
+  .ctc .shell{background:var(--white); border:1px solid var(--rule); border-radius:18px; overflow:hidden; box-shadow:0 1px 2px rgba(26,24,20,.05), 0 10px 40px rgba(26,24,20,.09);}
+  .ctc .head{background:var(--ink); color:var(--cream); padding:26px 28px 24px; position:relative;}
+  .ctc .head::after{content:""; position:absolute; left:0; right:0; bottom:0; height:3px; background:linear-gradient(90deg,var(--gold),var(--gold-light),var(--gold));}
+  .ctc .kicker{font-size:.72rem; letter-spacing:.16em; text-transform:uppercase; color:var(--gold-light); font-weight:700; margin-bottom:10px; font-family:Helvetica,Arial,sans-serif;}
+  .ctc .head h2{font-weight:400; font-size:1.7rem; line-height:1.2; margin-bottom:8px;}
+  .ctc .head h2 em{color:var(--gold-light);}
+  .ctc .head p{color:#C4B99A; font-size:.96rem; max-width:48ch;}
+  .ctc .body{padding:26px 28px;}
+
+  .ctc .ends{display:flex; justify-content:space-between; font-size:.78rem; letter-spacing:.08em; text-transform:uppercase; font-family:Helvetica,Arial,sans-serif; color:var(--ink-light); margin-bottom:8px;}
+  .ctc input[type=range]{-webkit-appearance:none; appearance:none; width:100%; height:10px; border-radius:999px; background:linear-gradient(90deg,#b9866a,var(--gold-light)); outline:none; margin-bottom:6px;}
+  .ctc input[type=range]::-webkit-slider-thumb{-webkit-appearance:none; width:28px; height:28px; border-radius:50%; background:var(--white); border:3px solid var(--gold); cursor:pointer; box-shadow:0 2px 6px rgba(0,0,0,.2);}
+  .ctc input[type=range]::-moz-range-thumb{width:26px; height:26px; border-radius:50%; background:var(--white); border:3px solid var(--gold); cursor:pointer;}
+  .ctc .mode{text-align:center; font-style:italic; color:var(--ink-mid); margin:6px 0 22px; font-size:1.02rem;}
+  .ctc .mode b{font-style:normal; color:var(--gold);}
+
+  .ctc .meters{display:grid; gap:16px; margin-bottom:20px;}
+  .ctc .meter .mt{display:flex; justify-content:space-between; align-items:baseline; font-size:.92rem; margin-bottom:6px;}
+  .ctc .meter .mt .mv{font-size:1.05rem;}
+  .ctc .bar{height:14px; border-radius:999px; background:var(--cream); border:1px solid var(--rule); overflow:hidden;}
+  .ctc .bar > i{display:block; height:100%; border-radius:999px; transition:width .35s ease;}
+  .ctc .bar.trust > i{background:var(--gold-light);}
+  .ctc .bar.resist > i{background:#a8462a;}
+
+  .ctc .readiness{background:var(--cream); border:1px solid var(--rule); border-radius:12px; padding:16px 18px; text-align:center; margin-bottom:18px;}
+  .ctc .readiness .rl{font-size:.72rem; letter-spacing:.1em; text-transform:uppercase; color:var(--ink-light); font-family:Helvetica,Arial,sans-serif; margin-bottom:6px;}
+  .ctc .readiness .rv{font-size:1.12rem; color:var(--ink);}
+  .ctc .callout{border-left:3px solid var(--gold-light); padding:13px 16px; font-size:.97rem; background:var(--white); border:1px solid var(--rule); border-left-width:3px; border-radius:10px;}
+  .ctc .callout b{color:var(--gold);}
+  .ctc .foot{padding:16px 28px 24px; font-size:.82rem; color:var(--ink-light); text-align:center; font-family:Helvetica,Arial,sans-serif;}
+  @media (max-width:560px){ .ctc{font-size:16px;} .ctc .head h2{font-size:1.4rem;} }
+</style>
+</head>
+<body>
+<div class="ctc">
+  <div class="shell">
+    <div class="head">
+      <div class="kicker">Jay Abraham · Education-Based Marketing</div>
+      <h2>People buy when they understand — <em>not when they're pushed.</em></h2>
+      <p>Build the understanding in advance and, by the time someone is deciding, the trust and clarity are already there. Move the dial and watch what pressure does next to what understanding does.</p>
+    </div>
+    <div class="body">
+      <div class="ends"><span>Pressure &amp; urgency</span><span>Understanding first</span></div>
+      <input id="slider" type="range" min="0" max="100" value="0">
+      <div class="mode" id="mode">Right now you're selling with <b>pressure</b>.</div>
+
+      <div class="meters">
+        <div class="meter">
+          <div class="mt"><span>Trust in you</span><span class="mv" id="trustv">Thin</span></div>
+          <div class="bar trust"><i id="trust" style="width:15%"></i></div>
+        </div>
+        <div class="meter">
+          <div class="mt"><span>The prospect's resistance</span><span class="mv" id="resistv">High</span></div>
+          <div class="bar resist"><i id="resist" style="width:88%"></i></div>
+        </div>
+      </div>
+
+      <div class="readiness">
+        <div class="rl">When they're ready to buy</div>
+        <div class="rv" id="ready">Only under a deadline — and the moment it passes, so does the interest.</div>
+      </div>
+      <div class="callout" id="callout">Drag toward understanding. Pressure can force a spike, but it raises resistance every time — and it has to be reapplied. Understanding compounds.</div>
+    </div>
+    <div class="foot">Educating from what you know also signals abundance — you share because you're confident in what you do. That posture sells before you ever ask.</div>
+  </div>
+</div>
+<script>
+(function(){
+  const $=(id)=>document.getElementById(id);
+  const s=$("slider");
+  const lvl=(v,a,b,c)=>v<33?a:(v<70?b:c);
+  function render(){
+    const v=+s.value;
+    const trust=Math.round(15+v*0.8);   // 15 -> ~95
+    const resist=Math.round(88-v*0.72);  // 88 -> ~16
+    $("trust").style.width=trust+"%"; $("resist").style.width=resist+"%";
+    $("trustv").textContent=lvl(v,"Thin","Building","Deep");
+    $("resistv").textContent=lvl(v,"High","Easing","Low");
+    $("mode").innerHTML = v<15 ? "Right now you're selling with <b>pressure</b>."
+      : v<70 ? "You're <b>teaching as much as selling</b> now." : "Now you <b>educate first</b> — and the sale takes care of itself.";
+    $("ready").textContent = v<15 ? "Only under a deadline — and the moment it passes, so does the interest."
+      : v<70 ? "Sooner, and with fewer objections — they're starting to get it." : "When they understand why it matters for them — which is already, before you ask.";
+    $("callout").innerHTML = v<15
+      ? "Drag toward understanding. Pressure can force a spike, but it raises resistance every time — and it has to be reapplied. Understanding compounds."
+      : v<70
+      ? "Feel the trade: as understanding goes up, resistance comes down on its own. You're doing less convincing because they're doing more realizing."
+      : "<b>This is the reversal.</b> By the time the decision arrives, the trust and clarity are already in place — so there's almost nothing left to overcome. You taught your way to the yes.";
+  }
+  s.addEventListener("input",render); render();
+})();
+</script>
+<script>
+(function(){function p(){try{parent.postMessage({ctcEmbed:true,height:(function(){var e=document.querySelector('.ctc')||document.body;return Math.ceil(e.getBoundingClientRect().bottom)+14;})()},"*");}catch(e){}}window.addEventListener("load",p);window.addEventListener("resize",p);try{new MutationObserver(p).observe(document.body,{subtree:true,childList:true,attributes:true,characterData:true});}catch(e){}setTimeout(p,300);setTimeout(p,900);})();
+</script>
+</body>
+</html>

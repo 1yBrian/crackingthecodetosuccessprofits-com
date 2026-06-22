@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lifetime Value — interactive</title>
+<meta name="description" content="Everyone knows a repeat client is worth more. Very few have the number. Calculate it — and watch your entire acquisition math change.">
+<style>
+  .ctc, .ctc *{box-sizing:border-box; margin:0; padding:0;}
+  .ctc{
+    --cream:#F5F0E8; --ink:#1A1814; --ink-mid:#3D3830; --ink-light:#6B6355;
+    --gold:#8B6914; --gold-light:#C4922A; --rule:#D4C9B0; --white:#FFFFFF; --dark-mid:#2A2720;
+    font-family:Georgia,'Times New Roman',serif; color:var(--ink); line-height:1.55; max-width:760px; margin:0 auto; font-size:17px; -webkit-font-smoothing:antialiased;
+  }
+  .ctc .shell{background:var(--white); border:1px solid var(--rule); border-radius:18px; overflow:hidden; box-shadow:0 1px 2px rgba(26,24,20,.05), 0 10px 40px rgba(26,24,20,.09);}
+  .ctc .head{background:var(--ink); color:var(--cream); padding:26px 28px 24px; position:relative;}
+  .ctc .head::after{content:""; position:absolute; left:0; right:0; bottom:0; height:3px; background:linear-gradient(90deg,var(--gold),var(--gold-light),var(--gold));}
+  .ctc .kicker{font-size:.72rem; letter-spacing:.16em; text-transform:uppercase; color:var(--gold-light); font-weight:700; margin-bottom:10px; font-family:Helvetica,Arial,sans-serif;}
+  .ctc .head h2{font-weight:400; font-size:1.7rem; line-height:1.2; margin-bottom:8px;}
+  .ctc .head h2 em{color:var(--gold-light);}
+  .ctc .head p{color:#C4B99A; font-size:.96rem; max-width:48ch;}
+  .ctc .body{padding:24px 28px 8px;}
+  .ctc .sectlabel{font-size:.72rem; letter-spacing:.12em; text-transform:uppercase; color:var(--gold); font-weight:700; margin:4px 0 14px; font-family:Helvetica,Arial,sans-serif;}
+  .ctc .base{display:grid; grid-template-columns:repeat(3,1fr); gap:12px;}
+  .ctc .cell{border:1px solid var(--rule); border-radius:12px; padding:12px 14px; background:var(--cream);}
+  .ctc .cell label{display:block; font-size:.74rem; color:var(--ink-light); font-weight:600; margin-bottom:7px; min-height:2.4em; font-family:Helvetica,Arial,sans-serif;}
+  .ctc .inwrap{display:flex; align-items:center; gap:3px;}
+  .ctc .pre{color:var(--ink-light); font-size:1.05rem;}
+  .ctc .cell input{width:100%; font-family:Georgia,serif; font-size:1.3rem; color:var(--ink); border:0; background:transparent; outline:none; -moz-appearance:textfield;}
+  .ctc .cell input::-webkit-outer-spin-button,.ctc .cell input::-webkit-inner-spin-button{-webkit-appearance:none;margin:0;}
+
+  .ctc .result{margin:22px -28px 0; padding:24px 28px; background:linear-gradient(180deg,#fbf6ea,#f3ecdb); border-top:1px solid var(--rule);}
+  .ctc .compare{display:grid; grid-template-columns:1fr auto 1fr; align-items:center; gap:14px; text-align:center;}
+  .ctc .compare .box .l{font-size:.74rem; letter-spacing:.08em; text-transform:uppercase; color:var(--ink-light); font-family:Helvetica,Arial,sans-serif; margin-bottom:6px;}
+  .ctc .compare .box .v{font-size:1.5rem; color:var(--ink-mid);}
+  .ctc .compare .box.ltv .v{font-size:2.4rem; color:var(--gold);}
+  .ctc .compare .mult{font-size:1rem; color:var(--gold); font-weight:700;}
+  .ctc .compare .mult span{display:block; font-size:1.7rem;}
+  .ctc .insight{margin-top:20px; text-align:center; font-size:1.05rem; color:var(--ink-mid);}
+  .ctc .insight b{color:var(--ink);}
+  .ctc .afford{margin-top:18px; background:var(--white); border:1px solid var(--rule); border-left:3px solid var(--gold-light); border-radius:10px; padding:15px 17px; font-size:.98rem;}
+  .ctc .afford b{color:var(--gold);}
+  .ctc .foot{padding:16px 28px 24px; font-size:.82rem; color:var(--ink-light); text-align:center; font-family:Helvetica,Arial,sans-serif;}
+  @media (max-width:560px){ .ctc{font-size:16px;} .ctc .head h2{font-size:1.4rem;} .ctc .base{grid-template-columns:1fr;} .ctc .compare{grid-template-columns:1fr; gap:8px;} .ctc .compare .mult span{font-size:1.3rem;} .ctc .result{margin-left:-20px;margin-right:-20px;} }
+</style>
+</head>
+<body>
+<div class="ctc">
+  <div class="shell">
+    <div class="head">
+      <div class="kicker">Jay Abraham · Lifetime Value</div>
+      <h2>One sale, or the whole relationship? <em>Get the number.</em></h2>
+      <p>Most owners know, vaguely, that a repeat client is worth more. Very few have actually run it. Put in your numbers — and watch what you can afford to do to win a client change completely.</p>
+    </div>
+    <div class="body">
+      <div class="sectlabel">Your typical client</div>
+      <div class="base">
+        <div class="cell"><label>Average sale</label><div class="inwrap"><span class="pre">$</span><input id="b-sale" type="number" min="1" value="400" inputmode="numeric"></div></div>
+        <div class="cell"><label>Purchases per year</label><div class="inwrap"><input id="b-freq" type="number" min="0.1" step="0.1" value="4" inputmode="decimal"></div></div>
+        <div class="cell"><label>Years they stay</label><div class="inwrap"><input id="b-years" type="number" min="0.5" step="0.5" value="3" inputmode="decimal"></div></div>
+      </div>
+
+      <div class="result">
+        <div class="compare">
+          <div class="box"><div class="l">First transaction</div><div class="v" id="first">$400</div></div>
+          <div class="mult"><span id="mult">12×</span>more</div>
+          <div class="box ltv"><div class="l">Lifetime value</div><div class="v" id="ltv">$4,800</div></div>
+        </div>
+        <div class="insight" id="insight">A client isn't worth <b>$400</b>. They're worth <b>$4,800</b>.</div>
+        <div class="afford" id="afford">—</div>
+      </div>
+    </div>
+    <div class="foot">Your numbers, modeled — not a projection or a promise. The number itself is the point: it changes what counts as a smart investment.</div>
+  </div>
+</div>
+<script>
+(function(){
+  const $=(id)=>document.getElementById(id);
+  const money=(n)=>"$"+Math.round(n).toLocaleString("en-US");
+  const num=(el,f)=>{const v=parseFloat(el.value); return Number.isFinite(v)&&v>0?v:f;};
+  function render(){
+    const sale=num($("b-sale"),1), freq=num($("b-freq"),1), years=num($("b-years"),1);
+    const ltv=sale*freq*years;
+    const mult=ltv/sale;
+    $("first").textContent=money(sale);
+    $("ltv").textContent=money(ltv);
+    $("mult").textContent=(mult>=10?Math.round(mult):mult.toFixed(1))+"×";
+    $("insight").innerHTML=`A client isn't worth <b>${money(sale)}</b>. They're worth <b>${money(ltv)}</b>.`;
+    const budget=ltv*0.2;
+    $("afford").innerHTML=`If a client is worth <b>${money(ltv)}</b>, spending <b>${money(budget)}</b> to win one is about 20% of the relationship — not an expense, an investment. At the single-sale price of ${money(sale)}, that same spend looked reckless. <b>Same client. The number changed the decision.</b>`;
+  }
+  ["b-sale","b-freq","b-years"].forEach(id=>{ $(id).addEventListener("input",render); $(id).addEventListener("change",render); });
+  render();
+})();
+</script>
+<script>
+(function(){function p(){try{parent.postMessage({ctcEmbed:true,height:(function(){var e=document.querySelector('.ctc')||document.body;return Math.ceil(e.getBoundingClientRect().bottom)+14;})()},"*");}catch(e){}}window.addEventListener("load",p);window.addEventListener("resize",p);try{new MutationObserver(p).observe(document.body,{subtree:true,childList:true,attributes:true,characterData:true});}catch(e){}setTimeout(p,300);setTimeout(p,900);})();
+</script>
+</body>
+</html>

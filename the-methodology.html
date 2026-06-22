@@ -56,30 +56,42 @@
       <h3>Three Ways to Grow a Business</h3>
       <p>Every revenue increase traces back to one of three moves: more clients, more transactions per client, or more revenue per transaction. There is no fourth. The reason this matters isn't the taxonomy — it's the discipline. When you know which lever you're pulling, you stop diffusing your effort across all three simultaneously. Most businesses are generating modest results from three underworked levers. Most breakthroughs come from going deep on one.</p>
 
+      <div class="interactive"><iframe class="ctc-embed" src="interactives/three-ways.html" title="Interactive — The Three Ways to Grow a Business" loading="lazy" scrolling="no" height="800"></iframe></div>
+
       <hr class="rule" />
 
       <h3>Strategy of Preeminence</h3>
       <p>This is the frame that changes how a business owner shows up, not just what they offer. Preeminence means positioning yourself as the definitive, trusted authority in your client's life for the problem you solve — not a vendor who completes transactions, but a practitioner who takes genuine responsibility for their outcomes. When this clicks, the sales dynamic reverses. You stop convincing and start attracting. The clients who are right for you self-select.</p>
 
+      <div class="interactive"><iframe class="ctc-embed" src="interactives/preeminence.html" title="Interactive — The Strategy of Preeminence" loading="lazy" scrolling="no" height="680"></iframe></div>
+
       <hr class="rule" />
 
-      <h3>Host-Beneficiary Relationships</h3>
-      <p>You don't have to own a large audience to access one. Every business owner is already in relationship with another business that has the trust and attention of your ideal client. A host-beneficiary arrangement turns that relationship into a channel — with the right framing, it's additive for everyone involved. Most business owners have five of these relationships sitting unused because they haven't named the structure clearly enough to act on it.</p>
+      <h3>Relationship Capital</h3>
+      <p>You don't have to own a large audience to reach one. Every business owner is already in relationship with other businesses that hold the trust and attention of their ideal client. Relationship capital is what you have the moment you name those relationships clearly enough to turn one into a channel — framed as a win for everyone involved. Most owners have around five of these sitting unused.</p>
+
+      <div class="interactive"><iframe class="ctc-embed" src="interactives/relationship-capital.html" title="Interactive — Relationship Capital" loading="lazy" scrolling="no" height="820"></iframe></div>
 
       <hr class="rule" />
 
       <h3>Risk Reversal</h3>
       <p>The biggest barrier to a first transaction is rarely price. It's perceived risk — the prospect's fear that they'll spend money or time and not get the result they're hoping for. Risk reversal transfers that fear from the buyer to the seller, which requires real confidence in your offering. Businesses that do this well close faster, attract better clients, and generate more referrals. The guarantee itself is rarely the expensive part; the positioning shift is where the value lives.</p>
 
+      <div class="interactive"><iframe class="ctc-embed" src="interactives/risk-reversal.html" title="Interactive — Risk Reversal" loading="lazy" scrolling="no" height="740"></iframe></div>
+
       <hr class="rule" />
 
       <h3>Lifetime Value</h3>
       <p>Every business owner knows, vaguely, that a repeat client is worth more than a first-time one. Very few have actually calculated it. When you do — when you have a real number for the average lifetime value of a client relationship — your entire acquisition calculus changes. Investments that looked unprofitable at the transaction level become obvious. Retention investments you've been postponing become urgent. The business you're running begins to look different.</p>
 
+      <div class="interactive"><iframe class="ctc-embed" src="interactives/lifetime-value.html" title="Interactive — Lifetime Value" loading="lazy" scrolling="no" height="700"></iframe></div>
+
       <hr class="rule" />
 
       <h3>Education-Based Marketing</h3>
       <p>People buy when they understand. Not when they're pressured — when they genuinely understand why what you're offering matters for their specific situation. Education-based marketing builds that understanding in advance, so by the time someone is considering working with you, the trust and clarity are already there. It also positions you as someone who operates from abundance — sharing what you know because you're confident in what you do.</p>
+
+      <div class="interactive"><iframe class="ctc-embed" src="interactives/education-based-marketing.html" title="Interactive — Education-Based Marketing" loading="lazy" scrolling="no" height="740"></iframe></div>
     </div>
   </section>
 
@@ -89,7 +101,7 @@
       <p class="section-label">What This Looks Like in Practice</p>
       <h2>These frameworks don't work because they're clever. They work because they're true.</h2>
       <p>In a recent session, a member was pricing a new service offer. She had arrived at her number by halving what she thought the market could bear. We applied the Lifetime Value frame to her existing client relationships, calculated the actual number, and she repriced on the spot — not because the framework told her to, but because the math made the decision obvious.</p>
-      <p>In another session, a member had been sitting on a potential host-beneficiary relationship for eight months because he couldn't figure out how to frame the ask. We built the frame in the session. He made the call that week.</p>
+      <p>In another session, a member had been sitting on a piece of relationship capital for eight months because he couldn't figure out how to frame the ask. We built the frame in the session. He made the call that week.</p>
       <p>Having someone apply these frameworks to your actual situation, with your actual numbers, is different from reading about them in a book. That's the whole point of the room.</p>
 
       <hr class="rule" />
@@ -126,5 +138,17 @@
     </div>
   </footer>
 
+  <style>
+    .interactive{ margin:22px 0 6px; }
+    .interactive iframe.ctc-embed{ width:100%; border:0; display:block; overflow:hidden; transition:height .2s ease; }
+  </style>
+  <script>
+  // Same-origin interactive embeds report their height; size each iframe to fit.
+  window.addEventListener("message", function(e){
+    var d = e.data; if(!d || !d.ctcEmbed || !d.height) return;
+    var frames = document.querySelectorAll("iframe.ctc-embed");
+    for (var i=0;i<frames.length;i++){ if (frames[i].contentWindow === e.source){ frames[i].style.height = (d.height + 4) + "px"; } }
+  });
+  </script>
 </body>
 </html>
