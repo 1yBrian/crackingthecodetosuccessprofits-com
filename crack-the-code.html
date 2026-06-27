@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Crack the Code to Success &amp; Profits — a 2-minute read on the growth you're leaving on the table</title>
+<meta name="description" content="A short, honest diagnostic built on Jay Abraham's three ways to grow a business. See which growth lever you're leaving on the table — in about two minutes.">
+<style>
+  :root{
+    --ink:#15201b; --muted:#566;  --faint:#8a978f;
+    --paper:#f6f4ee; --card:#ffffff; --line:#e4ded2;
+    --green:#0f6e56; --green-soft:#e2f3ec; --green-ink:#07402f;
+    --gold:#b07d1e; --gold-soft:#f6ecd6; --gold-ink:#6e4d0c;
+    --dark:#12221c; --dark-2:#0c1813;
+    --shadow:0 1px 2px rgba(20,30,25,.05), 0 8px 30px rgba(20,30,25,.07);
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{font-family:-apple-system,Helvetica,Arial,sans-serif; background:var(--paper); color:var(--ink); line-height:1.6; font-size:18px; -webkit-font-smoothing:antialiased;}
+  .serif{font-family:Georgia,'Times New Roman',serif;}
+  .wrap{max-width:780px; margin:0 auto; padding:0 20px;}
+
+  /* ---------- HERO ---------- */
+  .hero{background:linear-gradient(160deg,var(--dark) 0%,var(--dark-2) 100%); color:#eef3f0; position:relative; overflow:hidden;}
+  .hero::after{content:""; position:absolute; left:0; right:0; bottom:0; height:3px;
+    background:linear-gradient(90deg,var(--gold) 0%,#e6c878 50%,var(--gold) 100%); opacity:.9;}
+  .hero .wrap{padding:64px 20px 72px;}
+  .eyebrow{font-size:.78rem; letter-spacing:.18em; text-transform:uppercase; color:#cdb277; font-weight:600; margin-bottom:22px;}
+  .hero h1{font-family:Georgia,serif; font-weight:400; font-size:2.5rem; line-height:1.18; letter-spacing:-.01em; margin-bottom:18px;}
+  .hero h1 em{font-style:italic; color:#e6c878;}
+  .hero .sub{font-size:1.18rem; color:#bcccc4; max-width:30em; margin-bottom:14px;}
+  .hero .meta{font-size:.95rem; color:#8fa69c; margin-bottom:34px;}
+  .hero .meta b{color:#cdd9d2; font-weight:600;}
+  .btn{display:inline-flex; align-items:center; gap:10px; font:inherit; font-weight:600; font-size:1.05rem; cursor:pointer;
+    border:0; border-radius:999px; padding:15px 30px; background:var(--gold); color:#241701; box-shadow:var(--shadow);
+    transition:transform .12s ease, box-shadow .12s ease, background .12s ease;}
+  .btn:hover{transform:translateY(-1px); background:#c68d27;}
+  .btn.green{background:var(--green); color:#fff;} .btn.green:hover{background:#0c5d49;}
+  .btn.ghost{background:transparent; color:#cdd9d2; border:1px solid #36473f; box-shadow:none;}
+  .btn.ghost:hover{background:#16271f; transform:none;}
+  .btn[disabled]{opacity:.45; cursor:not-allowed; transform:none;}
+  .arrow{font-size:1.1em; line-height:1;}
+  .pillars{display:flex; flex-wrap:wrap; gap:10px; margin-top:30px;}
+  .pillars span{font-size:.82rem; letter-spacing:.02em; color:#9fb3aa; border:1px solid #2c3c34; border-radius:999px; padding:6px 13px;}
+
+  /* ---------- SECTIONS ---------- */
+  section{padding:48px 0;}
+  .lede{font-size:1.05rem; color:var(--muted);}
+  .step{display:none;}
+  .step.active{display:block; animation:fade .35s ease;}
+  @keyframes fade{from{opacity:0; transform:translateY(6px);} to{opacity:1; transform:none;}}
+
+  /* progress */
+  .progress{display:flex; align-items:center; gap:14px; margin-bottom:26px;}
+  .bar{flex:1; height:6px; background:#e4ded2; border-radius:999px; overflow:hidden;}
+  .bar > i{display:block; height:100%; width:0; background:linear-gradient(90deg,var(--green),#1c9070); border-radius:999px; transition:width .35s ease;}
+  .count{font-size:.82rem; color:var(--faint); white-space:nowrap; font-variant-numeric:tabular-nums;}
+
+  .qcard{background:var(--card); border:1px solid var(--line); border-radius:16px; padding:30px 28px 26px; box-shadow:var(--shadow);}
+  .qkicker{font-size:.74rem; letter-spacing:.14em; text-transform:uppercase; color:var(--gold-ink); font-weight:700; margin-bottom:12px;}
+  .qcard h2{font-family:Georgia,serif; font-weight:400; font-size:1.55rem; line-height:1.3; margin-bottom:8px;}
+  .qhelp{color:var(--muted); font-size:.98rem; margin-bottom:22px;}
+
+  .opts{display:grid; gap:10px;}
+  .opt{display:flex; align-items:center; gap:14px; text-align:left; width:100%; font:inherit; cursor:pointer;
+    background:#fcfbf8; border:1.5px solid var(--line); border-radius:12px; padding:15px 18px; color:var(--ink); transition:border-color .12s, background .12s;}
+  .opt:hover{border-color:#c9bfa6; background:#fbf7ee;}
+  .opt.sel{border-color:var(--green); background:var(--green-soft); box-shadow:inset 0 0 0 1px var(--green);}
+  .opt .dot{flex:0 0 20px; height:20px; border-radius:50%; border:2px solid #c2b89f; position:relative;}
+  .opt.sel .dot{border-color:var(--green);}
+  .opt.sel .dot::after{content:""; position:absolute; inset:3px; border-radius:50%; background:var(--green);}
+  .opt .lab{flex:1;}
+
+  .scale{display:grid; grid-template-columns:repeat(5,1fr); gap:8px; margin-top:6px;}
+  .scale button{font:inherit; cursor:pointer; background:#fcfbf8; border:1.5px solid var(--line); border-radius:12px; padding:16px 6px 12px; text-align:center; color:var(--ink); transition:border-color .12s, background .12s, transform .1s;}
+  .scale button:hover{border-color:#c9bfa6;}
+  .scale button.sel{border-color:var(--green); background:var(--green-soft); box-shadow:inset 0 0 0 1px var(--green); transform:translateY(-1px);}
+  .scale .n{display:block; font-family:Georgia,serif; font-size:1.5rem; line-height:1;}
+  .scale .t{display:block; font-size:.72rem; color:var(--muted); margin-top:7px; min-height:2.2em;}
+  .scends{display:flex; justify-content:space-between; font-size:.78rem; color:var(--faint); margin-top:10px;}
+
+  .nav{display:flex; justify-content:space-between; align-items:center; margin-top:24px;}
+  .link{background:none; border:0; font:inherit; color:var(--muted); cursor:pointer; padding:8px 4px;}
+  .link:hover{color:var(--ink);} .link[disabled]{opacity:0; pointer-events:none;}
+
+  /* ---------- RESULT ---------- */
+  .rhead{text-align:center; margin-bottom:8px;}
+  .rhead .eyebrow{color:var(--gold-ink);}
+  .rhead h1{font-family:Georgia,serif; font-weight:400; font-size:2.3rem; line-height:1.2; margin:6px 0 12px;}
+  .rhead .oneline{font-size:1.15rem; color:var(--muted); max-width:30em; margin:0 auto;}
+  .chip{display:inline-block; font-size:.7rem; letter-spacing:.05em; text-transform:uppercase; font-weight:700; padding:3px 10px; border-radius:999px; vertical-align:middle;}
+  .chip.real{background:var(--green-soft); color:var(--green-ink);}
+  .chip.modeled{background:var(--gold-soft); color:var(--gold-ink);}
+  .panel{background:var(--card); border:1px solid var(--line); border-radius:16px; padding:26px 26px; margin:18px 0; box-shadow:var(--shadow);}
+  .panel h3{font-family:Georgia,serif; font-weight:400; font-size:1.3rem; margin-bottom:4px; display:flex; gap:10px; align-items:center; flex-wrap:wrap;}
+  .panel .note{font-size:.9rem; color:var(--faint); margin:10px 0 16px;}
+
+  .levers{display:grid; gap:13px; margin-top:6px;}
+  .lever{display:grid; grid-template-columns:1fr; gap:6px;}
+  .lever .top{display:flex; justify-content:space-between; align-items:baseline; gap:10px;}
+  .lever .name{font-weight:600;} .lever .name small{font-weight:400; color:var(--faint);}
+  .lever .pct{font-variant-numeric:tabular-nums; color:var(--muted); font-size:.9rem;}
+  .track{height:12px; background:#eee7d8; border-radius:999px; overflow:hidden;}
+  .track > i{display:block; height:100%; width:0; border-radius:999px; background:linear-gradient(90deg,#1c9070,var(--green)); transition:width .8s cubic-bezier(.2,.8,.2,1);}
+  .lever.gap .track > i{background:linear-gradient(90deg,#d7a93b,var(--gold));}
+  .lever.gap .name::after{content:"the opening"; font-size:.66rem; letter-spacing:.04em; text-transform:uppercase; font-weight:700; color:var(--gold-ink); background:var(--gold-soft); padding:2px 8px; border-radius:999px; margin-left:8px;}
+  .lever.top-strength .name::after{content:"your strength"; font-size:.66rem; letter-spacing:.04em; text-transform:uppercase; font-weight:700; color:var(--green-ink); background:var(--green-soft); padding:2px 8px; border-radius:999px; margin-left:8px;}
+
+  blockquote{border-left:3px solid var(--green); padding:4px 0 4px 16px; margin:14px 0 0; color:var(--green-ink); font-style:italic;}
+  .move{font-size:1.08rem; line-height:1.6;}
+  .premise{background:var(--dark); color:#dde8e2; border:0;}
+  .premise h3{color:#e6c878;} .premise p{color:#bccabf;} .premise b{color:#fff; font-weight:600;}
+
+  /* capture */
+  .capture{border:2px solid var(--green); background:linear-gradient(180deg,#fff,#fafdfb);}
+  .field{margin:14px 0;}
+  .field label{display:block; font-size:.85rem; font-weight:600; color:var(--ink); margin-bottom:6px;}
+  .field label .opt-tag{font-weight:400; color:var(--faint);}
+  .field input, .field textarea{width:100%; font:inherit; font-size:1rem; color:var(--ink); background:#fff; border:1.5px solid var(--line); border-radius:11px; padding:13px 15px;}
+  .field input:focus, .field textarea:focus{outline:none; border-color:var(--green); box-shadow:0 0 0 3px var(--green-soft);}
+  .field textarea{min-height:74px; resize:vertical;}
+  .formnote{font-size:.82rem; color:var(--faint); margin-top:4px;}
+  .err{color:#a32a2a; font-size:.85rem; margin-top:8px; display:none;}
+  .secondary{text-align:center; margin-top:18px;}
+  .secondary button{background:none; border:0; font:inherit; color:var(--muted); text-decoration:underline; cursor:pointer;}
+  .secondary button:hover{color:var(--ink);}
+
+  .done{text-align:center; padding:10px 0;}
+  .done .mark{width:58px; height:58px; border-radius:50%; background:var(--green-soft); color:var(--green); display:flex; align-items:center; justify-content:center; font-size:1.9rem; margin:0 auto 16px;}
+  .done h2{font-family:Georgia,serif; font-weight:400; font-size:1.7rem; margin-bottom:8px;}
+  .done p{color:var(--muted); max-width:28em; margin:0 auto 8px;}
+
+  footer{border-top:1px solid var(--line); padding:30px 0 50px; color:var(--faint); font-size:.82rem; text-align:center;}
+  footer b{color:var(--muted);}
+  .hidden{display:none !important;}
+  @media (max-width:560px){
+    body{font-size:17px;} .hero h1{font-size:2rem;} .rhead h1{font-size:1.85rem;}
+    .scale .n{font-size:1.25rem;} .scale .t{font-size:.66rem;}
+  }
+</style>
+</head>
+<body>
+
+<!-- ===================== HERO ===================== -->
+<header class="hero" id="top">
+  <div class="wrap">
+    <div class="eyebrow">Cracking the Code to Success &amp; Profits</div>
+    <h1 class="serif">There are only three ways to grow a business.<br><em>Most owners run on one.</em></h1>
+    <p class="sub">This is a short, honest read on the growth you're leaving on the table — built on the framework Jay Abraham has used with companies for forty years.</p>
+    <p class="meta"><b>About 2 minutes.</b> Seven questions. A straight answer at the end — no pitch to sit through.</p>
+    <button class="btn" id="startBtn">Find my opening <span class="arrow">→</span></button>
+    <div class="pillars">
+      <span>More clients</span><span>Worth more per client</span><span>Buying more often</span><span>+ the assets you already own</span>
+    </div>
+  </div>
+</header>
+
+<!-- ===================== QUIZ ===================== -->
+<section id="quiz" class="hidden">
+  <div class="wrap">
+    <div class="progress">
+      <div class="bar"><i id="progFill"></i></div>
+      <div class="count" id="progCount">1 / 7</div>
+    </div>
+    <div id="steps"></div>
+    <div class="nav">
+      <button class="link" id="backBtn" disabled>← Back</button>
+      <span style="font-size:.8rem; color:var(--faint)">Your answers are real; the read at the end is modeled.</span>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== RESULT ===================== -->
+<section id="result" class="hidden">
+  <div class="wrap">
+    <div class="rhead">
+      <div class="eyebrow">Your Crack-the-Code read</div>
+      <h1 class="serif" id="archetype">—</h1>
+      <p class="oneline" id="oneline">—</p>
+    </div>
+
+    <div class="panel">
+      <h3>What you told us <span class="chip real">Real · your answers</span></h3>
+      <p class="note">Straight from how you answered — the levers, side by side. The shortest bar is where the most growth is usually hiding.</p>
+      <div class="levers" id="levers"></div>
+      <blockquote id="selfQuote"></blockquote>
+    </div>
+
+    <div class="panel">
+      <h3>Where the hidden profit likely sits <span class="chip modeled">Modeled · to confirm</span></h3>
+      <p class="note">A modeled read of your answers — a possibility to test, not a guaranteed result.</p>
+      <p class="move" id="oneMove">—</p>
+    </div>
+
+    <div class="panel premise">
+      <h3>The premise underneath this</h3>
+      <p id="premise">—</p>
+    </div>
+
+    <!-- capture -->
+    <div class="panel capture" id="captureCard">
+      <h3 id="captureH">Want the full breakdown?</h3>
+      <p class="note" id="captureSub">We'll send a personalized Crack-the-Code breakdown for your business — your levers in full, and the specific moves worth testing first. No spam, no pitch on a timer.</p>
+      <div class="field">
+        <label for="fName">First name <span class="opt-tag">— so it's addressed to you</span></label>
+        <input id="fName" type="text" autocomplete="given-name" placeholder="Your first name">
+      </div>
+      <div class="field">
+        <label for="fEmail">Email</label>
+        <input id="fEmail" type="email" autocomplete="email" placeholder="you@yourbusiness.com">
+      </div>
+      <div class="field">
+        <label for="fBiz">What kind of business is this? <span class="opt-tag">— optional, makes the breakdown specific</span></label>
+        <input id="fBiz" type="text" placeholder="e.g. dental practice, agency, coaching, retail…">
+      </div>
+      <div class="field">
+        <label for="fWhy">What would cracking this open mean for you? <span class="opt-tag">— optional, in your words</span></label>
+        <textarea id="fWhy" placeholder="The reason this matters right now…"></textarea>
+      </div>
+      <button class="btn green" id="sendBtn" style="width:100%; justify-content:center;">Send my full breakdown</button>
+      <div class="err" id="formErr"></div>
+      <div class="formnote">Your answers stay private. You'll hear from a person, not a funnel.</div>
+      <div class="secondary">
+        <button id="skipBtn">Not ready to share that? Take the move above and run with it — it's yours.</button>
+      </div>
+    </div>
+
+    <!-- success -->
+    <div class="panel hidden" id="doneCard">
+      <div class="done">
+        <div class="mark">✓</div>
+        <h2 id="doneH">We've got it.</h2>
+        <p id="doneP">—</p>
+        <p style="margin-top:14px"><b>Your first step is right above</b> — the one move. Start there; the full breakdown builds on it.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p><b>Cracking the Code to Success &amp; Profits</b> — an honest growth diagnostic.</p>
+    <p style="margin-top:6px">Powered by the Client Engagement System · CEM³ &nbsp;·&nbsp; Your answers are real; the read is a modeled possibility to confirm, never a guaranteed result.</p>
+  </div>
+</footer>
+
+<script>
+/* =======================================================================
+   CONFIG — the bits Brian may want to flip after seeing it live.
+   The CTA destination is intentionally easy to change in one place.
+   ======================================================================= */
+const CONFIG = {
+  captureEndpoint: "/api/crack-the-code",
+  // Primary call to action after the result. mode: "breakdown" (email capture).
+  // Later options without a rebuild: point sendBtn elsewhere, or turn on a
+  // secondary invite (e.g. the free Monday session) by filling secondaryInvite.
+  secondaryInvite: null,   // e.g. { label: "Or join the next free Monday session →", href: "https://…" }
+  brand: "CEM³ · Client Engagement System"
+};
+
+/* =======================================================================
+   THE DIAGNOSTIC
+   Five growth levers (higher score = more activated). The lowest is the
+   "opening"; the highest is the current "strength". Jay Abraham's three
+   ways to grow (clients · value · frequency) + the two deeper levers most
+   owners ignore (dormant assets · preeminence).
+   ======================================================================= */
+const LEVER_LABELS = {
+  acquisition: { name: "More clients",          sub: "a predictable way to bring people in" },
+  value:       { name: "Worth more per client", sub: "the size of each sale" },
+  frequency:   { name: "Buying more often",     sub: "repeat business & retention" },
+  assets:      { name: "Assets you already own",sub: "past clients, trust, referrals" },
+  preeminence: { name: "Trusted-advisor pull",  sub: "first call, not one of several" }
+};
+const SCALE_TXT = ["Not at all", "Rarely", "Somewhat", "Mostly", "Consistently"];
+
+const QUESTIONS = [
+  {
+    id: "q1", lever: "acquisition", type: "choice",
+    kicker: "Way 1 — More clients",
+    q: "Where do most of your new clients come from right now?",
+    help: "Jay Abraham calls a healthy mix your “Power Parthenon” — many pillars, not one.",
+    options: [
+      { label: "Mostly one channel — referrals, or ads, or one platform", score: 22 },
+      { label: "It's honestly unpredictable, month to month", score: 12 },
+      { label: "Two or three reliable sources", score: 62 },
+      { label: "Many channels working together", score: 95 }
+    ]
+  },
+  {
+    id: "q2", lever: "acquisition", type: "scale",
+    kicker: "Way 1 — More clients",
+    q: "You have a repeatable system that brings in new clients — not luck, not word-of-mouth alone.",
+    help: "How predictable is your client flow?"
+  },
+  {
+    id: "q3", lever: "value", type: "scale",
+    kicker: "Way 2 — Worth more per client",
+    q: "You regularly offer existing clients a next step, an upgrade, or a higher-value option.",
+    help: "The average sale is where quiet profit usually hides."
+  },
+  {
+    id: "q4", lever: "frequency", type: "scale",
+    kicker: "Way 3 — Buying more often",
+    q: "After the first purchase, your clients come back and buy again on their own.",
+    help: "Repeat business is the cheapest growth there is."
+  },
+  {
+    id: "q5", lever: "assets", type: "scale",
+    kicker: "The lever most owners walk past",
+    q: "You actively re-engage past clients and turn happy ones into referrals.",
+    help: "The warmest growth is the relationships you already have."
+  },
+  {
+    id: "q6", lever: "preeminence", type: "scale",
+    kicker: "The strategy of preeminence",
+    q: "Your clients see you as their trusted advisor — the first person they come to — not one option among several.",
+    help: "When you're the trusted advisor, price stops running the conversation."
+  },
+  {
+    id: "q7", lever: "_self", type: "choice",
+    kicker: "In your own words",
+    q: "If you could fix one thing about your growth, which would it be?",
+    help: "This one is for you — we'll mirror it back, not score it.",
+    options: [
+      { label: "Get more clients in the door",            self: "acquisition" },
+      { label: "Make each client worth more",             self: "value" },
+      { label: "Get clients coming back & staying",        self: "frequency" },
+      { label: "Stop depending on one source of business",self: "assets" },
+      { label: "Become the obvious first choice",          self: "preeminence" },
+      { label: "Honestly, I'm not sure — that's why I'm here", self: "_unsure" }
+    ]
+  }
+];
+
+const ARCHETYPE = {
+  acquisition: { name: "The Feast-or-Famine Engine",
+    line: "Your growth rides on new clients arriving — and when the channel goes quiet, so does the business." },
+  value: { name: "The Underpriced Operator",
+    line: "You're doing the work but leaving money in every transaction — the sale is smaller than it could honestly be." },
+  frequency: { name: "The One-and-Done Business",
+    line: "You win the client, deliver, and then they drift — the repeat business that's right there isn't being earned." },
+  assets: { name: "The Dormant Network",
+    line: "You're sitting on relationships and goodwill you've already built — and barely activating them." },
+  preeminence: { name: "The Best-Kept Secret",
+    line: "Your work is strong, but to the market you read as one option among several instead of the obvious choice." }
+};
+
+const ONE_MOVE = {
+  acquisition: "Build a second and third way to bring in clients so the business doesn't ride on one channel — Abraham calls this your Power Parthenon. Owners in your pattern usually find the most leverage here. A possibility to test, not a promise.",
+  value: "Add one honest next-step or higher-value option to what clients already buy from you. Raising the average sale is often the fastest, quietest profit — worth modeling before you ever chase a new lead.",
+  frequency: "Give clients a real reason and a rhythm to come back — a follow-on, a check-in, a next purchase that genuinely serves them. Repeat business is the cheapest growth there is, and it's the lever you're closest to.",
+  assets: "Re-engage the past clients and trusted relationships you already have, and make referrals something you ask for on purpose. It's the warmest, lowest-cost growth most owners walk straight past.",
+  preeminence: "Shift from vendor to trusted advisor — lead with their outcome, become the first call. When clients come to you first, competition and price stop setting the terms."
+};
+
+/* ---------- state ---------- */
+const answers = {};       // qid -> raw value (choice index or scale 1..5)
+let idx = 0;
+const $ = (s) => document.querySelector(s);
+
+/* ---------- render a step ---------- */
+function renderStep() {
+  const Q = QUESTIONS[idx];
+  const stepsEl = $("#steps");
+  let body = "";
+  if (Q.type === "scale") {
+    body = `<div class="scale">${[1,2,3,4,5].map(n =>
+      `<button data-v="${n}" class="${answers[Q.id]===n?'sel':''}">
+         <span class="n">${n}</span><span class="t">${SCALE_TXT[n-1]}</span></button>`).join("")}</div>
+      <div class="scends"><span>Not at all</span><span>Consistently</span></div>`;
+  } else {
+    body = `<div class="opts">${Q.options.map((o,i) =>
+      `<button class="opt ${answers[Q.id]===i?'sel':''}" data-i="${i}">
+         <span class="dot"></span><span class="lab">${o.label}</span></button>`).join("")}</div>`;
+  }
+  stepsEl.innerHTML = `
+    <div class="step active">
+      <div class="qcard">
+        <div class="qkicker">${Q.kicker}</div>
+        <h2 class="serif">${Q.q}</h2>
+        <p class="qhelp">${Q.help}</p>
+        ${body}
+      </div>
+    </div>`;
+
+  // wire choices
+  stepsEl.querySelectorAll(".scale button").forEach(b =>
+    b.addEventListener("click", () => choose(Q, parseInt(b.dataset.v, 10))));
+  stepsEl.querySelectorAll(".opt").forEach(b =>
+    b.addEventListener("click", () => choose(Q, parseInt(b.dataset.i, 10))));
+
+  $("#progCount").textContent = `${idx+1} / ${QUESTIONS.length}`;
+  $("#progFill").style.width = `${(idx)/(QUESTIONS.length)*100}%`;
+  $("#backBtn").disabled = idx === 0;
+}
+
+function choose(Q, val) {
+  answers[Q.id] = val;
+  // brief highlight, then advance
+  setTimeout(() => {
+    if (idx < QUESTIONS.length - 1) { idx++; renderStep(); }
+    else { $("#progFill").style.width = "100%"; showResult(); }
+  }, 180);
+  renderStep();
+}
+
+/* ---------- scoring (deterministic) ---------- */
+function scoreFrom(scaleVal) { return Math.round(((scaleVal - 1) / 4) * 100); }
+
+function compute() {
+  const s = { acquisition: null, value: null, frequency: null, assets: null, preeminence: null };
+  // acquisition = blend of q1 (source mix) and q2 (predictable engine)
+  const q1 = QUESTIONS[0].options[answers.q1]?.score ?? 40;
+  const q2 = answers.q2 ? scoreFrom(answers.q2) : 40;
+  s.acquisition = Math.round((q1 + q2) / 2);
+  s.value       = answers.q3 ? scoreFrom(answers.q3) : 40;
+  s.frequency   = answers.q4 ? scoreFrom(answers.q4) : 40;
+  s.assets      = answers.q5 ? scoreFrom(answers.q5) : 40;
+  s.preeminence = answers.q6 ? scoreFrom(answers.q6) : 40;
+
+  const entries = Object.entries(s);
+  let gap = entries[0], top = entries[0];
+  for (const e of entries) { if (e[1] < gap[1]) gap = e; if (e[1] > top[1]) top = e; }
+
+  // honour the felt sense: if their self-pick is a real lever and within 12 pts of
+  // the lowest, treat it as the opening (their lived read breaks the tie).
+  const self = QUESTIONS[6].options[answers.q7]?.self;
+  if (self && self !== "_unsure" && s[self] != null && s[self] - gap[1] <= 12) {
+    gap = [self, s[self]];
+  }
+
+  return {
+    scores: s,
+    gapLever: gap[0],
+    topLever: top[0],
+    self,
+    archetype: ARCHETYPE[gap[0]].name,
+    archetypeLine: ARCHETYPE[gap[0]].line,
+    oneMove: ONE_MOVE[gap[0]]
+  };
+}
+
+let RESULT = null;
+
+/* ---------- render result ---------- */
+function showResult() {
+  RESULT = compute();
+  try { localStorage.setItem("ctc_last", JSON.stringify({ answers, result: RESULT, at: new Date().toISOString() })); } catch (e) {}
+
+  $("#quiz").classList.add("hidden");
+  const r = $("#result"); r.classList.remove("hidden");
+
+  $("#archetype").textContent = RESULT.archetype;
+  $("#oneline").textContent = RESULT.archetypeLine;
+
+  // levers, gap last-emphasis via class
+  const order = Object.keys(LEVER_LABELS);
+  $("#levers").innerHTML = order.map(k => {
+    const v = RESULT.scores[k];
+    const cls = k === RESULT.gapLever ? "gap" : (k === RESULT.topLever ? "top-strength" : "");
+    return `<div class="lever ${cls}">
+      <div class="top"><span class="name">${LEVER_LABELS[k].name} <small>· ${LEVER_LABELS[k].sub}</small></span><span class="pct">${v}/100</span></div>
+      <div class="track"><i style="width:0" data-w="${v}"></i></div>
+    </div>`;
+  }).join("");
+  // animate bars
+  requestAnimationFrame(() => $("#levers").querySelectorAll(".track > i").forEach(i => i.style.width = i.dataset.w + "%"));
+
+  // self quote
+  const selfText = QUESTIONS[6].options[answers.q7]?.label;
+  $("#selfQuote").innerHTML = selfText
+    ? `You said the one thing you'd fix is: <strong>“${selfText.replace(/^[A-Z]/, c=>c.toLowerCase())}.”</strong>`
+    : "";
+
+  $("#oneMove").textContent = RESULT.oneMove;
+
+  const top = LEVER_LABELS[RESULT.topLever].name.toLowerCase();
+  const gap = LEVER_LABELS[RESULT.gapLever].name.toLowerCase();
+  $("#premise").innerHTML = `Jay Abraham's premise is simple: there are only <b>three ways to grow a business</b> — more clients, each client worth more, and clients buying more often — and the real money shows up when you work <b>all three at once</b>, plus the assets you already own. You're strongest on <b>${top}</b>. The opening — the lever you're leaving on the table — is <b>${gap}</b>.`;
+
+  // optional secondary invite
+  if (CONFIG.secondaryInvite) {
+    const sec = $(".secondary");
+    sec.insertAdjacentHTML("afterbegin",
+      `<a class="btn green" style="margin-bottom:14px" href="${CONFIG.secondaryInvite.href}">${CONFIG.secondaryInvite.label}</a><br>`);
+  }
+
+  r.scrollIntoView({ behavior: "smooth", block: "start" });
+}
+
+/* ---------- capture ---------- */
+const EMAIL_RE = /^[^@\s]+@[^@\s]+\.[^@\s]+$/;
+
+async function send(path) {
+  const firstName = $("#fName").value.trim();
+  const email = $("#fEmail").value.trim();
+  const businessType = $("#fBiz").value.trim();
+  const why = $("#fWhy").value.trim();
+  const err = $("#formErr");
+
+  if (!EMAIL_RE.test(email)) { err.textContent = "Please add a valid email so we can send the breakdown."; err.style.display = "block"; return; }
+  err.style.display = "none";
+  $("#sendBtn").disabled = true; $("#sendBtn").textContent = "Sending…";
+
+  const payload = { firstName, email, businessType, why, path, profile: RESULT, answers };
+  try { localStorage.setItem("ctc_capture", JSON.stringify({ payload, at: new Date().toISOString() })); } catch (e) {}
+
+  let ok = false;
+  try {
+    const res = await fetch(CONFIG.captureEndpoint, {
+      method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(payload)
+    });
+    ok = res.ok;
+    if (!ok) { const d = await res.json().catch(()=>({})); if (d.reason) err.textContent = d.reason; }
+  } catch (e) { ok = false; }
+
+  // After-the-Yes: the engagement begins on the response. We always advance to the
+  // value-returned state; a transient capture error is logged + retried server-side,
+  // never a dead end for the person.
+  showDone(firstName, ok);
+}
+
+function showDone(name, ok) {
+  $("#captureCard").classList.add("hidden");
+  const d = $("#doneCard"); d.classList.remove("hidden");
+  $("#doneH").textContent = name ? `We've got it, ${name}.` : "We've got it.";
+  $("#doneP").textContent = ok
+    ? "Your personalized Crack-the-Code breakdown is on its way, and a real person will follow up — no funnel, no timer."
+    : "Saved. Your breakdown is queued — a real person will follow up shortly.";
+  d.scrollIntoView({ behavior: "smooth", block: "center" });
+}
+
+/* ---------- wiring ---------- */
+$("#startBtn").addEventListener("click", () => {
+  $("#quiz").classList.remove("hidden");
+  renderStep();
+  $("#quiz").scrollIntoView({ behavior: "smooth", block: "start" });
+});
+$("#backBtn").addEventListener("click", () => { if (idx > 0) { idx--; renderStep(); } });
+$("#sendBtn").addEventListener("click", () => send("yes"));
+$("#skipBtn").addEventListener("click", () => {
+  // graceful maybe/no: keep the value they already have, close the loop kindly.
+  $("#captureCard").classList.add("hidden");
+  const d = $("#doneCard"); d.classList.remove("hidden");
+  $("#doneH").textContent = "Good — take it and run.";
+  $("#doneP").textContent = "The one move above is yours to keep. If you ever want the full breakdown for your business, it'll be here.";
+  d.scrollIntoView({ behavior: "smooth", block: "center" });
+});
+</script>
+</body>
+</html>

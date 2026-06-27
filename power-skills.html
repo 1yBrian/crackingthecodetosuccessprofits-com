@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Crack the Code on Your Power Skills — the human skill quietly deciding your profit</title>
+<meta name="description" content="A short, honest read on the power skills — the human skills — that quietly decide an owner's profit. Which one, strengthened, would move your business most? From Cracking the Code to Success and Profits.">
+<style>
+  :root{
+    --ink:#1b1a14; --muted:#5d5a4e; --faint:#928d7c;
+    --paper:#f6f3ea; --card:#ffffff; --line:#e6dfcd;
+    --green:#0f6e56; --green-soft:#e2f3ec; --green-ink:#07402f;
+    --gold:#c9a84c; --gold-deep:#9a7d24; --gold-soft:#f6eccf; --gold-ink:#6b5410;
+    --dark:#1a1812; --dark-2:#100f0a;
+    --shadow:0 1px 2px rgba(26,24,18,.05), 0 8px 30px rgba(26,24,18,.08);
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{font-family:-apple-system,Helvetica,Arial,sans-serif; background:var(--paper); color:var(--ink); line-height:1.6; font-size:18px; -webkit-font-smoothing:antialiased;}
+  .serif{font-family:Georgia,'Times New Roman',serif;}
+  .wrap{max-width:780px; margin:0 auto; padding:0 20px;}
+
+  .hero{background:linear-gradient(160deg,var(--dark) 0%,var(--dark-2) 100%); color:#efece2; position:relative; overflow:hidden;}
+  .hero::after{content:""; position:absolute; left:0; right:0; bottom:0; height:3px; background:linear-gradient(90deg,var(--gold-deep) 0%,#e6cd83 50%,var(--gold-deep) 100%);}
+  .hero .wrap{padding:62px 20px 70px;}
+  .eyebrow{font-size:.76rem; letter-spacing:.18em; text-transform:uppercase; color:var(--gold); font-weight:600; margin-bottom:20px;}
+  .hero h1{font-family:Georgia,serif; font-weight:400; font-size:2.45rem; line-height:1.18; letter-spacing:-.01em; margin-bottom:18px;}
+  .hero h1 em{font-style:italic; color:#e6cd83;}
+  .hero .sub{font-size:1.16rem; color:#c5c0b1; max-width:31em; margin-bottom:14px;}
+  .hero .meta{font-size:.95rem; color:#9d9787; margin-bottom:32px;}
+  .hero .meta b{color:#d8d3c4; font-weight:600;}
+  .btn{display:inline-flex; align-items:center; gap:10px; font:inherit; font-weight:600; font-size:1.05rem; cursor:pointer; border:0; border-radius:999px; padding:15px 30px; background:var(--gold); color:#2a2207; box-shadow:var(--shadow); transition:transform .12s, box-shadow .12s, background .12s;}
+  .btn:hover{transform:translateY(-1px); background:#d4b558;}
+  .btn.green{background:var(--green); color:#fff;} .btn.green:hover{background:#0c5d49;}
+  .arrow{font-size:1.1em; line-height:1;}
+  .pillars{display:flex; flex-wrap:wrap; gap:10px; margin-top:28px;}
+  .pillars span{font-size:.82rem; color:#a8a292; border:1px solid #3a352770; border-radius:999px; padding:6px 13px;}
+
+  section{padding:46px 0;}
+  .step{display:none;}
+  .step.active{display:block; animation:fade .35s ease;}
+  @keyframes fade{from{opacity:0; transform:translateY(6px);} to{opacity:1; transform:none;}}
+
+  .progress{display:flex; align-items:center; gap:14px; margin-bottom:26px;}
+  .bar{flex:1; height:6px; background:#e6dfcd; border-radius:999px; overflow:hidden;}
+  .bar > i{display:block; height:100%; width:0; background:linear-gradient(90deg,var(--green),#1c9070); border-radius:999px; transition:width .35s ease;}
+  .count{font-size:.82rem; color:var(--faint); white-space:nowrap; font-variant-numeric:tabular-nums;}
+
+  .qcard{background:var(--card); border:1px solid var(--line); border-radius:16px; padding:30px 28px 26px; box-shadow:var(--shadow);}
+  .qkicker{font-size:.74rem; letter-spacing:.14em; text-transform:uppercase; color:var(--gold-ink); font-weight:700; margin-bottom:12px;}
+  .qcard h2{font-family:Georgia,serif; font-weight:400; font-size:1.5rem; line-height:1.32; margin-bottom:8px;}
+  .qhelp{color:var(--muted); font-size:.98rem; margin-bottom:22px;}
+
+  .opts{display:grid; gap:10px;}
+  .opt{display:flex; align-items:center; gap:14px; text-align:left; width:100%; font:inherit; cursor:pointer; background:#fcfaf3; border:1.5px solid var(--line); border-radius:12px; padding:15px 18px; color:var(--ink); transition:border-color .12s, background .12s;}
+  .opt:hover{border-color:#d2c69e; background:#fbf6e8;}
+  .opt.sel{border-color:var(--green); background:var(--green-soft); box-shadow:inset 0 0 0 1px var(--green);}
+  .opt .dot{flex:0 0 20px; height:20px; border-radius:50%; border:2px solid #cabf99; position:relative;}
+  .opt.sel .dot{border-color:var(--green);}
+  .opt.sel .dot::after{content:""; position:absolute; inset:3px; border-radius:50%; background:var(--green);}
+  .opt .lab{flex:1;}
+
+  .scale{display:grid; grid-template-columns:repeat(5,1fr); gap:8px; margin-top:6px;}
+  .scale button{font:inherit; cursor:pointer; background:#fcfaf3; border:1.5px solid var(--line); border-radius:12px; padding:16px 6px 12px; text-align:center; color:var(--ink); transition:border-color .12s, background .12s, transform .1s;}
+  .scale button:hover{border-color:#d2c69e;}
+  .scale button.sel{border-color:var(--green); background:var(--green-soft); box-shadow:inset 0 0 0 1px var(--green); transform:translateY(-1px);}
+  .scale .n{display:block; font-family:Georgia,serif; font-size:1.5rem; line-height:1;}
+  .scale .t{display:block; font-size:.72rem; color:var(--muted); margin-top:7px; min-height:2.2em;}
+  .scends{display:flex; justify-content:space-between; font-size:.78rem; color:var(--faint); margin-top:10px;}
+
+  .nav{display:flex; justify-content:space-between; align-items:center; margin-top:24px;}
+  .link{background:none; border:0; font:inherit; color:var(--muted); cursor:pointer; padding:8px 4px;}
+  .link:hover{color:var(--ink);} .link[disabled]{opacity:0; pointer-events:none;}
+
+  .rhead{text-align:center; margin-bottom:8px;}
+  .rhead .eyebrow{color:var(--gold-ink);}
+  .rhead h1{font-family:Georgia,serif; font-weight:400; font-size:2.25rem; line-height:1.2; margin:6px 0 12px;}
+  .rhead .oneline{font-size:1.14rem; color:var(--muted); max-width:31em; margin:0 auto;}
+  .chip{display:inline-block; font-size:.7rem; letter-spacing:.05em; text-transform:uppercase; font-weight:700; padding:3px 10px; border-radius:999px; vertical-align:middle;}
+  .chip.real{background:var(--green-soft); color:var(--green-ink);}
+  .chip.modeled{background:var(--gold-soft); color:var(--gold-ink);}
+  .panel{background:var(--card); border:1px solid var(--line); border-radius:16px; padding:26px; margin:18px 0; box-shadow:var(--shadow);}
+  .panel h3{font-family:Georgia,serif; font-weight:400; font-size:1.3rem; margin-bottom:4px; display:flex; gap:10px; align-items:center; flex-wrap:wrap;}
+  .panel .note{font-size:.9rem; color:var(--faint); margin:10px 0 16px;}
+
+  .levers{display:grid; gap:13px; margin-top:6px;}
+  .lever .top{display:flex; justify-content:space-between; align-items:baseline; gap:10px;}
+  .lever .name{font-weight:600;} .lever .name small{font-weight:400; color:var(--faint);}
+  .lever .pct{font-variant-numeric:tabular-nums; color:var(--muted); font-size:.9rem;}
+  .track{height:12px; background:#efe7d3; border-radius:999px; overflow:hidden;}
+  .track > i{display:block; height:100%; width:0; border-radius:999px; background:linear-gradient(90deg,#1c9070,var(--green)); transition:width .8s cubic-bezier(.2,.8,.2,1);}
+  .lever.gap .track > i{background:linear-gradient(90deg,#dcc164,var(--gold-deep));}
+  .lever.gap .name::after{content:"the opening"; font-size:.66rem; letter-spacing:.04em; text-transform:uppercase; font-weight:700; color:var(--gold-ink); background:var(--gold-soft); padding:2px 8px; border-radius:999px; margin-left:8px;}
+  .lever.top-strength .name::after{content:"your strength"; font-size:.66rem; letter-spacing:.04em; text-transform:uppercase; font-weight:700; color:var(--green-ink); background:var(--green-soft); padding:2px 8px; border-radius:999px; margin-left:8px;}
+
+  blockquote{border-left:3px solid var(--green); padding:4px 0 4px 16px; margin:14px 0 0; color:var(--green-ink); font-style:italic;}
+  .move{font-size:1.08rem; line-height:1.6;}
+  .mirror{background:var(--green-soft); border-color:#bfe3d5;}
+  .mirror h3{color:var(--green-ink);}
+  .premise{background:var(--dark); color:#ded9cc; border:0;}
+  .premise h3{color:#e6cd83;} .premise p{color:#c2bcab;} .premise b{color:#fff; font-weight:600;}
+
+  .capture{border:2px solid var(--green); background:linear-gradient(180deg,#fff,#fafdfb);}
+  .field{margin:14px 0;}
+  .field label{display:block; font-size:.85rem; font-weight:600; color:var(--ink); margin-bottom:6px;}
+  .field label .opt-tag{font-weight:400; color:var(--faint);}
+  .field input, .field textarea{width:100%; font:inherit; font-size:1rem; color:var(--ink); background:#fff; border:1.5px solid var(--line); border-radius:11px; padding:13px 15px;}
+  .field input:focus, .field textarea:focus{outline:none; border-color:var(--green); box-shadow:0 0 0 3px var(--green-soft);}
+  .field textarea{min-height:74px; resize:vertical;}
+  .formnote{font-size:.82rem; color:var(--faint); margin-top:4px;}
+  .err{color:#a32a2a; font-size:.85rem; margin-top:8px; display:none;}
+  .secondary{text-align:center; margin-top:18px;}
+  .secondary a, .secondary button{background:none; border:0; font:inherit; color:var(--muted); text-decoration:underline; cursor:pointer;}
+  .secondary a:hover, .secondary button:hover{color:var(--ink);}
+
+  .done{text-align:center; padding:10px 0;}
+  .done .mark{width:58px; height:58px; border-radius:50%; background:var(--green-soft); color:var(--green); display:flex; align-items:center; justify-content:center; font-size:1.9rem; margin:0 auto 16px;}
+  .done h2{font-family:Georgia,serif; font-weight:400; font-size:1.7rem; margin-bottom:8px;}
+  .done p{color:var(--muted); max-width:29em; margin:0 auto 8px;}
+
+  footer{border-top:1px solid var(--line); padding:30px 0 50px; color:var(--faint); font-size:.82rem; text-align:center;}
+  footer b{color:var(--muted);}
+  .hidden{display:none !important;}
+  @media (max-width:560px){ body{font-size:17px;} .hero h1{font-size:1.95rem;} .rhead h1{font-size:1.8rem;} .scale .n{font-size:1.25rem;} .scale .t{font-size:.66rem;} }
+</style>
+</head>
+<body>
+
+<header class="hero" id="top">
+  <div class="wrap">
+    <div class="eyebrow">Cracking the Code to Success &amp; Profits · July: Power Skills</div>
+    <h1 class="serif">Your hardest business problem might be <em>a skill, not a strategy.</em></h1>
+    <p class="sub">You already know more than you're using. Most owners don't need another framework — they need the human skills that turn what they already know into profit. Those are power skills, and they're trainable.</p>
+    <p class="meta"><b>About 2 minutes.</b> Seven questions. An honest read on which power skill is quietly costing you most — no pitch to sit through.</p>
+    <button class="btn" id="startBtn">Find my hidden lever <span class="arrow">→</span></button>
+    <div class="pillars">
+      <span>Communicate</span><span>Decide</span><span>Focus</span><span>Adapt</span><span>Delegate</span><span>Influence</span>
+    </div>
+  </div>
+</header>
+
+<section id="quiz" class="hidden">
+  <div class="wrap">
+    <div class="progress"><div class="bar"><i id="progFill"></i></div><div class="count" id="progCount">1 / 7</div></div>
+    <div id="steps"></div>
+    <div class="nav">
+      <button class="link" id="backBtn" disabled>← Back</button>
+      <span style="font-size:.8rem; color:var(--faint)">Your answers are real; the read at the end is modeled.</span>
+    </div>
+  </div>
+</section>
+
+<section id="result" class="hidden">
+  <div class="wrap">
+    <div class="rhead">
+      <div class="eyebrow">Your power-skills read</div>
+      <h1 class="serif" id="archetype">—</h1>
+      <p class="oneline" id="oneline">—</p>
+    </div>
+
+    <div class="panel">
+      <h3>What you told us <span class="chip real">Real · your answers</span></h3>
+      <p class="note">Six power skills that quietly decide profit, side by side. The shortest bar is the one that, strengthened, would move your business most.</p>
+      <div class="levers" id="levers"></div>
+      <blockquote id="selfQuote"></blockquote>
+    </div>
+
+    <div class="panel mirror">
+      <h3>The honest part</h3>
+      <p id="mirrorBody" style="color:var(--green-ink)">—</p>
+    </div>
+
+    <div class="panel">
+      <h3>Where the opening is <span class="chip modeled">Modeled · to confirm</span></h3>
+      <p class="note">A modeled read of your answers — a power skill to practice, not a guaranteed result.</p>
+      <p class="move" id="oneMove">—</p>
+    </div>
+
+    <div class="panel premise">
+      <h3>Why this is July's theme</h3>
+      <p id="premise">—</p>
+    </div>
+
+    <div class="panel capture" id="captureCard">
+      <h3 id="captureH">Want the full breakdown?</h3>
+      <p class="note">We'll send a personalized read on all six power skills for your business — and the specific practice that moves your opening first. No spam, no pitch on a timer.</p>
+      <div class="field"><label for="fName">First name <span class="opt-tag">— so it's addressed to you</span></label><input id="fName" type="text" autocomplete="given-name" placeholder="Your first name"></div>
+      <div class="field"><label for="fEmail">Email</label><input id="fEmail" type="email" autocomplete="email" placeholder="you@yourbusiness.com"></div>
+      <div class="field"><label for="fBiz">What kind of business is this? <span class="opt-tag">— optional, makes it specific</span></label><input id="fBiz" type="text" placeholder="e.g. agency, coaching, dental practice, retail…"></div>
+      <div class="field"><label for="fWhy">What's the problem this skill keeps showing up in? <span class="opt-tag">— optional, in your words</span></label><textarea id="fWhy" placeholder="Where it bites you most right now…"></textarea></div>
+      <button class="btn green" id="sendBtn" style="width:100%; justify-content:center;">Send my full breakdown</button>
+      <div class="err" id="formErr"></div>
+      <div class="formnote">Your answers stay private. You'll hear from a person, not a funnel.</div>
+      <div class="secondary" id="secondary"></div>
+    </div>
+
+    <div class="panel hidden" id="doneCard">
+      <div class="done">
+        <div class="mark">✓</div>
+        <h2 id="doneH">We've got it.</h2>
+        <p id="doneP">—</p>
+        <p style="margin-top:14px"><b>Your first practice is right above</b> — the one move. Start there this week.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p><b>Cracking the Code to Success &amp; Profits</b> — weekly training for business owners · Brian Oney &amp; Scott Sylvan Bell</p>
+    <p style="margin-top:6px">Powered by the Client Engagement System · CEM³ &nbsp;·&nbsp; Your answers are real; the read is a modeled possibility to confirm, never a guaranteed result.</p>
+  </div>
+</footer>
+
+<script>
+const CONFIG = {
+  captureEndpoint: "/api/crack-the-code",
+  assessment: "power-skills",
+  secondaryInvite: { label: "Or see July's Power Skills month →", href: "https://crackingthecodetosuccessprofits.com" },
+  declineLabel: "Not ready to share that? Take the practice above and run with it — it's yours."
+};
+
+const SKILL = {
+  communicate: { name: "Communicate",  sub: "make your value land" },
+  decide:      { name: "Decide",       sub: "make the call, own it" },
+  focus:       { name: "Focus",        sub: "beat friction & distraction" },
+  adapt:       { name: "Adapt",        sub: "turn with the market" },
+  delegate:    { name: "Delegate",     sub: "out of the technician seat" },
+  influence:   { name: "Influence",    sub: "move people to yes, honestly" }
+};
+const SCALE_TXT = ["Not at all", "Rarely", "Sometimes", "Mostly", "Always"];
+
+const QUESTIONS = [
+  { id:"communicate", lever:"communicate", type:"scale", kicker:"Power skill — communication",
+    q:"You can make the value of what you do land clearly — with a client, your team, the market — without over-explaining.",
+    help:"Muddy value is unpaid work. Clarity is leverage." },
+  { id:"decide", lever:"decide", type:"scale", kicker:"Power skill — decisiveness",
+    q:"You make the important calls without thrashing — and you own them once made.",
+    help:"Most lost profit isn't from wrong calls. It's from late ones." },
+  { id:"focus", lever:"focus", type:"scale", kicker:"Power skill — self-management",
+    q:"You protect time for the work that actually moves revenue, instead of losing the day to friction and distraction.",
+    help:"The thing that grows the business rarely shouts the loudest." },
+  { id:"adapt", lever:"adapt", type:"scale", kicker:"Power skill — adaptability",
+    q:"When the market or a client shifts, you change your approach quickly instead of running the old playbook.",
+    help:"The better version is usually already there — once you stop defending the old one." },
+  { id:"delegate", lever:"delegate", type:"scale", kicker:"Power skill — delegation & trust",
+    q:"The business runs well when you step away — work doesn't all route back through you.",
+    help:"A business that can't run without you can't grow past you — or sell." },
+  { id:"influence", lever:"influence", type:"scale", kicker:"Power skill — influence",
+    q:"You can move people — team, partners, clients — toward a yes, by leading with what they want.",
+    help:"Influence is service, aimed on purpose. Not pressure." },
+  { id:"self", lever:"_self", type:"choice", kicker:"In your own words",
+    q:"Which of these, if you got great at it, would change your business most?",
+    help:"This one's for you — we'll mirror it back, not score it.",
+    options:[
+      { label:"Making my value land clearly", self:"communicate" },
+      { label:"Making decisions without thrashing", self:"decide" },
+      { label:"Protecting focus from the daily chaos", self:"focus" },
+      { label:"Adapting faster when things change", self:"adapt" },
+      { label:"Getting out of being the bottleneck", self:"delegate" },
+      { label:"Moving people toward a yes", self:"influence" },
+      { label:"Honestly, I'm not sure — that's why I'm here", self:"_unsure" }
+    ] }
+];
+
+const ARCHETYPE = {
+  communicate:{ name:"The Quiet Genius",     line:"You do excellent work — but its value doesn't fully translate, so you're paid for the surface and not the depth." },
+  decide:     { name:"The Deliberator",      line:"You weigh well, but the weighing runs long. Momentum and money leak out of the gap between knowing and deciding." },
+  focus:      { name:"The Firefighter",      line:"You're busy and capable, but the urgent keeps eating the important — so the lever that grows the business rarely gets touched." },
+  adapt:      { name:"The Creature of Habit",line:"What worked got you here — but the market moved and the playbook didn't. You're running last season's game well." },
+  delegate:   { name:"The Bottleneck",       line:"Everything routes through you. You're the engine and the ceiling — the business can't grow past your own hours." },
+  influence:  { name:"The Order-Taker",      line:"You serve well but rarely move people. You react to what's asked instead of leading the room toward the better outcome." }
+};
+
+const ONE_MOVE = {
+  communicate:"Pick the one message your business most needs to land, and sharpen it until a twelve-year-old would get it. Clear value is the difference between being chosen and being compared.",
+  decide:"Set a deadline for your next stuck decision and decide at about 70% certainty. You can correct a call in motion; you can't recover the weeks spent not making it.",
+  focus:"Name the single task that actually moves revenue this week, and protect two hours a day for it before anything else reaches you. Friction grows in the gaps you don't defend.",
+  adapt:"Pick one place the market has clearly shifted and run one small experiment against your old playbook this month. Treat the old way as a hypothesis, not a habit.",
+  delegate:"Take one task only you currently do, write down how you do it, and hand it off this week. Each thing you let go of is room the business gets to grow into.",
+  influence:"Before your next ask, lead with what the other person actually wants, then connect your request to it. Influence is service, aimed on purpose."
+};
+
+const answers = {};
+let idx = 0;
+const $ = (s) => document.querySelector(s);
+
+function renderStep(){
+  const Q = QUESTIONS[idx];
+  let body = "";
+  if (Q.type === "scale"){
+    body = `<div class="scale">${[1,2,3,4,5].map(n=>`<button data-v="${n}" class="${answers[Q.id]===n?'sel':''}"><span class="n">${n}</span><span class="t">${SCALE_TXT[n-1]}</span></button>`).join("")}</div>
+      <div class="scends"><span>Not at all</span><span>Always</span></div>`;
+  } else {
+    body = `<div class="opts">${Q.options.map((o,i)=>`<button class="opt ${answers[Q.id]===i?'sel':''}" data-i="${i}"><span class="dot"></span><span class="lab">${o.label}</span></button>`).join("")}</div>`;
+  }
+  $("#steps").innerHTML = `<div class="step active"><div class="qcard"><div class="qkicker">${Q.kicker}</div><h2 class="serif">${Q.q}</h2><p class="qhelp">${Q.help}</p>${body}</div></div>`;
+  $("#steps").querySelectorAll(".scale button").forEach(b=>b.addEventListener("click",()=>choose(Q,parseInt(b.dataset.v,10))));
+  $("#steps").querySelectorAll(".opt").forEach(b=>b.addEventListener("click",()=>choose(Q,parseInt(b.dataset.i,10))));
+  $("#progCount").textContent = `${idx+1} / ${QUESTIONS.length}`;
+  $("#progFill").style.width = `${(idx)/(QUESTIONS.length)*100}%`;
+  $("#backBtn").disabled = idx === 0;
+}
+function choose(Q,val){
+  answers[Q.id]=val;
+  setTimeout(()=>{ if(idx<QUESTIONS.length-1){idx++;renderStep();} else {$("#progFill").style.width="100%";showResult();} },180);
+  renderStep();
+}
+function scoreFrom(v){ return Math.round(((v-1)/4)*100); }
+
+let RESULT=null;
+function compute(){
+  const s={};
+  ["communicate","decide","focus","adapt","delegate","influence"].forEach(k=>{ s[k]= answers[k]?scoreFrom(answers[k]):40; });
+  const entries=Object.entries(s);
+  let gap=entries[0], top=entries[0];
+  for(const e of entries){ if(e[1]<gap[1])gap=e; if(e[1]>top[1])top=e; }
+  const self = QUESTIONS[6].options[answers.self]?.self;
+  if (self && self!=="_unsure" && s[self]!=null && s[self]-gap[1]<=12) gap=[self,s[self]];
+  return { scores:s, gapLever:gap[0], topLever:top[0], self,
+    archetype:ARCHETYPE[gap[0]].name, archetypeLine:ARCHETYPE[gap[0]].line, oneMove:ONE_MOVE[gap[0]] };
+}
+
+function showResult(){
+  RESULT=compute();
+  try{ localStorage.setItem("ps_last", JSON.stringify({answers,result:RESULT,at:new Date().toISOString()})); }catch(e){}
+  $("#quiz").classList.add("hidden");
+  const r=$("#result"); r.classList.remove("hidden");
+  $("#archetype").textContent=RESULT.archetype;
+  $("#oneline").textContent=RESULT.archetypeLine;
+
+  const order=Object.keys(SKILL);
+  $("#levers").innerHTML=order.map(k=>{
+    const v=RESULT.scores[k];
+    const cls = k===RESULT.gapLever?"gap":(k===RESULT.topLever?"top-strength":"");
+    return `<div class="lever ${cls}"><div class="top"><span class="name">${SKILL[k].name} <small>· ${SKILL[k].sub}</small></span><span class="pct">${v}/100</span></div><div class="track"><i style="width:0" data-w="${v}"></i></div></div>`;
+  }).join("");
+  requestAnimationFrame(()=>$("#levers").querySelectorAll(".track > i").forEach(i=>i.style.width=i.dataset.w+"%"));
+
+  const selfText = QUESTIONS[6].options[answers.self]?.label;
+  $("#selfQuote").innerHTML = selfText ? `You said the skill that would change the most is: <strong>“${selfText.replace(/^[A-Z]/,c=>c.toLowerCase())}.”</strong>` : "";
+
+  const gapName = SKILL[RESULT.gapLever].name.toLowerCase();
+  $("#mirrorBody").innerHTML = `Power skills are nearly invisible to the person using them — which is why the lowest bar is often a surprise, not the one you'd have named. That's not a verdict; it's leverage. <strong>The most profitable fix is usually the skill you've stopped noticing</strong> — for you, that points at <strong>${gapName}</strong>.`;
+
+  $("#oneMove").textContent=RESULT.oneMove;
+
+  const top=SKILL[RESULT.topLever].name.toLowerCase();
+  const gap=SKILL[RESULT.gapLever].name.toLowerCase();
+  $("#premise").innerHTML = `Most owners reach for another strategy when the real constraint is a human skill — the way you communicate, decide, focus, adapt, delegate, or influence. Power skills aren't soft; they're where success and profit are quietly won or lost, and they're trainable like any mechanic. You're already strong at <b>${top}</b>. The opening is <b>${gap}</b>. In July, <b>Cracking the Code to Success &amp; Profits</b> runs every session through this lens, with Brian Oney and Scott Sylvan Bell.`;
+
+  if (CONFIG.secondaryInvite){
+    $("#secondary").innerHTML = `<a class="btn green" style="margin-bottom:14px; display:inline-flex" href="${CONFIG.secondaryInvite.href}">${CONFIG.secondaryInvite.label}</a><br><button id="skipBtn">${CONFIG.declineLabel}</button>`;
+  } else {
+    $("#secondary").innerHTML = `<button id="skipBtn">${CONFIG.declineLabel}</button>`;
+  }
+  $("#skipBtn").addEventListener("click", decline);
+
+  r.scrollIntoView({behavior:"smooth", block:"start"});
+}
+
+const EMAIL_RE=/^[^@\s]+@[^@\s]+\.[^@\s]+$/;
+async function send(path){
+  const firstName=$("#fName").value.trim(), email=$("#fEmail").value.trim(), businessType=$("#fBiz").value.trim(), why=$("#fWhy").value.trim();
+  const err=$("#formErr");
+  if(!EMAIL_RE.test(email)){ err.textContent="Please add a valid email so we can send the breakdown."; err.style.display="block"; return; }
+  err.style.display="none"; $("#sendBtn").disabled=true; $("#sendBtn").textContent="Sending…";
+  const payload={ assessment:CONFIG.assessment, firstName, email, businessType, why, path, profile:RESULT, answers };
+  try{ localStorage.setItem("ps_capture", JSON.stringify({payload,at:new Date().toISOString()})); }catch(e){}
+  let ok=false;
+  try{
+    const res=await fetch(CONFIG.captureEndpoint,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(payload)});
+    ok=res.ok; if(!ok){ const d=await res.json().catch(()=>({})); if(d.reason) err.textContent=d.reason; }
+  }catch(e){ ok=false; }
+  $("#captureCard").classList.add("hidden");
+  const d=$("#doneCard"); d.classList.remove("hidden");
+  $("#doneH").textContent = firstName ? `We've got it, ${firstName}.` : "We've got it.";
+  $("#doneP").textContent = ok
+    ? "Your personalized breakdown is on its way, and a real person will follow up — no funnel, no timer."
+    : "Saved. Your breakdown is queued — a real person will follow up shortly.";
+  d.scrollIntoView({behavior:"smooth", block:"center"});
+}
+function decline(){
+  $("#captureCard").classList.add("hidden");
+  const d=$("#doneCard"); d.classList.remove("hidden");
+  $("#doneH").textContent="Good — take it and run.";
+  $("#doneP").textContent="The practice above is yours to keep. If you ever want the full breakdown for your business, it'll be here.";
+  d.scrollIntoView({behavior:"smooth", block:"center"});
+}
+
+$("#startBtn").addEventListener("click",()=>{ $("#quiz").classList.remove("hidden"); renderStep(); $("#quiz").scrollIntoView({behavior:"smooth",block:"start"}); });
+$("#backBtn").addEventListener("click",()=>{ if(idx>0){idx--;renderStep();} });
+$("#sendBtn").addEventListener("click",()=>send("yes"));
+</script>
+</body>
+</html>
