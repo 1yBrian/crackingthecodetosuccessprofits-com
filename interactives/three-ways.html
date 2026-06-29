@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The Three Ways to Grow — interactive</title>
-<meta name="description" content="Every revenue increase traces back to one of three moves: more clients, more transactions per client, or more revenue per transaction. There is no fourth. Plug in your numbers and feel why.">
+<title>The Three Ways to Grow — Inputs · Efficiency · Yield</title>
+<meta name="description" content="Every gain in profit traces back to one of three moves: more Inputs (clients you bring in), more Efficiency (less time, cost, friction), or more Yield (lifetime value and margin). There is no fourth. Plug in your numbers and watch them compound.">
 <style>
   /* Self-contained + embeddable: scoped to .ctc, transparent body so it drops onto
      any page (iframe or paste). Brand-matched to crackingthecodetosuccessprofits.com. */
@@ -15,7 +15,7 @@
     --green:#0f6e56; --green-soft:#e9f1e3; --green-ink:#3D3830;
     --gold:#C4922A; --gold-deep:#8B6914; --gold-soft:#fbf3df; --gold-ink:#6b5410;
     --dark:#1A1814;
-    --clients:#0f6e56; --freq:#8B6914; --value:#2a6e7e;
+    --inputs:#0f6e56; --eff:#8B6914; --yield:#2a6e7e;
     font-family:Georgia,'Times New Roman',serif; color:var(--ink); line-height:1.55;
     -webkit-font-smoothing:antialiased; max-width:760px; margin:0 auto; font-size:17px;
   }
@@ -27,7 +27,7 @@
   .ctc .head::after{content:""; position:absolute; left:0; right:0; bottom:0; height:3px; background:linear-gradient(90deg,var(--gold-deep),#e6cd83,var(--gold-deep));}
   .ctc .kicker{font-size:.72rem; letter-spacing:.16em; text-transform:uppercase; color:var(--gold); font-weight:700; margin-bottom:10px;}
   .ctc .head h2{font-family:Georgia,serif; font-weight:400; font-size:1.7rem; line-height:1.2; margin-bottom:8px;}
-  .ctc .head p{color:#bcb6a7; font-size:.96rem; max-width:46ch;}
+  .ctc .head p{color:#bcb6a7; font-size:.96rem; max-width:48ch;}
   .ctc .head em{color:#e6cd83; font-style:italic;}
 
   .ctc .body{padding:24px 28px 10px;}
@@ -38,7 +38,7 @@
   .ctc .base .cell{border:1px solid var(--line); border-radius:12px; padding:12px 14px; background:#fcfaf3;}
   .ctc .base label{display:block; font-size:.74rem; color:var(--muted); font-weight:600; margin-bottom:7px; min-height:2.4em;}
   .ctc .base .inwrap{display:flex; align-items:center; gap:4px;}
-  .ctc .base .pre{color:var(--faint); font-size:1.05rem;}
+  .ctc .base .pre,.ctc .base .suf{color:var(--faint); font-size:1.05rem;}
   .ctc .base input{width:100%; font:inherit; font-size:1.25rem; font-family:Georgia,serif; color:var(--ink); border:0; background:transparent; outline:none; -moz-appearance:textfield;}
   .ctc .base input::-webkit-outer-spin-button, .ctc .base input::-webkit-inner-spin-button{-webkit-appearance:none; margin:0;}
   .ctc .base .dot{display:inline-block; width:9px; height:9px; border-radius:50%; margin-right:6px; vertical-align:middle;}
@@ -55,9 +55,9 @@
   .ctc input[type=range]::-webkit-slider-thumb{-webkit-appearance:none; width:24px; height:24px; border-radius:50%; background:#fff; border:3px solid var(--green); cursor:pointer; box-shadow:0 2px 6px rgba(0,0,0,.18); transition:transform .1s;}
   .ctc input[type=range]::-webkit-slider-thumb:active{transform:scale(1.12);}
   .ctc input[type=range]::-moz-range-thumb{width:22px; height:22px; border-radius:50%; background:#fff; border:3px solid var(--green); cursor:pointer;}
-  .ctc .lever.l-clients .pv{color:var(--clients);} .ctc .lever.l-clients input[type=range]::-webkit-slider-thumb{border-color:var(--clients);}
-  .ctc .lever.l-freq .pv{color:var(--freq);} .ctc .lever.l-freq input[type=range]::-webkit-slider-thumb{border-color:var(--freq);}
-  .ctc .lever.l-value .pv{color:var(--value);} .ctc .lever.l-value input[type=range]::-webkit-slider-thumb{border-color:var(--value);}
+  .ctc .lever.l-inputs .pv{color:var(--inputs);} .ctc .lever.l-inputs input[type=range]::-webkit-slider-thumb{border-color:var(--inputs);}
+  .ctc .lever.l-eff .pv{color:var(--eff);} .ctc .lever.l-eff input[type=range]::-webkit-slider-thumb{border-color:var(--eff);}
+  .ctc .lever.l-yield .pv{color:var(--yield);} .ctc .lever.l-yield input[type=range]::-webkit-slider-thumb{border-color:var(--yield);}
 
   /* result */
   .ctc .result{margin:22px -28px 0; padding:24px 28px; background:linear-gradient(180deg,#fbf7ec,#f6efdd); border-top:1px solid var(--line);}
@@ -66,7 +66,7 @@
   .ctc .lift{font-size:1rem; color:var(--green); font-weight:700; background:var(--green-soft); padding:5px 12px; border-radius:999px;}
   .ctc .barwrap{display:flex; height:22px; border-radius:8px; overflow:hidden; margin:20px 0 10px; border:1px solid var(--line); background:#fff;}
   .ctc .barwrap > span{display:block; height:100%; transition:width .5s cubic-bezier(.2,.8,.2,1);}
-  .ctc .seg-base{background:#d8cfb8;} .ctc .seg-clients{background:var(--clients);} .ctc .seg-freq{background:var(--freq);} .ctc .seg-value{background:var(--value);}
+  .ctc .seg-base{background:#d8cfb8;} .ctc .seg-inputs{background:var(--inputs);} .ctc .seg-eff{background:var(--eff);} .ctc .seg-yield{background:var(--yield);}
   .ctc .legend{display:flex; flex-wrap:wrap; gap:6px 16px; justify-content:center; font-size:.78rem; color:var(--muted);}
   .ctc .legend i{display:inline-block; width:10px; height:10px; border-radius:2px; margin-right:5px; vertical-align:middle;}
 
@@ -90,58 +90,58 @@
     <div class="head">
       <div class="kicker">Jay Abraham · The Three Ways to Grow a Business</div>
       <h2 class="serif">There are only three ways to grow. <em>There is no fourth.</em></h2>
-      <p>More clients · more transactions per client · more revenue per transaction. Plug in your numbers and watch what happens when you stop spreading effort and start compounding it.</p>
+      <p>Inputs · Efficiency · Yield — bring more in, keep more of it, earn more from each client. Plug in your numbers and watch what happens when you stop spreading effort and start compounding it.</p>
     </div>
 
     <div class="body">
       <div class="sectlabel">Start with your business today</div>
       <div class="base">
         <div class="cell">
-          <label><span class="dot" style="background:var(--clients)"></span>Clients per year</label>
-          <div class="inwrap"><input id="b-clients" type="number" min="1" value="150" inputmode="numeric"></div>
+          <label><span class="dot" style="background:var(--inputs)"></span>Inputs — new clients per year</label>
+          <div class="inwrap"><input id="b-inputs" type="number" min="1" value="150" inputmode="numeric"></div>
         </div>
         <div class="cell">
-          <label><span class="dot" style="background:var(--freq)"></span>Transactions per client / year</label>
-          <div class="inwrap"><input id="b-freq" type="number" min="0.1" step="0.1" value="4" inputmode="decimal"></div>
+          <label><span class="dot" style="background:var(--yield)"></span>Yield — value per client / year</label>
+          <div class="inwrap"><span class="pre">$</span><input id="b-yield" type="number" min="1" value="1200" inputmode="numeric"></div>
         </div>
         <div class="cell">
-          <label><span class="dot" style="background:var(--value)"></span>Average sale</label>
-          <div class="inwrap"><span class="pre">$</span><input id="b-value" type="number" min="1" value="400" inputmode="numeric"></div>
+          <label><span class="dot" style="background:var(--eff)"></span>Efficiency — profit you keep (margin)</label>
+          <div class="inwrap"><input id="b-eff" type="number" min="1" max="99" value="30" inputmode="numeric"><span class="suf">%</span></div>
         </div>
       </div>
-      <div class="baserev">Today, that's about <b id="baseRev">$240,000</b> a year.</div>
+      <div class="baserev">Today, that's about <b id="baseRev">$54,000</b> in profit a year.</div>
 
-      <div class="sectlabel">Now improve each lever — even a little</div>
+      <div class="sectlabel">Now improve each of the three — even a little</div>
 
-      <div class="lever l-clients">
-        <div class="lt"><span class="nm">More clients <small>· acquisition</small></span><span class="pv" id="pv-clients">+10%</span></div>
-        <input id="s-clients" type="range" min="0" max="50" value="10">
+      <div class="lever l-inputs">
+        <div class="lt"><span class="nm">Inputs <small>· client acquisition</small></span><span class="pv" id="pv-inputs">+10%</span></div>
+        <input id="s-inputs" type="range" min="0" max="50" value="10">
       </div>
-      <div class="lever l-freq">
-        <div class="lt"><span class="nm">More transactions per client <small>· frequency</small></span><span class="pv" id="pv-freq">+10%</span></div>
-        <input id="s-freq" type="range" min="0" max="50" value="10">
+      <div class="lever l-eff">
+        <div class="lt"><span class="nm">Efficiency <small>· time, cost, logistics, process</small></span><span class="pv" id="pv-eff">+10%</span></div>
+        <input id="s-eff" type="range" min="0" max="50" value="10">
       </div>
-      <div class="lever l-value">
-        <div class="lt"><span class="nm">More revenue per transaction <small>· average sale</small></span><span class="pv" id="pv-value">+10%</span></div>
-        <input id="s-value" type="range" min="0" max="50" value="10">
+      <div class="lever l-yield">
+        <div class="lt"><span class="nm">Yield <small>· lifetime value &amp; margin</small></span><span class="pv" id="pv-yield">+10%</span></div>
+        <input id="s-yield" type="range" min="0" max="50" value="10">
       </div>
 
       <div class="result">
         <div class="bigrow">
-          <span class="big" id="newRev">$320,460</span>
+          <span class="big" id="newRev">$71,874</span>
           <span class="lift" id="lift">+33%</span>
         </div>
         <div class="barwrap" id="bar">
           <span class="seg-base" style="width:75%"></span>
-          <span class="seg-clients" style="width:8%"></span>
-          <span class="seg-freq" style="width:8%"></span>
-          <span class="seg-value" style="width:9%"></span>
+          <span class="seg-inputs" style="width:8%"></span>
+          <span class="seg-eff" style="width:8%"></span>
+          <span class="seg-yield" style="width:9%"></span>
         </div>
         <div class="legend">
           <span><i style="background:#d8cfb8"></i>today</span>
-          <span><i style="background:var(--clients)"></i>clients</span>
-          <span><i style="background:var(--freq)"></i>frequency</span>
-          <span><i style="background:var(--value)"></i>avg sale</span>
+          <span><i style="background:var(--inputs)"></i>inputs</span>
+          <span><i style="background:var(--eff)"></i>efficiency</span>
+          <span><i style="background:var(--yield)"></i>yield</span>
         </div>
         <div class="math" id="math">1.10 × 1.10 × 1.10 = <b>1.33×</b></div>
         <div class="callout" id="callout">—</div>
@@ -149,7 +149,7 @@
     </div>
 
     <div class="foot">
-      <b>Your numbers, modeled — not a projection or a promise.</b> The point isn't the forecast; it's the discipline of knowing which lever you're pulling.
+      <b>Your numbers, modeled — not a projection or a promise.</b> The point isn't the forecast; it's the discipline of knowing which of the three you're pulling.
     </div>
   </div>
 </div>
@@ -159,9 +159,9 @@
   const $ = (id) => document.getElementById(id);
   const money = (n) => "$" + Math.round(n).toLocaleString("en-US");
   const els = {
-    bc:$("b-clients"), bf:$("b-freq"), bv:$("b-value"),
-    sc:$("s-clients"), sf:$("s-freq"), sv:$("s-value"),
-    pvc:$("pv-clients"), pvf:$("pv-freq"), pvv:$("pv-value"),
+    bi:$("b-inputs"), by:$("b-yield"), be:$("b-eff"),
+    si:$("s-inputs"), se:$("s-eff"), sy:$("s-yield"),
+    pvi:$("pv-inputs"), pve:$("pv-eff"), pvy:$("pv-yield"),
     baseRev:$("baseRev"), newRev:$("newRev"), lift:$("lift"),
     math:$("math"), callout:$("callout"), bar:$("bar")
   };
@@ -169,54 +169,56 @@
   function num(el, fallback){ const v = parseFloat(el.value); return Number.isFinite(v) && v > 0 ? v : fallback; }
 
   function render(){
-    const C = num(els.bc, 1), F = num(els.bf, 1), V = num(els.bv, 1);
-    const pc = (+els.sc.value)/100, pf = (+els.sf.value)/100, pv = (+els.sv.value)/100;
-    els.pvc.textContent = "+" + els.sc.value + "%";
-    els.pvf.textContent = "+" + els.sf.value + "%";
-    els.pvv.textContent = "+" + els.sv.value + "%";
+    const I = num(els.bi, 1);                                  // inputs: clients
+    const Y = num(els.by, 1);                                  // yield: value per client
+    const E = Math.min(num(els.be, 1), 99) / 100;              // efficiency: margin kept
+    const pi = (+els.si.value)/100, pe = (+els.se.value)/100, py = (+els.sy.value)/100;
+    els.pvi.textContent = "+" + els.si.value + "%";
+    els.pve.textContent = "+" + els.se.value + "%";
+    els.pvy.textContent = "+" + els.sy.value + "%";
 
-    const base = C * F * V;
-    const mult = (1+pc) * (1+pf) * (1+pv);
+    const base = I * Y * E;                                     // profit today
+    const mult = (1+pi) * (1+pe) * (1+py);
     const nw = base * mult;
     const liftPct = (mult - 1) * 100;
-    const sumPct = (pc + pf + pv) * 100;
+    const sumPct = (pi + pe + py) * 100;
 
     els.baseRev.textContent = money(base);
     els.newRev.textContent = money(nw);
     els.lift.textContent = (liftPct >= 0 ? "+" : "") + liftPct.toFixed(liftPct < 10 ? 1 : 0) + "%";
 
     // contribution bar — each lever's marginal add, scaled against the new total.
-    const addC = base * pc;
-    const addF = base * (1+pc) * pf;
-    const addV = base * (1+pc) * (1+pf) * pv;
+    const addI = base * pi;
+    const addE = base * (1+pi) * pe;
+    const addY = base * (1+pi) * (1+pe) * py;
     const tot = nw || 1;
     const pct = (x) => (x / tot * 100).toFixed(2) + "%";
     els.bar.innerHTML =
       '<span class="seg-base" style="width:'+pct(base)+'"></span>' +
-      '<span class="seg-clients" style="width:'+pct(addC)+'"></span>' +
-      '<span class="seg-freq" style="width:'+pct(addF)+'"></span>' +
-      '<span class="seg-value" style="width:'+pct(addV)+'"></span>';
+      '<span class="seg-inputs" style="width:'+pct(addI)+'"></span>' +
+      '<span class="seg-eff" style="width:'+pct(addE)+'"></span>' +
+      '<span class="seg-yield" style="width:'+pct(addY)+'"></span>';
 
     const f2 = (x) => (1+x).toFixed(2);
-    els.math.innerHTML = f2(pc) + " × " + f2(pf) + " × " + f2(pv) + " = <b>" + mult.toFixed(2) + "×</b>";
+    els.math.innerHTML = f2(pi) + " × " + f2(pe) + " × " + f2(py) + " = <b>" + mult.toFixed(2) + "×</b>";
 
     // dynamic teaching callout
-    const active = [pc,pf,pv].filter(x => x > 0).length;
-    const maxP = Math.max(pc,pf,pv);
+    const active = [pi,pe,py].filter(x => x > 0).length;
+    const maxP = Math.max(pi,pe,py);
     let msg;
     if (active === 0){
-      msg = "Move a lever. Nothing grows on its own — but you only need one to start.";
+      msg = "Move a lever. Nothing grows on its own — but you only need one of the three to start.";
     } else if (active === 1){
-      const which = pc===maxP ? "more clients" : (pf===maxP ? "more transactions per client" : "a higher average sale");
-      msg = "<b>Going deep on one lever</b> — " + which + ". Clean and focused: +" + liftPct.toFixed(liftPct<10?1:0) + "%. Now try nudging the other two and watch them multiply, not add.";
+      const which = pi===maxP ? "more Inputs (clients in the door)" : (pe===maxP ? "more Efficiency (less time, cost, and friction)" : "more Yield (lifetime value and margin)");
+      msg = "<b>Going deep on one of the three</b> — " + which + ". Clean and focused: +" + liftPct.toFixed(liftPct<10?1:0) + "%. Now nudge the other two and watch them multiply, not add.";
     } else {
       const gap = (liftPct - sumPct);
-      msg = "<b>This is compounding.</b> Add the three improvements and you'd guess +" + Math.round(sumPct) + "%. But they <b>multiply</b> — so you actually get +" + liftPct.toFixed(liftPct<10?1:0) + "%. That extra " + gap.toFixed(1) + " points is free, and it only exists because you worked more than one lever.";
+      msg = "<b>This is compounding.</b> Add the three improvements and you'd guess +" + Math.round(sumPct) + "%. But they <b>multiply</b> — so you actually get +" + liftPct.toFixed(liftPct<10?1:0) + "%. That extra " + gap.toFixed(1) + " points costs nothing more; it exists only because you worked more than one of the three.";
     }
     els.callout.innerHTML = msg;
   }
 
-  ["bc","bf","bv","sc","sf","sv"].forEach(k => {
+  ["bi","by","be","si","se","sy"].forEach(k => {
     els[k].addEventListener("input", render);
     els[k].addEventListener("change", render);
   });
