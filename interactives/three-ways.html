@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>The Three Ways to Grow — Inputs · Efficiency · Yield</title>
-<meta name="description" content="Every gain in profit traces back to one of three moves: more Inputs (clients you bring in), more Efficiency (less time, cost, friction), or more Yield (lifetime value and margin). There is no fourth. Plug in your numbers and watch them compound.">
+<meta name="description" content="Every gain in profit traces back to one of three moves: more Inputs (clients you bring in), more Efficiency (pricing, cost, and process), or more Yield (the annual economic value each client returns). There is no fourth. Plug in your numbers and watch them compound.">
 <style>
   /* Self-contained + embeddable: scoped to .ctc, transparent body so it drops onto
      any page (iframe or paste). Brand-matched to crackingthecodetosuccessprofits.com. */
@@ -171,7 +171,7 @@
   function render(){
     const I = num(els.bi, 1);                                  // inputs: clients
     const Y = num(els.by, 1);                                  // yield: value per client
-    const E = Math.min(num(els.be, 1), 99) / 100;              // efficiency: margin kept
+    const E = Math.min(num(els.be, 1), 99) / 100;              // efficiency: profit kept (pricing & cost)
     const pi = (+els.si.value)/100, pe = (+els.se.value)/100, py = (+els.sy.value)/100;
     els.pvi.textContent = "+" + els.si.value + "%";
     els.pve.textContent = "+" + els.se.value + "%";
