@@ -90,7 +90,7 @@
     <div class="head">
       <div class="kicker">Jay Abraham · The Three Ways to Grow a Business</div>
       <h2 class="serif">There are only three ways to grow. <em>There is no fourth.</em></h2>
-      <p>Inputs · Efficiency · Yield — bring more clients in; sharpen pricing, cost and process so you keep more; and grow the yearly economic yield of every client. Three ways, each a bundle of levers — watch them compound.</p>
+      <p>Inputs · Efficiency · Yield — bring more in across clients, channels and offers; sharpen pricing, cost and process so you keep more; and grow the yearly economic yield of every client. Three ways, each a bundle of levers — watch them compound.</p>
     </div>
 
     <div class="body">
@@ -114,7 +114,7 @@
       <div class="sectlabel">Now improve each of the three — even a little</div>
 
       <div class="lever l-inputs">
-        <div class="lt"><span class="nm">Inputs <small>· client acquisition</small></span><span class="pv" id="pv-inputs">+10%</span></div>
+        <div class="lt"><span class="nm">Inputs <small>· channels, SKUs, segments, reach</small></span><span class="pv" id="pv-inputs">+10%</span></div>
         <input id="s-inputs" type="range" min="0" max="50" value="10">
       </div>
       <div class="lever l-eff">
@@ -209,7 +209,7 @@
     if (active === 0){
       msg = "Move a lever. Nothing grows on its own — but you only need one of the three to start.";
     } else if (active === 1){
-      const which = pi===maxP ? "more Inputs (clients in the door)" : (pe===maxP ? "more Efficiency (pricing, cost, and process)" : "more Yield (the economic value each client returns)");
+      const which = pi===maxP ? "more Inputs (clients, channels, offers)" : (pe===maxP ? "more Efficiency (pricing, cost, and process)" : "more Yield (the economic value each client returns)");
       msg = "<b>Going deep on one of the three</b> — " + which + ". Clean and focused: +" + liftPct.toFixed(liftPct<10?1:0) + "%. Now nudge the other two and watch them multiply, not add.";
     } else {
       const gap = (liftPct - sumPct);
