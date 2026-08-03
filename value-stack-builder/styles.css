@@ -156,7 +156,7 @@ header.masthead {
 .field.span-2 { grid-column: 1 / -1; }
 .field label { font-size: 0.9rem; font-weight: 600; color: var(--ink-mid); display: flex; align-items: center; gap: 0.5rem; }
 .field .src {
-  font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.06em;
+  font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.06em;
   padding: 0.1rem 0.45rem; border-radius: 999px; font-weight: 700;
 }
 .src-scraped { background: #E3EFE7; color: var(--green); }

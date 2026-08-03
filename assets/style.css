@@ -199,7 +199,7 @@ section { padding: 4rem 2rem; }
 
 /* ── TYPOGRAPHY ─────────────────────────────────── */
 .section-label {
-  font-size: 0.72rem;
+  font-size: 0.8rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--gold);
@@ -254,7 +254,7 @@ hr.rule {
 }
 
 .col-label {
-  font-size: 0.72rem;
+  font-size: 0.8rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--gold);
