@@ -53,6 +53,7 @@ nav .nav-links {
   gap: 0;
   list-style: none;
   flex-wrap: wrap;
+  flex-shrink: 0;
 }
 
 nav .nav-links li a {
@@ -63,7 +64,7 @@ nav .nav-links li a {
   font-size: 0.78rem;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  padding: 0 1rem;
+  padding: 0 0.7rem;
   height: 100%;
   transition: color 0.15s;
   white-space: nowrap;
@@ -475,6 +476,36 @@ footer a:hover { text-decoration: underline; }
 }
 
 /* ── RESPONSIVE ─────────────────────────────────── */
+
+/* Between a small laptop and the phone breakpoint the six bar items plus the
+   mark and the button are tight. Tighten the bar rather than let it wrap onto
+   a second line, which strands the last item under the others. */
+@media (max-width: 1150px) {
+  nav { padding: 0 1rem; }
+  nav .nav-links li a { padding: 0 0.45rem; letter-spacing: 0.03em; }
+  nav .nav-cta { padding: 0.5rem 0.8rem; letter-spacing: 0.04em; }
+  nav .wordmark img { height: 48px; }
+}
+
+/* Narrower than that the six items cannot share a line with the mark and the
+   button at all. Rather than squeeze them off the edge, the bar becomes two
+   deliberate rows: mark and button above, the six items centred beneath. */
+@media (max-width: 1023px) and (min-width: 681px) {
+  nav { flex-wrap: wrap; align-items: center; padding-bottom: 0.4rem; }
+  nav .nav-links {
+    flex-basis: 100%;
+    order: 3;
+    justify-content: center;
+    padding-bottom: 0.2rem;
+  }
+  nav .nav-links li a {
+    height: auto;
+    padding: 0.35rem 0.32rem;
+    letter-spacing: 0.02em;
+    font-size: 0.74rem;
+  }
+}
+
 @media (max-width: 680px) {
   nav .nav-links { display: none; }
   nav { justify-content: space-between; }
